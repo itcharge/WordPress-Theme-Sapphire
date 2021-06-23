@@ -24,8 +24,8 @@
 			<div class="header-right-wrapper">
 				<a href="#0" id="nav-toggle" class="cd-nav-trigger">Menu<span></span></a>
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<ul class="onepress-menu">	
-				   	   <?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s', 'fallback_cb' => 'onepress_primary_menu_fb' ) ); ?>
+					<ul class="sapphire-menu">	
+						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s', 'fallback_cb' => 'sapphire_primary_menu_fb' ) ); ?>
 				    </ul>
 				</nav>
 			</div>
