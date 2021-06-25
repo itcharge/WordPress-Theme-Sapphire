@@ -1,0 +1,70 @@
+body, button, input, select, textarea {
+	color: #1a1a1a;
+	font-family: "lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.75;
+}
+body {
+	line-height: 1;
+	overflow-y: hidden;
+	background: #eaeaea;
+}
+html {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+html, body, #container {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+#mobile-nav {
+	display: none;
+}
+.container {
+	min-height:100%;
+	max-width: 1080px;
+	margin: 0 auto;
+	margin-bottom: 80px;
+	padding: 0px 30px;
+	clear: both;
+	position: relative;
+}
+@media screen and (min-width: 800px) {
+	.container {
+		padding: 0px 50px;
+	}
+}
+
+/*----------------------
+	left-box
+----------------------*/
+#left-box {
+	float: left;
+	width: 640px;
+	padding-top: 20px;
+	padding-bottom: 80px;
+}
+
+/*----------------------
+	right-box
+----------------------*/
+#right-box {
+	float: left;
+	width: 300px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+/*----------------------
+	footer
+----------------------*/
+.footer {
+	text-align: center;
+	font-size: 12px;
+	margin: 30px 0;
+}

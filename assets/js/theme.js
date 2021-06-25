@@ -7,7 +7,7 @@
 		jQuery(this).prepend('<div class="nav-toggle-subarrow"></div>');
 	});
 
-	jQuery('#nav-toggle').on('click', function(event){
+	jQuery('#nav-toggle').on('click', function(event) {
 		event.preventDefault();
 		jQuery('#nav-toggle').toggleClass('nav-is-visible');
 		jQuery('.main-navigation .sapphire-menu').toggleClass("sapphire-menu-mobile");

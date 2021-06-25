@@ -1,0 +1,17 @@
+.sbox {
+	padding: 20px;
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
+	margin-bottom: 20px;
+	font-size:12px;
+	background: rgba(255, 255, 255, 0.7);
+}
+.sbox h2 {
+	border-left: 4px solid #3780D3;
+	height: 26px;
+	line-height: 26px;
+	padding-left: 15px;
+	font-size: 18px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+}

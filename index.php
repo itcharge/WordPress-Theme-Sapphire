@@ -5,15 +5,14 @@
 		<div id="home-loop">
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article class="article article-type-post">
-				<div class="article-meta">
-					<a href="<?php the_permalink(); ?>" class="article-date">
-						<time><?php the_time('Y年n月j日') ?></time>
-					</a>
-				</div>
-				
 				<div class='article-inner'>
 					<header class="article-header">
-						<h1><a class="article-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a><h1>
+						<h1>
+							<a class="article-title" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</h1>
+						<a href="<?php the_permalink(); ?>" class="article-date">
+							<time><?php the_time('Y-m-d') ?></time>
+						</a>
 					</header>
 					<div class="article-entry">
 						<?php the_excerpt(); ?>
