@@ -6,7 +6,6 @@ body, button, input, select, textarea {
 	line-height: 1.75;
 }
 body {
-	line-height: 1;
 	overflow-y: hidden;
 	background: #eaeaea;
 }
@@ -15,8 +14,6 @@ html {
 	-webkit-text-size-adjust: 100%;
 }
 html, body, #container {
-	margin: 0;
-	padding: 0;
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
@@ -26,18 +23,11 @@ html, body, #container {
 	display: none;
 }
 .container {
+	position: relative;
 	min-height:100%;
 	max-width: 1080px;
 	margin: 0 auto;
-	margin-bottom: 80px;
-	padding: 0px 30px;
 	clear: both;
-	position: relative;
-}
-@media screen and (min-width: 800px) {
-	.container {
-		padding: 0px 50px;
-	}
 }
 
 /*----------------------
@@ -58,6 +48,7 @@ html, body, #container {
 	width: 300px;
 	padding-top: 20px;
 	padding-left: 20px;
+	padding-bottom: 80px;
 }
 
 /*----------------------
@@ -66,5 +57,11 @@ html, body, #container {
 .footer {
 	text-align: center;
 	font-size: 12px;
-	margin: 30px 0;
+	margin: 30px auto;
+	font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+	text-shadow: 0 1px #fff;
+	position: relative;
+	bottom: 30px;
+	opacity: 0.6;
+	width: 960px;
 }

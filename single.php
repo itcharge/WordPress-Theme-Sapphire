@@ -2,20 +2,19 @@
 
 <div class="site-content">
 	<div id="left-box">
-		<div id="home-loop">
-		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			<article class="article article-type-post article-index">
+		<div id="home-main">
+			<?php if (have_posts()) : the_post(); update_post_caches($posts); ?>
+			<article class="article article-type-post">
 				<div class='article-inner'>
 					<header class="article-header">
-						<h1 class="article-title">
-							<a class="article-title-url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-						</h1>
+						<h1 class="article-title"><?php the_title(); ?></h1>
 						<a href="<?php the_permalink(); ?>" class="article-date">
 							<time><?php the_time('Y-m-d') ?></time>
 						</a>
 					</header>
-					<div class="article-entry">
-						<?php the_excerpt(); ?>
+					
+					<div class="article-entry" itemprop="articleBody">
+						<?php the_content(); ?>
 					</div>
 					
 					<div class="article-info article-info-index">
@@ -47,15 +46,12 @@
 						?>
 						<p class="article-more-link">
 							<?php edit_post_link('编辑', '', ''); ?>
-							<a class="article-more-a" href="<?php the_permalink(); ?>">阅读全文 >> </a>
 						</p>
 			      		<div class="clearfix"></div>
 					</div>
 				</div>
 			</article>
-		<?php endwhile; ?>
-		<?php endif; ?>
-		<?php pagenav();?>
+			<?php endif; ?>
 		</div>
 	</div>
 	<?php get_sidebar(); ?>
