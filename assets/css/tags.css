@@ -1,184 +1,147 @@
-#header .tagcloud a {
-	color:#fff; 
-}
-
-.tagcloud a{
-	display: inline-block;  
-	text-decoration: none;  
+.tagcloud a {
+	display:inline-block;  
+	text-decoration:none;  
 	font-weight: normal;
-	font-size: 0.75rem;  
-	color: #fff;   
-	height: 1.125rem;  
-	line-height: 1.125rem;  
+	font-size:10px;  
+	color:#fff;   
+	height:18px;  
+	line-height:18px;  
 	float: left;
-	padding: 0 5px 0px 10px;  
-	position: relative;  
-	border-radius: 0 5px 5px 0; 
+	padding:0 5px 0px 10px;  
+	position:relative;  
+	border-radius:0 5px 5px 0; 
 	margin: 5px 9px 5px 8px;
-	opacity: 0.75;
 	font-family: "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei" "Lucida Grande", Verdana, "Helvetica Neue", Arial;
-	&:hover {
-		opacity: 0.8;
-	}
-	&:before {
-		content: " ";
-		width: 0px;
-		height: 0px;
-		position: absolute;
-		top: 0;
-		left: -18px;
-		border: 9px solid transparent;
-	}
-	&:after {  
-		content: " ";  
-		width: 4px;  
-		height: 4px;  
-		background-color: #fff;  
-		border-radius: 4px;  
-		box-shadow: 0px 0px 0px 1px rgba(0,0,0,.3);  
-		position: absolute;  
-		top: 7px;
-		left: 2px;
-	}
 }
-
-.tagcloud a.color0 {
-	background: #88acdb;
-}
-
-.tagcloud a.color0::before {
-	border-right-color: #88acdb;
-}
-
-.tagcloud a.color1 {
-	background: #ffa07a;
-}
-
-.tagcloud a.color1::before {
-	border-right-color: #ffa07a;
-}
-
-.tagcloud a.color2 {
-	background: #f08080;
-}
-
-.tagcloud a.color2::before {
-	border-right-color: #f08080;
-}
-
-.tagcloud a.color3 {
-	background: #76becc;
-}
-
-.tagcloud a.color3::before {
-	border-right-color: #76becc;
-}
-
-.tagcloud a.color4 {
-	background: #918597;
-}
-
-.tagcloud a.color4::before {
-	border-right-color: #918597;
-}
-
-.tagcloud a.color5 {
-	background: #6fc0e4;
-}
-
-.tagcloud a.color5::before {
-	border-right-color: #6fc0e4;
-}
-
-.tagcloud a.color6 {
-	background: #bc8f8f;
-}
-
-.tagcloud a.color6::before {
-	border-right-color: #bc8f8f;
-}
-
 
 .tagcloud a:hover {
-	opacity: 1;
-	-webkit-transform: scale(1.06);
-	-moz-transform: scale(1.06);
-	-ms-transform: scale(1.06);
-	transform: scale(1.06);
-	background-color: #9c9;
-	border-color: #9c9;
-}
-
-.tagcloud a:hover::before {
-	border-right-color: #9c9;
+	opacity: 0.8;
 }
 
 .tagcloud a:before {
 	content: " ";
-	width: 0;
-	height: 0;
+	width: 0px;
+	height: 0px;
 	position: absolute;
 	top: 0;
-	left: -1.1rem;
-	border: 0.5625rem solid transparent;
+	left: -18px;
+	border: 9px solid transparent;
 }
 
-.tagcloud a:after {
-	content: " ";
-	width: 4px;
-	height: 4px;
-	background-color: #fff;
-	border-radius: 4px;
-	-webkit-box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-	box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
-	position: absolute;
-	top: 0.4375rem;
+.tagcloud a:after {  
+	content: " ";  
+	width: 4px;  
+	height: 4px;  
+	background-color: #fff;  
+	border-radius: 4px;  
+	box-shadow: 0px 0px 0px 1px rgba(0,0,0,.3);  
+	position: absolute;  
+	top: 7px;
 	left: 2px;
 }
 
-.article-tag::before,
-.article-category::before {
+
+.tagcloud a.color1 {
+	background:  #FF945C;
+}
+
+.tagcloud a.color1:before {
+	border-right-color: #FF945C;  
+}
+
+.tagcloud a.color2 {
+	background:  #cc8167;
+}
+
+.tagcloud a.color2:before {
+	border-right-color: #cc8167;  
+}
+
+.tagcloud a.color3 {
+	background:  #BA8F6C;
+}
+
+.tagcloud a.color3:before {
+	border-right-color: #BA8F6C;  
+}
+
+.tagcloud a.color4 {
+	background: #94635c;
+}
+
+.tagcloud a.color4:before {
+		border-right-color: #94635c;  
+	}
+
+.tagcloud a.color5 {
+	background: #7B5D5F;
+}
+
+.tagcloud a.color5:before {
+	border-right-color:#7B5D5F;  
+}
+
+.tagcloud a.color6 {
+	background: #88acdb;
+}
+
+.tagcloud a.color6:before {
+	border-right-color: #88acdb;
+}
+
+.article-tag-list .article-tag-list-item {
 	float: left;
-	color: #999;
-	font: 16px FontAwesome;
-	margin-right: 5px;
-	margin-top: 0.333333333333333rem;
-}
-
-.article-tag::before {
-	content: "\f02b";
-	margin-left: 1em;
-}
-
-.article-category::before {
-	content: "\f02d";
 }
 
 .article-pop-out {
 	float: left;
 }
 
-.article-pop-out:before {
+
+.article-pop-out .icon-tuding {
 	color: #999;
-	content: "\f08d";
-	font: 16px FontAwesome;
 	float: left;
-	margin-right: 5px;
-	margin-top: 0.333333333333333rem;
+	margin-right: 10px;
+	margin-top: 6px;
 }
 
-.article-pop-out:after {
+.article-pop-out {
 	float: left;
-	content: "";
-	margin-right: 20px;
-	margin-top: 9px;
+}
+
+.article-tag-list {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
+.article-tag {
+	float: left;
+}
+.article-category {
+	float: left;
+}
+
+.article-tag .icon {
+	color: #999;
+	float: left;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+
+.article-category .icon {
+	color: #999;
+	float: left;
+	margin-right: 10px;
+	margin-top: 6px;
 }
 
 .archive-article-date {
 	color: #999;
 	margin-right: 7.6923%;
 	float: right;
-	.icon {
-		margin: 5px 5px 5px 0;
-	}
+}
+
+.archive-article-date .icon {
+	margin: 5px 5px 5px 0;
 }

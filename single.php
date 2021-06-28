@@ -9,7 +9,10 @@
 					<header class="article-header">
 						<h1 class="article-title"><?php the_title(); ?></h1>
 						<a href="<?php the_permalink(); ?>" class="article-date">
-							<time><?php the_time('Y-m-d') ?></time>
+							<time>
+								<i class="icon-calendar icon"></i>
+								<?php the_time('Y-m-d') ?>
+							</time>
 						</a>
 					</header>
 					

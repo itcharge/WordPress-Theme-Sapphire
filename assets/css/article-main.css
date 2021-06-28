@@ -135,7 +135,7 @@
 	top: 34px;
 	width: 12rem;
 	padding-right: 1.2rem;
-	font-size: 0.875rem;
+	font-size: 16px;
 	text-align: right;
 	z-index: 1;
 }
@@ -143,30 +143,6 @@
 .article-date time {
 	color: #aaa;
 	float: right;
-}
-
-.article-date time:before {
-	margin-top: 0px;
-	margin-right: 4px;
-	content: "\f073";
-	font: 1em FontAwesome;
-	color: #999;
-}
-
-.article-date a:nth-child(2) {
-	clear: right;
-	float: right;
-	padding-top: 0.45rem;
-	color: #999;
-}
-
-.article-date a:nth-child(2):hover {
-	color: #258fb8;
-	font-size: 110%;
-}
-
-.article-date a:nth-child(2) i {
-	vertical-align: top;
 }
 
 .article-more-link {

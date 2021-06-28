@@ -8,24 +8,26 @@
 
 
 #back-top {
-	position:fixed;
-	width:40px;
-	height:40px;
-	bottom:80px;
-	right:30px;
-	background:#ccc;
-	text-align:center;
-	line-height:40px;
-	text-decoration:none;
+	position: fixed;
+	width: 45px;
+	height: 45px;
+	bottom: 80px;
+	right: 30px;
+	background: #fff;
+	text-align: center;
+	border-radius: 100%;
+	border: .06em solid #e6ebf5;
+	line-height: 45px;
+	text-decoration: none;
+	box-shadow: 0 0 1.5em 0 rgb(0 0 0 / 12%);
 }
 
 
 #back-top .icon-plane {
-	color: #fff;
-	text-shadow: 1px 1px 1px #509eb7;
+	color: #9c9c9c;
 	opacity: 0.7;
-	font-size: 25px;
-	margin: 7.5px;
+	font-size: 20px;
+	margin: 12.5px;
 	text-align: center;
 	display: block;
 }

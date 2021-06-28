@@ -347,3 +347,54 @@ template {
 [hidden] {
   display: none;
 }
+
+
+// 根据使用习惯，对normalize上进行补充
+//-----------------------------------------------------
+
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote {
+  margin: 0;
+}
+
+// ul ol dl
+ul, ol, li, dl, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol {
+  list-style: none outside none;
+}
+
+// hn
+h1, h2, h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 16px;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+// icon
+i {
+  font-style: normal;
+}
+
+// 所有元素为border-box
+* {
+  box-sizing: border-box;
+}
+
+// 清除子元素浮动
+.clearfix {
+  @extend %clearfix;
+}
