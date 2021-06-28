@@ -59,5 +59,11 @@
 		</div>
 	</div>
 	<?php get_sidebar(); ?>
+	<div class="clearfix"></div>
 </div>
+
+<a href="#" id="back-top">
+	<i class="icon-font icon-plane"></i>
+</a>
+
 <?php get_footer(); ?>

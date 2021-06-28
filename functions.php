@@ -34,21 +34,19 @@ function sapphire_scripts() {
 	/**
 	 * Styles.
 	 */
-	wp_enqueue_style('sapphire-main-css', get_template_directory_uri() . '/assets/css/main.css');
+	wp_enqueue_style( 'sapphire-main-css', get_template_directory_uri() . '/assets/css/main.css' );
+	wp_enqueue_style( 'sapphire-fonts-css', get_template_directory_uri() . '/assets/css/fonts.css' );
 	/**
 	 * Scripts.
 	 */
-	wp_enqueue_script('jquery');
+	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'sapphire-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), "", true );
-	wp_enqueue_script( 'sapphire-cssrefresh-js', get_template_directory_uri() . '/assets/js/cssrefresh.js', array(), "", true );
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 
 
 /**
-* 数字分页函数
-* 因为wordpress默认仅仅提供简单分页
-* 所以要实现数字分页，需要自定义函数
+* 自定义数字分页函数
 * @Param int $range            数字分页的宽度
 * @Return string|empty        输出分页的HTML代码        
 */

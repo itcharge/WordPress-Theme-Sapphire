@@ -1,6 +1,25 @@
-.footer-left {
-  float: left;
+.site-footer .footer-info {
+	font-size: 12px;
+	font-family: Menlo, Monaco, "Andale Mono", "lucida console", "Courier New", monospace;
+	max-width: 960px;
+	position: relative;
+	text-align: center;
+	padding-top: 21px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #A1A1A1;
 }
-.footer-right {
-  float: right;
+
+.site-footer .footer-info a {
+	color: #A1A1A1;
+}
+.site-footer .outer {
+	padding: 0 30px;
+}
+
+.site-footer .footer-info .footer-left {
+	float: left;
+}
+.site-footer .footer-info .footer-right {
+	float: right;
 }

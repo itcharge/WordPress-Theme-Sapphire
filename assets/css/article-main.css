@@ -58,12 +58,11 @@
 }
 
 .site-content {
-	border-top: 1px solid #e9e9e9;
-	padding-top: 74px;
+	margin: 0px auto 0px;
 	clear: both;
 	width: 960px;
-	margin: 0 auto;
 	display: block;
+	position: relative;
 }
 
 
@@ -75,9 +74,14 @@
 	position: relative;
 	background: #fff;
 	-webkit-transition: all 0.2s ease-in;
-	img {
-		max-width: 100%;
-	}
+}
+
+.article img {
+	max-width: 100%;
+}
+
+.article .article-type-post {
+	margin-bottom: 0px;
 }
 
 .article-inner h1.article-title, .article-title-url {

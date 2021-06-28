@@ -12,5 +12,7 @@
 		</div>
 	</div>
 	<?php get_sidebar(); ?>
+	<div class="clearfix"></div>
 </div>
+
 <?php get_footer(); ?>

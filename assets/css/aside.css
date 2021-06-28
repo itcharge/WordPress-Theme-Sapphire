@@ -1,0 +1,31 @@
+.wrap-side-operation {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	right: 30px;
+	bottom: 100px;
+}
+
+
+#back-top {
+	position:fixed;
+	width:40px;
+	height:40px;
+	bottom:80px;
+	right:30px;
+	background:#ccc;
+	text-align:center;
+	line-height:40px;
+	text-decoration:none;
+}
+
+
+#back-top .icon-plane {
+	color: #fff;
+	text-shadow: 1px 1px 1px #509eb7;
+	opacity: 0.7;
+	font-size: 25px;
+	margin: 7.5px;
+	text-align: center;
+	display: block;
+}
