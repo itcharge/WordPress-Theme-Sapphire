@@ -145,20 +145,44 @@
 
 
 
-.sbox {
-	padding: 20px;
+.side-box {
 	border: 1px solid #CFCFCF;
 	box-shadow: 0 0 5px #C6C6C6;
 	margin-bottom: 20px;
-	font-size:12px;
 	background: rgba(255, 255, 255, 1);
 }
-.sbox h2 {
-	border-left: 4px solid #3780D3;
-	height: 26px;
-	line-height: 26px;
-	padding-left: 15px;
-	font-size: 18px;
-	margin-bottom: 5px;
-	margin-left: 5px;
+.side-box .side-box-header {
+	border-left: 5px solid #4d4d4d;
+	padding: 20px 0px 15px 25px;
+}
+
+.side-box h1.side-box-title {
+	color: #696969;
+	margin: 0px;
+	font-weight: 300;
+	line-height: 35px;
+	font-size: 22px;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	-o-transition: color 0.3s;
+	transition: color 0.3s;
+	text-decoration: none;
+}
+
+.side-box h1.side-box-title .side-box-title-url:hover {
+	color: #b0a0aa;
+	text-decoration:underline;
+}
+
+.side-box ul li:before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border: 1px solid #999;
+	border-radius: 10px;
+	background: #aaa;
+	display: inline-block;
+	margin-right: 10px;
+	float: left;
+	margin-top: 10px;
 }

@@ -35,23 +35,35 @@
 			</div>
 		</nav>
 	</div>
-	<div class="sbox">
-		<h2>页面列表</h2>
+	<div class="side-box recent-posts">
+		<div class="side-box-header">
+			<h1 class="side-box-title">
+				页面列表
+			</h1>
+		</div>
 		<ul>
-		<?php wp_list_pages(); ?>
+			<?php wp_list_pages(); ?>
 		</ul>
 	</div>
-	<div class="sbox">
-		<h2>友情链接</h2>
+	<div class="side-box friend-link">
+		<div class="side-box-header">
+			<h1 class="side-box-title">
+				友情链接
+			</h1>
+		</div>
 		<ul>
-		<?php get_links(); ?>
+			<?php get_links(); ?>
 		</ul>
 	</div>
-	<div class="sbox">
-		<h2>功能</h2>
+	<div class="side-box feature-page">
+		<div class="side-box-header">
+			<h1 class="side-box-title">
+				功能
+			</h1>
+		</div>
 		<ul>
-		<?php wp_register(); ?>
-		<?php wp_loginout(); ?>
+			<?php wp_register(); ?>
+			<?php wp_loginout(); ?>
 		</ul>
 	</div>
 	<?php } ?>

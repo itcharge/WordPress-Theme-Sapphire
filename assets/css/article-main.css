@@ -105,7 +105,7 @@
 
 .article-header {
 	border-left: 5px solid #4d4d4d;
-	padding: 30px 0px 15px 25px;
+	padding: 20px 0px 15px 25px;
 	width: 460px;
 }
 
@@ -132,7 +132,7 @@
 .article-date {
 	position: absolute;
 	right: 0;
-	top: 34px;
+	top: 24px;
 	width: 12rem;
 	padding-right: 1.2rem;
 	font-size: 16px;
