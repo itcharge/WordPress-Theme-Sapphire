@@ -30,20 +30,27 @@
 							$cat = get_the_category();
 							if ($cat) {
 								echo '<div class="article-category tagcloud">';
-								foreach ($cat as $key => $category) {
-									$color_cat = rand(1, 6);
-									echo '<a class="article-category-link color'.$color_cat.'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
-								}
+									echo '<i class="icon-book icon"></i>';
+									echo '<ul class="article-tag-list">';
+										foreach ($cat as $key => $category) {
+											echo '<li class="article-tag-list-item">';
+												echo '<a class="article-category-link color'.rand(1, 6).'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
+											echo '</li>';
+										}
+									echo '</ul>';
 								echo '</div>';
 							}
-						?>
-						<?php
 							$tags = get_the_tags();
 							if ($tags) {
-								echo '<div class="article-tag tagcloud">';
-								foreach ($tags as $key => $tag) {
-									echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
-								}
+								echo '<div class="article-category tagcloud">';
+									echo '<i class="icon-price-tags icon"></i>';
+									echo '<ul class="article-tag-list">';
+										foreach ($tags as $key => $tag) {
+											echo '<li class="article-tag-list-item">';
+												echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
+											echo '</li>';
+										}
+									echo '</ul>';
 								echo '</div>';
 							}
 						?>
