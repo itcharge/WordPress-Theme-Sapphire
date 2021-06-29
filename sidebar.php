@@ -1,6 +1,5 @@
 <div id="right-box">
 	<?php if( is_dynamic_sidebar() ){ dynamic_sidebar(); }else{ ?>
-	
 		<div class="intro-inner">
 			<div class="overlay"></div>
 			<header class="intro-header">
@@ -35,7 +34,7 @@
 				</div>
 			</nav>
 		</div>
-		<div class="side-box recent-posts">
+		<div class="side-box recent-posts" id="side-box-recent-posts">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
 					页面列表
@@ -45,7 +44,7 @@
 				<?php wp_list_pages(); ?>
 			</ul>
 		</div>
-		<div class="side-box friend-link">
+		<div class="side-box friend-link" id="side-box-friend-link">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
 					友情链接
@@ -55,7 +54,7 @@
 				<?php get_links(); ?>
 			</ul>
 		</div>
-		<div class="side-box feature-page">
+		<div class="side-box feature-page" id="side-box-feature-page">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
 					功能
