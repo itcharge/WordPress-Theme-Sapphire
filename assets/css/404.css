@@ -1,0 +1,46 @@
+.site-404-box {
+	display: flex;
+	justify-content: center;
+	margin-top: 180px;
+	text-align: center;
+}
+
+.site-404-text {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 384px;
+}
+
+.site-404-title {
+	font-size: 40px;
+	font-weight: 600;
+	color: #666666;
+	line-height: 1.4;
+	margin: 0;
+}
+
+.site-404-subtitle {
+	font-size: 18px;
+	color: #666666;
+	line-height: 1.4;
+	margin: 10px 0 0;
+}
+
+.site-404-gohome {
+	margin-top: 20px;
+	display: inline-block;
+	text-align: center;
+	color: #fff;
+	font-size: 14px;
+	line-height: 32px;
+	
+	text-decoration: none;
+	background: none;
+	background-color: #b0a0aa;
+	border-radius: 3px;
+	border-color: #b0a0aa;
+	border: 1px solid;
+	padding: 0 16px;
+}
