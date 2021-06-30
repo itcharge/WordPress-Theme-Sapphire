@@ -40,9 +40,11 @@
 					页面列表
 				</h1>
 			</div>
-			<ul>
-				<?php wp_list_pages(); ?>
-			</ul>
+			<div class="side-box-entry">
+				<ul>
+					<?php wp_list_pages(); ?>
+				</ul>
+			</div>
 		</div>
 		<div class="side-box friend-link" id="side-box-friend-link">
 			<div class="side-box-header">
@@ -50,9 +52,11 @@
 					友情链接
 				</h1>
 			</div>
-			<ul>
-				<?php get_links(); ?>
-			</ul>
+			<div class="side-box-entry">
+				<ul>
+					<?php get_links(); ?>
+				</ul>
+			</div>
 		</div>
 		<div class="side-box feature-page" id="side-box-feature-page">
 			<div class="side-box-header">
@@ -60,10 +64,12 @@
 					功能
 				</h1>
 			</div>
-			<ul>
-				<?php wp_register(); ?>
-				<?php wp_loginout(); ?>
-			</ul>
+			<div class="side-box-entry">
+				<ul>
+					<?php wp_register(); ?>
+					<?php wp_loginout(); ?>
+				</ul>
+			</div>
 		</div>
 	<?php } ?>
 </div>
