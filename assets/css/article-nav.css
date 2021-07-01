@@ -13,6 +13,7 @@
 	font-size: 12px;
 	margin: 0 5px 30px;
 	border-radius: 2px;
+	text-decoration: none;
 }
 
 #page-nav .page-number:hover {
