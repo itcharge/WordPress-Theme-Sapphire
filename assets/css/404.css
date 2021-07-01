@@ -41,7 +41,6 @@
 	background-color: #4D4D4D;
 	border-radius: 3px;
 	border-color: #4D4D4D;
-	border: 1px solid;
 	padding: 0 16px;
 }
 
@@ -59,14 +58,14 @@
 .site-404-image-container {
 	align-items: center;
 	display: flex;
-	height: 250px;
-	width: 250px;
+	height: 300px;
+	width: 300px;
 	justify-content: center;
 	margin-top: 20px;
 	margin-left: 20px;
 }
 
 .site-404-image {
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 }
