@@ -13,7 +13,6 @@
 .site-branding .site-title, .site-branding .site-text-logo {
 	margin: 0px;
 	line-height: 1;
-	font-family: "Segoe UI", "Lucida Grande", Verdana, "Helvetica Neue", Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
 	font-size: 23px;
 	letter-spacing: 1px;
 	text-transform: uppercase;
@@ -100,7 +99,6 @@
 
 .sapphire-menu a {
 	color: #333333;
-	font-family: "Raleway", Helvetica, Arial, sans-serif;
 	padding-left: 17px;
 	padding-right: 17px;
 	font-size: 13px;
