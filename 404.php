@@ -14,20 +14,15 @@
 		<div class="site-404-box">
 			<div class="site-404-text">
 				<h1 class="site-404-title">404</h1>
-				<p class="site-404-subtitle">从前有个页面，现在他走丢了~</p>
+				<p class="site-404-subtitle">从前有个页面，现在他走丢了 ~</p>
 				<a class="site-404-gohome" href="<?php bloginfo('url');?>">去往首页</a>
 				<div class="site-404-content">
-					或 <font id="jump">3</font> 秒后返回首页
+					<a class="site-404-goup" href="javascript:history.go(-1);">或着  返回上页 ></a>
 				</div>
 			</div>
-			<script>
-					function countDown(secs){
-						$("#jump").html(secs);
-						if(--secs>0){ setTimeout( "countDown(" + secs + ")",1000 ); }
-						else{window.location.href="<?php bloginfo('url'); ?>"; }
-					}
-					countDown(3);
-			</script>
+			<div class="site-404-image-container">
+				<img class="site-404-image" src="<?php bloginfo('template_url');?>/assets/img/404.svg" alt="page error">
+			</div>
 		</div>
 	</div>
 </body>
