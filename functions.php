@@ -45,6 +45,7 @@ function sapphire_scripts() {
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 
 
+
 /**
 * 自定义数字分页函数
 * @Param int $range            数字分页的宽度
