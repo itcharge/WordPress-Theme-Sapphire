@@ -1,9 +1,9 @@
 .article-inner {
-	border-color: #d1d1d1;
 	position: relative;
 	margin-bottom: 0px;
 	word-break: break-word;
-	box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.07);
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
 }
 
 .article-inner p {

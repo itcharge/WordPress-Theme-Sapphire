@@ -109,14 +109,12 @@
 	width: 460px;
 }
 
+/* 归档、分类、标签页面 */
 .article-meta {
-	width: 150px;
 	font-size: 14;
-	text-align: right;
-	position: absolute;
-	right: 0;
+	position: relative;
 	top: 23px;
-	text-align: center;
+	text-align: left;
 	z-index: 1;
 }
 

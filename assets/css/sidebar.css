@@ -2,7 +2,7 @@
 	position: relative;
 	padding: 20px;
 	border: 1px solid #CFCFCF;
-	box-shadow: 0 0 5px #C6C6C6;
+	box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.07);
 	margin-bottom: 20px;
 	font-size:12px;
 	background: rgba(255, 255, 255, 1);
@@ -148,6 +148,8 @@
 .side-box {
 	border: 1px solid #CFCFCF;
 	box-shadow: 0 0 5px #C6C6C6;
+	border: 1px solid #CFCFCF;
+	box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.07);
 	margin-bottom: 20px;
 	background: rgba(255, 255, 255, 1);
 }
