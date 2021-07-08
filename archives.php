@@ -35,15 +35,15 @@
 			<article class="archive-article archive-type-post">
 				<div class="archive-article-inner">
 					<header class="archive-article-header">
-						<div class="article-meta">
-							<h1 class="article-title"><?php the_title(); ?></h1>
-							<a href="<?php the_permalink(); ?>" class="archive-article-date">
-								<time>
-									<i class="icon-calendar icon"></i>
-									<?php the_time('Y-m-d') ?>
-								</time>
-							</a>
-						</div>
+						<h1 class="archive-article-title">
+							<a class="article-title-url" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+						</h1>
+						<a href="<?php the_permalink(); ?>" class="archive-article-date">
+							<time>
+								<i class="icon-calendar icon"></i>
+								<?php the_time('Y-m-d') ?>
+							</time>
+						</a>
 					</header>
 				</div>
 			</article>

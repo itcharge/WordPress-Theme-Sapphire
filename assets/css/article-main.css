@@ -84,13 +84,13 @@
 	margin-bottom: 0px;
 }
 
-.article-inner h1.article-title, .article-title-url {
-	color: #696969;
+.article-inner h1.article-title .article-title-url {
+	color: #17181a;
 	margin-left: 0px;
-	font-weight: 300;
+	font-weight: 500;
 	line-height: 35px;
 	margin-bottom: 20px;
-	font-size: 22px;
+	font-size: 18px;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;
 	-o-transition: color 0.3s;
@@ -107,24 +107,6 @@
 	border-left: 5px solid #4d4d4d;
 	padding: 20px 0px 15px 25px;
 	width: 460px;
-}
-
-/* 归档、分类、标签页面 */
-.article-meta {
-	font-size: 14;
-	position: relative;
-	top: 23px;
-	text-align: left;
-	z-index: 1;
-}
-
-.article-meta time {
-	color: #aaa;
-}
-
-.article-meta time .icon-clock {
-	margin-right: 8px;
-	font-size: 16px;
 }
 
 .article-date {
