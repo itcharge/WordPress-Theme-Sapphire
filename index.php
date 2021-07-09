@@ -21,7 +21,7 @@
 						<?php the_excerpt(); ?>
 					</div>
 					
-					<div class="article-info article-info-index">
+					<div class="article-info-index">
 						<?php if (is_sticky() && is_home()): ?>
 							<div class="article-pop-out tagcloud">
 								<a class="color<?php echo rand(1,6) ?>">置顶</a>
@@ -43,7 +43,7 @@
 							}
 							$tags = get_the_tags();
 							if ($tags) {
-								echo '<div class="article-category tagcloud">';
+								echo '<div class="article-tag tagcloud">';
 									echo '<i class="icon-price-tags icon"></i>';
 									echo '<ul class="article-tag-list">';
 										foreach ($tags as $key => $tag) {
@@ -55,10 +55,10 @@
 								echo '</div>';
 							}
 						?>
-						<p class="article-more-link">
+						<span class="article-more-link">
 							<?php edit_post_link('编辑', '', ''); ?>
 							<a class="article-more-a" href="<?php the_permalink(); ?>">阅读全文 >> </a>
-						</p>
+						</span>
 			      		<div class="clearfix"></div>
 					</div>
 				</div>

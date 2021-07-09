@@ -15,19 +15,19 @@
 			</header>
 			<nav class="intro-site-state">
 				<div class="intro-site-state-item">
-					<a class="intro-articles" href="<?php bloginfo('template_url');?>/archives">
+					<a class="intro-articles" href="<?php get_option('home'); ?>/archive">
 						<span class="intro-site-state-item-count"><?php $count_posts = wp_count_posts(); echo  $count_posts->publish; ?></span>
 						<span class="intro-site-state-item-name">文 章</span>
 					</a>
 				</div>
 				<div class="intro-site-state-item">
-					<a class="intro-articles" href="<?php bloginfo('template_url');?>/categories">
+					<a class="intro-articles" href="<?php get_option('home'); ?>/category">
 						<span class="intro-site-state-item-count"><?php echo wp_count_terms('category'); ?></span>
 						<span class="intro-site-state-item-name">分 类</span>
 					</a>
 				</div>
 				<div class="intro-site-state-item">
-					<a class="intro-articles" href="<?php bloginfo('template_url');?>/tags">
+					<a class="intro-articles" href="<?php get_option('home'); ?>/tag">
 						<span class="intro-site-state-item-count"><?php echo wp_count_terms('post_tag'); ?></span>
 						<span class="intro-site-state-item-name">标 签</span>
 					</a>

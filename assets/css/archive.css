@@ -24,30 +24,22 @@
 	text-decoration: none;
 }
 
+.archive-articles {
+	margin-top: 20px;
+}
+
 .archive-article {
 	margin-left: 48px;
-	padding:20px 0;
-	border-bottom: 1px solid #eee;
-	border-top: 1px solid #fff;
+	border-top: 1px solid #eee;
 	position: relative;
 }
 
-.archive-article :first-child  {
-	border-top: none;
-}
-
-.archive-article :last-child {
-	border-bottom: none;
-}
-
-.archive-article .archive-type-post {
+.archive-type-post {
 	position:relative;
 }
 
-
 .archive-article-header {
-	width: 460px;
-	min-height: 36px;
+	width: 500px;
 }
 
 
@@ -60,9 +52,8 @@
 .archive-article-title .article-title-url {
 	color: #17181a;
 	margin-left: 0px;
-	font-weight: 500;
+	font-weight: 300;
 	line-height: 35px;
-	margin-bottom: 20px;
 	font-size: 18px;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;
@@ -83,10 +74,10 @@
 .archive-article-header .archive-article-date {
 	position: absolute;
 	right: 0;
-	top: 34px;
+	top: 17px;
 	width: 12rem;
 	padding-right: 1.2rem;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: right;
 	z-index: 1;
 }
@@ -96,6 +87,8 @@
 	float: right;
 }
 
+
+/*归档页：分类、标签*/
 
 .archive-article-inner .article-category:before {
 	float: left;
@@ -123,4 +116,19 @@
 	max-width: 83px;
 	padding-left: 8px;
 	font-size: 12px;
+}
+
+.article-read-count {
+	color: #999;
+	height: 20px;
+}
+
+.read-count {
+	line-height: 20px;
+}
+
+.read-count .icon {
+	margin-right: 10px;
+	margin-top: 0px;
+
 }

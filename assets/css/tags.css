@@ -89,6 +89,12 @@
 	border-right-color: #88acdb;
 }
 
+.article-tag-list {
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+
 .article-tag-list .article-tag-list-item {
 	float: left;
 }
@@ -107,12 +113,6 @@
 
 .article-pop-out {
 	float: left;
-}
-
-.article-tag-list {
-	float: left;
-	padding: 0;
-	margin: 0;
 }
 
 .article-tag {

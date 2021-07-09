@@ -84,10 +84,10 @@
 	margin-bottom: 0px;
 }
 
-.article-inner h1.article-title .article-title-url {
+.article-inner h1.article-title {
 	color: #17181a;
 	margin-left: 0px;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 35px;
 	margin-bottom: 20px;
 	font-size: 18px;
@@ -95,6 +95,10 @@
 	-moz-transition: color 0.3s;
 	-o-transition: color 0.3s;
 	transition: color 0.3s;
+}
+
+.article-inner h1.article-title .article-title-url {
+	color: #17181a;
 	text-decoration: none;
 }
 
@@ -115,7 +119,7 @@
 	top: 24px;
 	width: 12rem;
 	padding-right: 1.2rem;
-	font-size: 16px;
+	font-size: 14px;
 	text-align: right;
 	z-index: 1;
 }
@@ -127,6 +131,7 @@
 
 .article-more-link {
 	margin-top: 0;
+	margin-bottom: 0;
 	text-align: left;
 	float: right;
 }
@@ -155,22 +160,12 @@
 	visibility: hidden;
 }
 
-.article-info.info-on-right {
-	margin: 10px 0 0 0;
-	float: right;
-}
-
-.article-info-index.article-info {
+.article-info-index {
 	padding-top: 20px;
+	padding-bottom: 20px;
 	margin: 0px 30px 0 30px;
 	min-height: 40px;
 	border-top: 1px solid #ddd;
-}
-
-.article-info-post.article-info {
-	padding: 0;
-	border: none;
-	margin: -30px 0 20px 30px;
 }
 
 .clearfix {

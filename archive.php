@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: Archives
+	Template Name: 归档模板
 */ 
 ?>
 <?php get_header(); ?>
@@ -24,10 +24,10 @@
 				$year = get_the_time('Y');
 				if ($last != $year) {
 					if ($last == 0000) {
-						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div>';
+						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
 					} else {
-						echo '</section>';
-						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div>';
+						echo '</div></section>';
+						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
 					}
 					$last = $year;
 				}				
@@ -41,7 +41,7 @@
 						<a href="<?php the_permalink(); ?>" class="archive-article-date">
 							<time>
 								<i class="icon-calendar icon"></i>
-								<?php the_time('Y-m-d') ?>
+								<?php the_time('m-d') ?>
 							</time>
 						</a>
 					</header>

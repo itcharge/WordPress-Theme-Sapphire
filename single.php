@@ -14,6 +14,7 @@
 								<?php the_time('Y-m-d') ?>
 							</time>
 						</a>
+						<?php read_words_times(); ?>
 					</header>
 					
 					<div class="article-entry" itemprop="articleBody">
@@ -54,9 +55,9 @@
 								echo '</div>';
 							}
 						?>
-						<p class="article-more-link">
+						<span class="article-more-link">
 							<?php edit_post_link('编辑', '', ''); ?>
-						</p>
+						</span>
 			      		<div class="clearfix"></div>
 					</div>
 				</div>
