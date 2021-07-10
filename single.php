@@ -41,19 +41,19 @@
 									echo '</ul>';
 								echo '</div>';
 							}
-							$tags = get_the_tags();
-							if ($tags) {
-								echo '<div class="article-category tagcloud">';
-									echo '<i class="icon-price-tags icon"></i>';
-									echo '<ul class="article-tag-list">';
-										foreach ($tags as $key => $tag) {
-											echo '<li class="article-tag-list-item">';
-												echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
-											echo '</li>';
-										}
-									echo '</ul>';
-								echo '</div>';
-							}
+//							$tags = get_the_tags();
+//							if ($tags) {
+//								echo '<div class="article-category tagcloud">';
+//									echo '<i class="icon-price-tags icon"></i>';
+//									echo '<ul class="article-tag-list">';
+//										foreach ($tags as $key => $tag) {
+//											echo '<li class="article-tag-list-item">';
+//												echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
+//											echo '</li>';
+//										}
+//									echo '</ul>';
+//								echo '</div>';
+//							}
 						?>
 						<span class="article-more-link">
 							<?php edit_post_link('编辑', '', ''); ?>

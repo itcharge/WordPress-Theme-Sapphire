@@ -26,7 +26,6 @@ function sapphire_primary_menu_fb() {
 }
 
 
-
 /**
  * Enqueue scripts and styles.
  */

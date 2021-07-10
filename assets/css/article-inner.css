@@ -1,3 +1,4 @@
+/* 文章基本 */
 .article-inner {
 	position: relative;
 	margin-bottom: 0px;
@@ -64,6 +65,7 @@
 	display: inline;
 }
 
+/* 文章内容 CSS */
 .article-entry {
 	line-height: 1.8em;
 	padding-right: 30px;
