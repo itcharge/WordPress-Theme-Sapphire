@@ -35,14 +35,16 @@ function sapphire_scripts() {
 	 */
 	wp_enqueue_style( 'sapphire-main-css', get_template_directory_uri() . '/assets/css/main.css' );
 	wp_enqueue_style( 'sapphire-fonts-css', get_template_directory_uri() . '/assets/css/fonts.css' );
-	wp_enqueue_style( 'sapphire-prettify-css', get_template_directory_uri() . '/assets/css/prettify.css');
+	wp_enqueue_style( 'sapphire-prettify-css', get_template_directory_uri() . '/assets/css/prettify.css' );
+	wp_enqueue_style( 'sapphire-automenu-css', get_template_directory_uri() . '/assets/css/automenu.css' );
 	/**
 	 * Scripts.
 	 */
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'sapphire-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), "", true );
 	wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
-	wp_enqueue_script( 'mathjax', 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, true );  
+	wp_enqueue_script( 'sapphire-mathjax-js', 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, true );
+	wp_enqueue_script( 'sapphire-automenu-js', get_template_directory_uri() . '/assets/js/automenu.js' );
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 
