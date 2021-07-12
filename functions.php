@@ -35,15 +35,16 @@ function sapphire_scripts() {
 	 */
 	wp_enqueue_style( 'sapphire-main-css', get_template_directory_uri() . '/assets/css/main.css' );
 	wp_enqueue_style( 'sapphire-fonts-css', get_template_directory_uri() . '/assets/css/fonts.css' );
+	wp_enqueue_style( 'sapphire-prettify-css', get_template_directory_uri() . '/assets/css/prettify.css');
 	/**
 	 * Scripts.
 	 */
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'sapphire-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), "", true );
+	wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
+	wp_enqueue_script( 'mathjax', 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML', array(), false, true );  
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
-
-
 
 /**
 * 自定义数字分页函数
@@ -116,9 +117,7 @@ function pagenav($type=null, $archive_pages=0) {
 }
 
 /**
-* 自定义获取文章字数、阅读时间
-* @Param int $range            数字分页的宽度
-* @Return string|empty        输出分页的HTML代码        
+* 自定义获取文章字数、阅读时间     
 */
 function read_words_times($text='') {
 	global $post;
@@ -141,6 +140,14 @@ function read_words_times($text='') {
 	echo '<span class="read-count"><i class="icon-book icon"></i><span class="article-time-count">'.$read_time.' 分钟</span></span></div>';
 }
 
+/**
+* 代码高亮     
+*/
+# 添加代码高亮
+function add_prism() {
+	
+}
+add_action('wp_enqueue_scripts', 'add_prism');
 ?>
 
 

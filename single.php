@@ -21,6 +21,23 @@
 						<?php the_content(); ?>
 					</div>
 					
+					<div class="article-copyright">
+						<ul>
+							<li class="article-copyright-author">
+								<strong>本文作者：</strong>
+								<?php the_author(); ?>
+							</li>
+							<li class="article-copyright-link">
+								<strong>本文链接：</strong>
+								<a href="<?php get_permalink(); ?>" title="<?php the_title(); ?>"><?php echo get_permalink(); ?></a>
+							</li>
+							<li class="article-copyright-license">
+								<strong>版权声明：</strong>
+								本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn" title="CC BY-NC-SA 3.0">CC BY-NC-SA 3.0</a> 许可协议。<strong>转载请注明出处！</strong>
+							</li>
+						</ul>
+					</div>
+					
 					<div class="article-info article-info-index">
 						<?php if (is_sticky() && is_home()): ?>
 							<div class="article-pop-out tagcloud">

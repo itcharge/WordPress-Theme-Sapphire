@@ -22,7 +22,9 @@
 
 } )();
 
-
+/**
+ * 滚动到顶部
+ */
 ( function () {
 	
 	var offset = 300, speed = 250, duration = 500, backButton = jQuery('#back-top');
@@ -59,4 +61,13 @@
 			scrollTop: 0
 		}, speed);
 	});
+} )();
+
+/**
+ * 代码高亮 更改 pre 标签
+ */
+( function () {
+	jQuery(document).ready(function () {
+		jQuery("pre").addClass("prettyprint linenums");
+	})
 } )();

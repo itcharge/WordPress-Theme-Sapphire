@@ -1,0 +1,249 @@
+<style>
+/* 文章基本 */
+.article-inner {
+	position: relative;
+	margin-bottom: 0px;
+	word-break: break-word;
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
+}
+
+.article-inner .article-header p {
+	margin: 0 0 1.75em;
+}
+
+.article-inner .article-header h1 {
+	font-size: 28px;
+	font-size: 1.75rem;
+	line-height: 1.25;
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.article-inner .article-header h2 {
+	font-size: 23px;
+	font-size: 1.75rem;
+	line-height: 1.2173913043;
+	margin-top: 2.4347826087em;
+	margin-bottom: 1.2173913043em;
+}
+
+.article-inner .article-header h3 {
+	font-size: 19px;
+	font-size: 1.1875rem;
+	line-height: 1.1052631579;
+	margin-top: 2.9473684211em;
+	margin-bottom: 1.4736842105em;
+}
+
+.article-inner .article-header h4,h5,h6 {
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.3125;
+	margin-top: 3.5em;
+	margin-bottom: 1.75em;
+}
+
+.article-inner .article-header h4 {
+	letter-spacing: 0.140625em;
+	text-transform: uppercase;
+}
+
+.article-inner .article-header h6 {
+	font-style: italic;
+}
+
+.article-inner .article-header h1,h2,h3,h4,h5,h6 {
+	font-weight: 900;
+}
+
+.article-inner .article-header h1,h2,h3,h4,h5,h6:first-child {
+	margin-top: 0;
+}
+
+.article-inner .article-header h1:first-child {
+	margin-bottom: 10px;
+	display: inline;
+}
+
+/* 文章内容 CSS */
+.article-entry {
+	font-size: 16px;
+	color: black;
+	padding: 25px 30px;
+	line-height: 1.6;
+	word-spacing: 0px;
+	letter-spacing: 0px;
+	word-break: break-word;
+	word-wrap: break-word;
+	text-align: justify;
+}
+
+.article-entry p {
+	font-size: 16px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	margin: 0;
+	line-height: 26px;
+}
+
+.article-entry blockquote {
+	font-size: 14px;
+	overflow: auto;
+	border-left: 3px solid rgba(0, 0, 0, 0.4);
+	background: rgba(0, 0, 0, 0.05);
+	color: #6a737d;
+	padding: 10px 10px 10px 20px;
+	margin: 20px 0px 20px 0px;
+}
+
+.article-entry blockquote p {
+	color: black;
+	margin: 0px;
+	line-height: 26px;
+}
+
+.article-entry em {
+	font-style: italic;
+}
+
+
+.article-entry ul {
+	list-style-type: disc;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-left: 25px;
+	
+}
+
+.article-entry ol {
+	list-style-type: decimal;
+	margin-top: 8px;
+	margin-bottom: 8px;
+	padding-left: 25px;
+	counter-reset: item;
+}
+
+.article-entry li {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	line-height: 26px;
+	text-align: left;
+}
+
+.article-entry a {
+	text-decoration: none;
+	color: #1e6bb8;
+	word-wrap: break-word;
+	font-weight: bold;
+	border-bottom: 1px solid #1e6bb8;
+}
+
+.article-entry img {
+	display: block;
+	margin: 0 auto;
+	width: auto;
+	max-width: 100%;
+	vertical-align: middle;
+	border-style: none;
+}
+
+.article-entry figcaption {
+	margin-top: 5px;
+	text-align: center;
+	color: #888;
+	font-size: 14px;
+}
+
+.article-entry h1,h2,h3,h4,h5,h6 {
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	color: black;
+}
+
+.article-entry h1 {
+	text-align: center;
+	font-size: 24px;
+}
+
+.article-entry h2 {
+	font-size: 22px;
+	border-bottom: 1px solid #ddd;
+}
+
+.article-entry h3 {
+	font-size: 20px;
+	border-bottom: 1px solid #ddd;
+}
+
+.article-entry h4 {
+	font-size: 18px;
+}
+
+.article-entry h5,h6 {
+	font-size: 16px;
+}
+
+.article-entry video {
+	max-width: 100%;
+}
+
+.article-entry strong {
+	font-weight: bold;
+	color: red;
+}
+
+.article-entry .caption {
+	display: block;
+	font-size: 0.8em;
+	color: #aaa;
+}
+.article-entry hr {
+	height: 1px;
+	margin: 10px 0px 10px 0px;
+	border-left: 0;
+	border-right: 0;
+	border-top: 1px solid #DDD;
+	border-bottom: 0;
+}
+
+.article-entry pre {
+	padding: 16px 16px 16px 28px;
+	margin: 10px 0px;
+	font-size: 14px;
+}
+
+.article-entry table {
+	border: none;
+	width: auto;
+	margin: auto;
+	text-align: left;
+	border-collapse: collapse;
+}
+
+.article-entry table tr {
+	border: 0;
+	border-top: 1px solid #ccc;
+	background-color: white;
+}
+.article-entry table tr th {
+	font-weight: bold;
+	text-align: center;
+	background-color: #f0f0f0;
+}
+
+.article-entry table tr th,td {
+	font-size: 16px;
+	padding: 5px 10px;
+	border: 1px solid #ccc;
+}
+
+.article-copyright {
+	margin: 30px;
+/*	margin: 2em 0 0;*/
+	padding: 10px 10px 10px 20px;
+	border-left: 3px solid #ff1700;
+	background-color: #eaeaea;
+	list-style: none;
+}</style>
