@@ -1,3 +1,12 @@
+<?php
+/**
+ * The template for displaying header.
+ *
+ * This is the template that displays all of the <head> section and everything up until main.
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */	
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

@@ -1,7 +1,12 @@
 <?php
-/*
-	Template Name: 归档模板
-*/ 
+/**
+ * Template Name: 归档模板
+ *
+ * The template for displaying archive pages
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
 ?>
 <?php get_header(); ?>
 <div class="site-content">

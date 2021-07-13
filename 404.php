@@ -1,3 +1,11 @@
+<?php 
+/**
+ * The template for displaying 404 pages (not found)
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

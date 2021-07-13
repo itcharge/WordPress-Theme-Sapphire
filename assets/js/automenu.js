@@ -42,8 +42,14 @@
                 var that = this;
                 var opts = that.settings;
                 var width = typeof opts.width === 'number' && opts.width;
+                var height = typeof opts.height === 'number' && opts.height;
+                var footHeight = $("#site-footer").height();
+                var windowHeight = $(window).height();
+                if (height > windowHeight - footHeight - 40 - 28 - 42.78) {
+                    height = windowHeight - footHeight - 40 - 28 - 42.78;
+                }
                 that.$element.width(width);
-                var html = '<ul>';
+                var html = '<ul style="height: '+ height +'px">';
                 var num = 0;
                 $('*').each(function(){
                     var _this = $(this);
@@ -75,7 +81,7 @@
                     top = $(document).scrollTop(),
                     currentId;
                 if ($(document).scrollTop()==0) {
-                    //初始化active
+                    //初始化 active
                     $el.find('li').removeClass('active').eq(0).addClass('active');
                     return;
                 }
@@ -138,13 +144,14 @@
         levelOne : 'h2', //一级标题
         levelTwo : 'h3',  //二级标题（暂不支持更多级）
         width : 300, //容器宽度
+        height: 600, //容器高度
         offTop : 100, //滚动切换导航时离顶部的距离
     };
 
     /**
-     * 优雅处： 通过data-xxx 的方式 实例化插件。
+     * 优雅处： 通过 data-xxx 的方式 实例化插件。
      * 这样的话 在页面上就不需要显示调用了。
-     * 可以查看bootstrap 里面的JS插件写法
+     * 可以查看 bootstrap 里面的 JS 插件写法
      */
     $(function () {
         if($('[data-autoMenu]').length > 0) {

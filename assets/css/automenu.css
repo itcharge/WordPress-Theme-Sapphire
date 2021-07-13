@@ -1,5 +1,7 @@
 /*-------main---------*/
 .autoMenu {
+	line-height: 1.3;
+	font-size: 14px;
 	position: relative;
 	margin: 0px;
 	padding: 0px;
@@ -7,17 +9,18 @@
 	text-align: left;
 }
 .autoMenu ul {
-	line-height: 2;
+	line-height: 1.3;
 	list-style-type: none;
 	overflow-y: auto; 
+	padding: 0px 16px 0px 30px;
 }
 
 .autoMenu ul:before {
 	position: absolute;
 	content: "";
-	top: 12px;
-	left: 43px;
-	bottom: 12px;
+	top: 14px;
+	left: 33px;
+	bottom: 14px;
 	width: 2px;
 	background-color: #ebedef;
 	z-index: -1;
@@ -25,27 +28,28 @@
 
 .autoMenu a:before {
 	content: "";
-	width: 6px;
-	height: 6px;
+	width: 7px;
+	height: 7px;
 	background-color: #333;
 	border-radius: 50%;
 	display: inline-block;
 	z-index: 100;
-	margin: 14px 10px 0px 1px;
+	margin: 5px 10px 0px 1px;
+/*	margin: 14px 10px 0px 1px;*/
 	float: left;
 }
 
-.autoMenu a::before.active {
-	content: "";
-	width: 6px;
-	height: 6px;
-	background-color: #1e6bb8;
-	border-radius: 50%;
-	display: inline-block;
-	z-index: 100;
-	margin: 12px 10px 0px 1px;
-	float: left;
-}
+/*.autoMenu a::before.active {*/
+/*	content: "";*/
+/*	width: 6px;*/
+/*	height: 6px;*/
+/*	background-color: #1e6bb8;*/
+/*	border-radius: 50%;*/
+/*	display: inline-block;*/
+/*	z-index: 100;*/
+/*	margin: 12px 10px 0px 1px;*/
+/*	float: left;*/
+/*}*/
 
 .autoMenu ul li.active {
 	color: #1e6bb8;
@@ -70,9 +74,15 @@
 }
 .autoMenu ul>li.toc-heading {
 	font-weight: bold;
+	padding-top: 4px;
+	padding-bottom: 4px;
+	margin-top: 6px;
+	margin-bottom: 6px;
 }
 .autoMenu ul>li.toc-heading-sub {
 	padding-left: 30px;
+	padding-top: 4px;
+	padding-bottom: 4px;
 }
 .autoMenu ul>li>a {
 	color: #333;

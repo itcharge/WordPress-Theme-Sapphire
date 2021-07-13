@@ -1,3 +1,10 @@
+<?php
+/**
+ * The sidebar containing the main widget area.
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
 <div id="right-box">
 	<?php if( is_dynamic_sidebar() ){ dynamic_sidebar(); }else{ ?>
 		<div class="intro-inner">

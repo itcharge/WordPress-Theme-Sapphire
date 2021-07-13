@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php
+/**
+ * The template for displaying home
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+get_header(); 
+?>
 
 <div class="site-content">
 	<div id="left-box">

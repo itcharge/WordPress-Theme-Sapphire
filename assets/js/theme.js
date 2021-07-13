@@ -28,9 +28,11 @@
  */
 ( function () {
 	
-	var offset = 300, speed = 250, duration = 500, backButton = jQuery('#back-top');
+	var offset = 300, duration = 500, backButton = jQuery('#back-top');
 	var tocTop = jQuery("#side-box-article-toc").offset().top;
-
+	var tocHeight = jQuery("#side-box-article-toc").height;
+	var docHeight = jQuery(document).height;
+	var footHeight = jQuery("#site-footer").height;
 	
 	// 当滚动条的垂直位置距顶部 300 像素一下时，跳转链接出现，否则消失
 	jQuery(window).scroll(function () {
@@ -44,10 +46,16 @@
 		}
 		
 		if (scrollTop >= tocTop) {
-			jQuery("#side-box-article-toc").css({position: 'fixed'});
-			jQuery("#side-box-article-toc").animate({top: '20px'}, 1000);
+			if (scrollTop + tocHeight + footHeight + 40 <= docHeight) {
+				jQuery("#side-box-article-toc").css({"position":"fixed"});
+				jQuery("#side-box-article-toc").animate({"top":'20px'}, duration);
+			} else {
+				console.log(jQuery(window).scrollTop());
+				jQuery("#side-box-article-toc").css({"position":"fixed"});
+				jQuery("#side-box-article-toc").animate({"top":"", "bottom":'20px'}, duration);
+			}
 		} else {
-			jQuery("#side-box-article-toc").css({position: 'static', top: '0px'});
+			jQuery("#side-box-article-toc").css({"position":"static", "top":"0"});
 		}				
 	});
 	
