@@ -71,7 +71,7 @@
 				</ul>
 			</div>
 		</div>
-		<div class="side-box article-toc">
+		<div class="side-box article-toc" id="side-box-article-toc">
 			<div class="autoMenu" id="autoMenu" data-autoMenu></div>
 		</div>
 	<?php } ?>

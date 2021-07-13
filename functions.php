@@ -141,15 +141,6 @@ function read_words_times($text='') {
 	$read_time = ceil($count / 300); // 修改数字 300 调整时间
 	echo '<span class="read-count"><i class="icon-book icon"></i><span class="article-time-count">'.$read_time.' 分钟</span></span></div>';
 }
-
-/**
-* 代码高亮     
-*/
-# 添加代码高亮
-function add_prism() {
-	
-}
-add_action('wp_enqueue_scripts', 'add_prism');
 ?>
 
 
