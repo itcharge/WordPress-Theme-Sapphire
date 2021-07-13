@@ -1,6 +1,6 @@
 <?php wp_footer(); ?>
 
-<footer class="site-footer">
+<footer class="site-footer" id="site-footer">
 	<div class="footer-info">
 		<div class="footer-left">
 			&copy; 
