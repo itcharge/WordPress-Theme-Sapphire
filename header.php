@@ -8,10 +8,13 @@
 	<meta name="description" content="<? bloginfo('description'); ?>" />
 	<?php wp_head(); ?>
 </head>
-
+<?php if ( is_single() ): ?>
 <body <?php body_class(); ?> onload="prettyPrint()">
+<?php else : ?>
+<body <?php body_class(); ?> >
+<?php endif; ?>
 	<?php wp_body_open(); ?>
-	<header class="site-header" role="banner">
+	<header class="site-header" id="site-header" role="banner">
 		<div class="container">
 			<div class="site-branding">
 				<?php
