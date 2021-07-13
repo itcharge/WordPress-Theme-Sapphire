@@ -10,6 +10,29 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<?php wp_body_open(); ?>
+	<header class="site-header" id="site-header" role="banner">
+		<div class="container">
+			<div class="site-branding">
+				<?php
+				if ( is_front_page() && is_home() ) :
+					echo '<h1 class=" n"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+				else :
+					echo '<p class="site-title"><a href="' .esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>';
+				endif;
+				?>
+			</div>
+			
+			<div class="header-right-wrapper">
+				<a href="#0" id="nav-toggle" class="cd-nav-trigger">Menu<span></span></a>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<ul class="sapphire-menu">	
+						<?php wp_nav_menu( array('theme_location' => 'primary', 'container' => '', 'items_wrap' => '%3$s', 'fallback_cb' => 'sapphire_primary_menu_fb' ) ); ?>
+				    </ul>
+				</nav>
+			</div>
+		</div>
+	</header>
 	<div class="site-content">
 		<div class="site-404-box">
 			<div class="site-404-text">
