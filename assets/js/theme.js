@@ -22,36 +22,33 @@
 
 } )();
 
+
 /**
  * 滚动到顶部
  */
 ( function () {
 	
 	var offset = 300, speed = 250, duration = 500, backButton = jQuery('#back-top');
-	var sideTop = jQuery("#right-box").offset().top + jQuery("#right-box").height() + jQuery(window).height();
+	var tocTop = jQuery("#side-box-article-toc").offset().top;
+
 	
 	// 当滚动条的垂直位置距顶部 300 像素一下时，跳转链接出现，否则消失
 	jQuery(window).scroll(function () {
-		if (jQuery(window).scrollTop() > offset) {
+//		console.log(jQuery(window).scrollTop());
+
+		var scrollTop = jQuery(window).scrollTop();
+		if (scrollTop > offset) {
 			backButton.fadeIn(duration);
 		} else {
 			backButton.fadeOut(duration);
 		}
 		
-		console.log(jQuery(window).scrollTop());
-		
-		if (jQuery(window).scrollTop() > sideTop) {
-			if (jQuery("#fixed-right-box").length == 0) {
-				// 下面是要显示的模块，复制侧边栏中的标签云内容，追加到侧边栏的底部
-				var articleToc = jQuery("#side-box-article-toc").clone().html();
-				var html = "<div id='fixed-right-box'><div class='side-box article-toc' id='side-box article-toc'>" + articleToc + "</div></div>";
-				jQuery("#right-box").append(html);
-			} else {
-				jQuery("#fixed-right-box").show();
-			}
+		if (scrollTop >= tocTop) {
+			jQuery("#side-box-article-toc").css({position: 'fixed'});
+			jQuery("#side-box-article-toc").animate({top: '20px'}, 1000);
 		} else {
-			jQuery("#fixed-right-box").hide();
-		}
+			jQuery("#side-box-article-toc").css({position: 'static', top: '0px'});
+		}				
 	});
 	
 	jQuery('#back-top').click(function () {
@@ -61,11 +58,12 @@
 	});
 } )();
 
+
 /**
  * 代码高亮 更改 pre 标签
  */
 ( function () {
 	jQuery(document).ready(function () {
 		jQuery("pre").addClass("prettyprint linenums");
-	})
+	});
 } )();

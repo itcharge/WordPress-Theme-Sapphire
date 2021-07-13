@@ -17,7 +17,7 @@
 							</time>
 						</a>
 					</header>
-					<div class="article-entry">
+					<div class="article-entry" id="article-entry-excerpt">
 						<?php the_excerpt(); ?>
 					</div>
 					

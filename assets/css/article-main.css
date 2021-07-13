@@ -84,49 +84,7 @@
 	margin-bottom: 0px;
 }
 
-.article-inner h1.article-title {
-	color: #17181a;
-	margin-left: 0px;
-	font-weight: 400;
-	line-height: 35px;
-	font-size: 18px;
-	-webkit-transition: color 0.3s;
-	-moz-transition: color 0.3s;
-	-o-transition: color 0.3s;
-	transition: color 0.3s;
-}
 
-.article-inner h1.article-title .article-title-url {
-	color: #17181a;
-	text-decoration: none;
-}
-
-.article-inner h1.article-title .article-title-url:hover {
-	color: #b0a0aa;
-	text-decoration:underline;
-}
-
-.article-header {
-	border-left: 5px solid #4d4d4d;
-	padding: 15px 0px 15px 25px;
-	width: 460px;
-}
-
-.article-date {
-	position: absolute;
-	right: 0;
-	top: 24px;
-	width: 12rem;
-	padding-right: 1.2rem;
-	font-size: 14px;
-	text-align: right;
-	z-index: 1;
-}
-
-.article-date time {
-	color: #aaa;
-	float: right;
-}
 
 .article-more-link {
 	margin-top: 0;

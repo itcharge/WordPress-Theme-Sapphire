@@ -17,7 +17,7 @@
 						<?php read_words_times(); ?>
 					</header>
 					
-					<div class="article-entry" itemprop="articleBody">
+					<div class="article-entry" id="article-entry-content">
 						<?php the_content(); ?>
 					</div>
 					

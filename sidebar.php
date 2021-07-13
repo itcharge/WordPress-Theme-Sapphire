@@ -71,8 +71,13 @@
 				</ul>
 			</div>
 		</div>
+		<?php if ( is_single() ): ?>
 		<div class="side-box article-toc" id="side-box-article-toc">
+			<div class="side-box-header">
+				<h1 class="side-box-title">目 录</h1>
+			</div>
 			<div class="autoMenu" id="autoMenu" data-autoMenu></div>
 		</div>
+		<?php endif; ?>
 	<?php } ?>
 </div>

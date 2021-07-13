@@ -7,75 +7,71 @@
 	box-shadow: 0 0 5px #C6C6C6;
 }
 
-.article-inner .article-header p {
-	margin: 0 0 1.75em;
+
+.article-inner .article-header {
+	border-left: 5px solid #4d4d4d;
+	padding: 20px 0px 15px 25px;
+	width: 460px;
 }
 
-.article-inner .article-header h1 {
-	font-size: 28px;
-	font-size: 1.75rem;
-	line-height: 1.25;
-	margin-top: 2em;
-	margin-bottom: 1em;
+.article-header .article-title {
+	color: #17181a;
+	margin: 0px;
+	font-weight: 400;
+	line-height: 24px;
+	font-size: 18px;
+	-webkit-transition: color 0.3s;
+	-moz-transition: color 0.3s;
+	-o-transition: color 0.3s;
+	transition: color 0.3s;
 }
 
-.article-inner .article-header h2 {
-	font-size: 23px;
-	font-size: 1.75rem;
-	line-height: 1.2173913043;
-	margin-top: 2.4347826087em;
-	margin-bottom: 1.2173913043em;
+.article-header .article-title .article-title-url {
+	color: #17181a;
+	text-decoration: none;
 }
 
-.article-inner .article-header h3 {
-	font-size: 19px;
-	font-size: 1.1875rem;
-	line-height: 1.1052631579;
-	margin-top: 2.9473684211em;
-	margin-bottom: 1.4736842105em;
+.article-inner .article-title .article-title-url:hover {
+	color: #b0a0aa;
+	text-decoration:underline;
 }
 
-.article-inner .article-header h4,h5,h6 {
-	font-size: 16px;
-	font-size: 1rem;
-	line-height: 1.3125;
-	margin-top: 3.5em;
-	margin-bottom: 1.75em;
+.article-date {
+	position: absolute;
+	right: 0;
+	top: 24px;
+	width: 12rem;
+	padding-right: 1.2rem;
+	font-size: 14px;
+	text-align: right;
+	z-index: 1;
 }
 
-.article-inner .article-header h4 {
-	letter-spacing: 0.140625em;
-	text-transform: uppercase;
+.article-date time {
+	color: #aaa;
+	float: right;
 }
 
-.article-inner .article-header h6 {
-	font-style: italic;
-}
 
-.article-inner .article-header h1,h2,h3,h4,h5,h6 {
-	font-weight: 900;
-}
-
-.article-inner .article-header h1,h2,h3,h4,h5,h6:first-child {
-	margin-top: 0;
-}
-
-.article-inner .article-header h1:first-child {
-	margin-bottom: 10px;
-	display: inline;
-}
 
 /* 文章内容 CSS */
 .article-entry {
 	font-size: 16px;
-	color: black;
-	padding: 25px 30px;
+	color: #333;
 	line-height: 1.6;
 	word-spacing: 0px;
 	letter-spacing: 0px;
 	word-break: break-word;
 	word-wrap: break-word;
 	text-align: justify;
+}
+
+#article-entry-excerpt {
+	padding: 10px 30px;
+}
+
+#article-entry-content {
+	padding: 25px 30px;
 }
 
 .article-entry p {
@@ -97,7 +93,7 @@
 }
 
 .article-entry blockquote p {
-	color: black;
+	color: #333;
 	margin: 0px;
 	line-height: 26px;
 }
@@ -157,7 +153,7 @@
 	margin-top: 30px;
 	margin-bottom: 15px;
 	font-weight: bold;
-	color: black;
+	color: #333;
 }
 
 .article-entry h1 {

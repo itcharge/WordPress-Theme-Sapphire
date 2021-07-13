@@ -1,18 +1,59 @@
-@charset "utf-8";
-/*reset*/
-.autoMenu div,ul,p,h1,h2,h3,h4,ol,dl,dd,dt,form,input,textarea,select,strong,em {
-	padding: 0;
-	margin: 0;
+/*-------main---------*/
+.autoMenu {
+	position: relative;
+	margin: 0px;
+	padding: 0px;
+	z-index: 1;
+	text-align: left;
+}
+.autoMenu ul {
+	line-height: 2;
+	list-style-type: none;
+	overflow-y: auto; 
 }
 
-.autoMenu * {
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box
+.autoMenu ul:before {
+	position: absolute;
+	content: "";
+	top: 12px;
+	left: 43px;
+	bottom: 12px;
+	width: 2px;
+	background-color: #ebedef;
+	z-index: -1;
 }
 
-.autoMenu li {
-	list-style: none;
+.autoMenu a:before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	background-color: #333;
+	border-radius: 50%;
+	display: inline-block;
+	z-index: 100;
+	margin: 14px 10px 0px 1px;
+	float: left;
+}
+
+.autoMenu a::before.active {
+	content: "";
+	width: 6px;
+	height: 6px;
+	background-color: #1e6bb8;
+	border-radius: 50%;
+	display: inline-block;
+	z-index: 100;
+	margin: 12px 10px 0px 1px;
+	float: left;
+}
+
+.autoMenu ul li.active {
+	color: #1e6bb8;
+	background-color: #ebedef;
+}
+
+.autoMenu li:hover {
+	background-color: #ebedef;
 }
 
 .autoMenu a {
@@ -27,29 +68,16 @@
 .autoMenu a:focus {
 	outline:none;
 }
-
-/*-------main---------*/
-.autoMenu {
-	position: relative;
-	bottom: 0;
-	right: 0;
-	z-index: 1;
-	text-align: left;
+.autoMenu ul>li.toc-heading {
+	font-weight: bold;
 }
-.autoMenu ul {
-	line-height: 2;
-	overflow-y: auto; 
-	background: #fff;
-	-webkit-box-shadow:0 0 10px #CCC;  
-	-moz-box-shadow:0 0 10px #CCC;  
-	box-shadow:0 0 10px #CCC;
-}
-.autoMenu ul>li.sub {
-	padding-left: 20px;
+.autoMenu ul>li.toc-heading-sub {
+	padding-left: 30px;
 }
 .autoMenu ul>li>a {
-	color: #399c9c;
+	color: #333;
 }
-.autoMenu ul>li.active>a {
-	color: #ff5370;
+.autoMenu ul li.active>a {
+	color: #1e6bb8;
+	background-color: #ebedef;
 }

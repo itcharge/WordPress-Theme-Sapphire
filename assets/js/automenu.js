@@ -38,37 +38,35 @@
                 this.bindEvent();
                 
             },
-            createHtml: function(){
+            createHtml: function() {
                 var that = this;
                 var opts = that.settings;
                 var width = typeof opts.width === 'number' && opts.width;
-                var height = typeof opts.height === 'number' && opts.height;
-                var padding = typeof opts.padding === 'number' && opts.padding;
                 that.$element.width(width);
-                var html = '<ul style="height: '+ height +'px;padding:' + padding + 'px">';
+                var html = '<ul>';
                 var num = 0;
                 $('*').each(function(){
                     var _this = $(this);
-                    if(_this.get(0).tagName == opts.levelOne.toUpperCase()){
+                    if (_this.get(0).tagName == opts.levelOne.toUpperCase()) {
                         _this.attr('id',num);
                         var nodetext = that.handleTxt(_this.html());
-                        html += '<li name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
+                        html += '<li class="toc-heading" name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
                         num++;
-                    }else if(_this.get(0).tagName == opts.levelTwo.toUpperCase()){
+                    } else if (_this.get(0).tagName == opts.levelTwo.toUpperCase()) {
                         _this.attr('id',num);
                         var nodetext = that.handleTxt(_this.html());
-                        html += '<li class="sub" name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
+                        html += '<li class="toc-heading-sub" name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
                         num++;
                     }
                 })
                 html += '</ul>';
                 return html;   
             },
-            handleTxt: function(txt){
-                //正则表达式去除HTML的标签
+            handleTxt: function(txt) {
+                //正则表达式去除 HTML 的标签
                 return txt.replace(/<\/?[^>]+>/g,"").trim();
             },
-            setActive: function(){
+            setActive: function() {
                 var $el = this.$element,
                     opts = this.settings,
                     items = opts.levelOne + ',' + opts.levelTwo,
@@ -76,17 +74,17 @@
                     offTop = opts.offTop,
                     top = $(document).scrollTop(),
                     currentId;
-                if($(document).scrollTop()==0){
+                if ($(document).scrollTop()==0) {
                     //初始化active
                     $el.find('li').removeClass('active').eq(0).addClass('active');
                     return;
                 }
-                $items.each(function(){
+                $items.each(function() {
                     var m = $(this),
                         itemTop = m.offset().top;
-                    if(top > itemTop-offTop){
+                    if (top > itemTop-offTop) {
                         currentId = m.attr('id');
-                    }else{
+                    } else {
                         return false;
                     }
                 })
@@ -97,9 +95,9 @@
                 }
                 
             },
-            bindEvent: function(){
+            bindEvent: function() {
                 var _this = this;
-                $(window).scroll(function(){
+                $(window).scroll(function() {
                     _this.setActive()
                 });
             }
@@ -121,7 +119,7 @@
                 menu = $el.data('autoMenu'),
                 option = $.extend({}, $.fn.autoMenu.defaults, typeof options === 'object' && options);
             if (!menu) {
-                //将实例化后的插件缓存在dom结构里（内存里）
+                //将实例化后的插件缓存在 dom 结构里（内存里）
                 $el.data('autoMenu',new Menu(this, option));
             }
 
@@ -140,10 +138,7 @@
         levelOne : 'h2', //一级标题
         levelTwo : 'h3',  //二级标题（暂不支持更多级）
         width : 300, //容器宽度
-        height : 600, //容器高度
-        padding: 20, //内部间距
         offTop : 100, //滚动切换导航时离顶部的距离
-
     };
 
     /**
@@ -152,7 +147,7 @@
      * 可以查看bootstrap 里面的JS插件写法
      */
     $(function () {
-        if($('[data-autoMenu]').length>0){
+        if($('[data-autoMenu]').length > 0) {
             new Menu($('[data-autoMenu]'));
         }
     });
