@@ -10,6 +10,6 @@
 ?>
 <div id="comments" class="width-short">
 	<?php if(comments_open()) : ?>
-		
+	<div class="comment-"></div>
 	<?php endif; ?>
 </div>
