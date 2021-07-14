@@ -35,21 +35,8 @@
 	display: inline-block;
 	z-index: 100;
 	margin: 5px 10px 0px 1px;
-/*	margin: 14px 10px 0px 1px;*/
 	float: left;
 }
-
-/*.autoMenu a::before.active {*/
-/*	content: "";*/
-/*	width: 6px;*/
-/*	height: 6px;*/
-/*	background-color: #1e6bb8;*/
-/*	border-radius: 50%;*/
-/*	display: inline-block;*/
-/*	z-index: 100;*/
-/*	margin: 12px 10px 0px 1px;*/
-/*	float: left;*/
-/*}*/
 
 .autoMenu ul li.active {
 	color: #1e6bb8;
@@ -90,4 +77,8 @@
 .autoMenu ul li.active>a {
 	color: #1e6bb8;
 	background-color: #ebedef;
+}
+
+.autoMenu ul li.active>a::before {
+	background-color: #1e6bb8;
 }
