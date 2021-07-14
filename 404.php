@@ -1,5 +1,7 @@
 <?php 
 /**
+ * Template Name: 404 页面
+ *
  * The template for displaying 404 pages (not found)
  *
  * @package Sapphire

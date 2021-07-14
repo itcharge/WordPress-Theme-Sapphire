@@ -1,5 +1,7 @@
 <?php 
 /**
+ * Template Name: 文章模板
+ *
  * The template for displaying all single posts
  *
  * @package Sapphire

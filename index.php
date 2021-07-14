@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 首页模板
+ *
  * The template for displaying home
  *
  * @package Sapphire

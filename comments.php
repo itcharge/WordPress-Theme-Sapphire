@@ -8,3 +8,8 @@
  * @since Sapphire 1.0
  */
 ?>
+<div id="comments" class="width-short">
+	<?php if(comments_open()) : ?>
+		
+	<?php endif; ?>
+</div>

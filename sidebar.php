@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 侧边栏模板
+ *
  * The sidebar containing the main widget area.
  *
  * @package Sapphire

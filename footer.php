@@ -1,5 +1,7 @@
 <?php 
 /**
+ * Template Name: 页脚模板
+ *
  * The template for displaying the footer
  *
  * Contains the closing of the #content div and all content after.

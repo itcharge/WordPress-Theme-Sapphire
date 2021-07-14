@@ -1,5 +1,7 @@
 <?php
 /**
+ * Template Name: 页眉模板
+ *
  * The template for displaying header.
  *
  * This is the template that displays all of the <head> section and everything up until main.
