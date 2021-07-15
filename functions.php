@@ -48,6 +48,7 @@ function sapphire_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 
+
 /**
 * 自定义数字分页函数
 * @Param int $range            数字分页的宽度
@@ -141,7 +142,41 @@ function read_words_times($text='') {
 	$read_time = ceil($count / 300); // 修改数字 300 调整时间
 	echo '<span class="read-count"><i class="icon-book icon"></i><span class="article-time-count">'.$read_time.' 分钟</span></span></div>';
 }
+
+
+function loadCustomTemplate($template) {
+	global $wp_query;
+	if(!file_exists($template)) { 
+		return;
+	}
+	$wp_query->is_page = true;
+	$wp_query->is_single = false;
+	$wp_query->is_home = false;
+	$wp_query->comments = false;
+	// if we have a 404 status
+	if ($wp_query->is_404) {
+	// set status of 404 to false
+		unset($wp_query->query["error"]);
+		$wp_query->query_vars["error"] = "";
+		$wp_query->is_404 = false;
+	}
+	// change the header to 200 OK
+	header("HTTP/1.1 200 OK");
+	//load our template
+	include($template);
+	exit;
+}
+ 
+/**
+* 自定义查找链接
+*/
+function templateRedirect() {
+	$basename = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
+	loadCustomTemplate(TEMPLATEPATH.'/assets/custom/'."/$basename.php");
+}
+add_action('template_redirect', 'templateRedirect');
 ?>
+
 
 
 	
