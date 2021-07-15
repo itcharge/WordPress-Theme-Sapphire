@@ -47,13 +47,25 @@
 		<div class="side-box recent-posts" id="side-box-recent-posts">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
-					页面列表
+					最近文章
 				</h1>
 			</div>
 			<div class="side-box-entry">
-				<ul>
-					<?php wp_list_pages(); ?>
-				</ul>
+				<?php 
+					// WP_Query 所使用的参数 
+					$args = array(
+						'order' => 'DESC',
+						'orderby' => 'date',
+						'posts_per_page' => 5
+					); 
+
+					// 调用 WP_Query 新建文章查询. 
+					$the_query = new WP_Query( $args ); 
+					$post_count = 0;
+				?>
+				<?php if ($the_query->have_posts()) :  while ( $the_query->have_posts() && $post_count < 5) : $the_query->the_post(); echo "<h1>".the_title()."</h1>"; $post_count++; ?>
+				<?php endwhile; ?>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="side-box friend-link" id="side-box-friend-link">
