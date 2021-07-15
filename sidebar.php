@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: 侧边栏模板
+ * Template Name: 边栏模板
  *
  * The sidebar containing the main widget area.
  *

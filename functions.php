@@ -12,7 +12,7 @@ endif; // sapphire_setup
 add_action( 'after_setup_theme', 'sapphire_setup' );
 
 /**
- * Display a default one page menu when the Primary menu is not assign yet.
+ * 默认菜单栏.
  */
 function sapphire_primary_menu_fb() {
 	?>
@@ -27,7 +27,7 @@ function sapphire_primary_menu_fb() {
 
 
 /**
- * Enqueue scripts and styles.
+ * 加载 scripts、styles.
  */
 function sapphire_scripts() {
 	/**
@@ -57,7 +57,7 @@ function pagenav($type=null, $archive_pages=0) {
 	global $paged, $wp_query;
 	$range = 4;
 	if (!$max_page) {
-		if($type) {
+		if ($type) {
 			$max_page = $archive_pages / 10;
    		} else {
    			$max_page = $wp_query->max_num_pages;
@@ -69,7 +69,7 @@ function pagenav($type=null, $archive_pages=0) {
 			$paged = 1;
 		}
 		
-		if($paged == 1) {
+		if ($paged == 1) {
 			echo '<a class="extend" style="visibility:hidden" href="'.get_pagenum_link($paged-1).'">上一页</a>';
 		} else {
 			echo '<a class="extend" href="'.get_pagenum_link($paged-1).'">上一页</a>';

@@ -36,7 +36,6 @@
                 this.$element.html(this.createHtml());
                 this.setActive();
                 this.bindEvent();
-                
             },
             createHtml: function() {
                 var that = this;
