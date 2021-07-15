@@ -71,13 +71,21 @@
 		<div class="side-box friend-link" id="side-box-friend-link">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
-					友情链接
+					热门标签
 				</h1>
 			</div>
 			<div class="side-box-entry">
-				<ul>
-					<?php get_links(); ?>
-				</ul>
+				<?php
+					$tags_list = get_tags( array('number' => '50', 'orderby' => 'count', 'order' => 'DESC', 'hide_empty' => false) );
+					$count = 0; 
+					if ($tags_list) {
+						foreach($tags_list as $tag) {
+							$count++;
+							echo '<a title="' . $tag->count . '个话题" href="'.get_tag_link($tag->term_id).'" target="_blank" rel="noopener noreferrer">'.$tag->name.'</a>';
+							if( $count > 20 ) break;
+						}
+					}
+				?>
 			</div>
 		</div>
 		<div class="side-box feature-page" id="side-box-feature-page">
