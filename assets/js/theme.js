@@ -27,7 +27,6 @@
  * 滚动到顶部
  */
 ( function () {
-	
 	var offset = 300, duration = 500, backButton = jQuery('#back-top');
 	var tocTop = jQuery("#side-box-article-toc").offset().top;
 	var tocHeight = jQuery("#side-box-article-toc").height;
