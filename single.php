@@ -49,11 +49,6 @@ get_header();
 					</div>
 					
 					<div class="article-info article-info-index">
-						<?php if (is_sticky() && is_home()): ?>
-							<div class="article-pop-out tagcloud">
-								<a class="color<?php echo rand(1,6) ?>">置顶</a>
-							</div>
-						<?php endif; ?>
 						<?php 
 							$cat = get_the_category();
 							if ($cat) {
@@ -89,6 +84,8 @@ get_header();
 					</div>
 				</div>
 			</article>
+			
+			<?php comments_template(); ?>
 			<?php endif; ?>
 		</div>
 	</div>
