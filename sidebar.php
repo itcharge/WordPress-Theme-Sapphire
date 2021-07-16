@@ -47,10 +47,11 @@
 		<div class="side-box recent-posts" id="side-box-recent-posts">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
-					最近文章
+					最新文章
 				</h1>
 			</div>
 			<div class="side-box-entry">
+				
 				<?php 
 					// WP_Query 所使用的参数 
 					$args = array(
@@ -63,9 +64,10 @@
 					$the_query = new WP_Query( $args ); 
 					$post_count = 0;
 				?>
-				<?php if ($the_query->have_posts()) :  while ( $the_query->have_posts() && $post_count < 5) : $the_query->the_post(); echo "<h1>".the_title()."</h1>"; $post_count++; ?>
+				<?php if ($the_query->have_posts()) :  echo '<ul class="recent-posts">'; while ( $the_query->have_posts() && $post_count < 5) : $the_query->the_post(); $post_count++; ?>
+					<li class="recent-post"><a class="recent-post-link" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 				<?php endwhile; ?>
-				<?php endif; ?>
+				<?php echo '</ul>'; endif; ?> 
 			</div>
 		</div>
 		<div class="side-box friend-link" id="side-box-friend-link">
@@ -79,11 +81,15 @@
 					$tags_list = get_tags( array('number' => '50', 'orderby' => 'count', 'order' => 'DESC', 'hide_empty' => false) );
 					$count = 0; 
 					if ($tags_list) {
+						echo '<div class="article-info-index"><div class="article-category tagcloud"><ul class="article-tag-list">';
 						foreach($tags_list as $tag) {
 							$count++;
-							echo '<a title="' . $tag->count . '个话题" href="'.get_tag_link($tag->term_id).'" target="_blank" rel="noopener noreferrer">'.$tag->name.'</a>';
+							echo '<li class="article-tag-list-item">';
+								echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
+							echo '</li>';
 							if( $count > 20 ) break;
 						}
+						echo '</ul></div></div>';
 					}
 				?>
 			</div>
