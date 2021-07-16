@@ -30,7 +30,7 @@
 }
 
 .intro-header a:hover {
-	color: #B0A0AA;
+	color: #1e6bb8;
 }
 
 .intro-header .profilepic {
@@ -127,7 +127,7 @@
 }
 
 .intro-site-state-item a:hover {
-	color: #B0A0AA;
+	color: #1e6bb8;
 }
 
 .intro-site-state-item-count {
@@ -177,7 +177,6 @@
 	margin-top: 20px;
 	margin-bottom: 0px;
 	padding: 0px;
-	font-size: 16px;
 }
 
 .side-box-entry .recent-post {
@@ -188,8 +187,15 @@
 }
 
 .side-box-entry .recent-post-link {
-	color: #333;
+	color: #17181a;
+	font-size: 16px;
+	font-weight: 300;
 	text-decoration: none;
+}
+
+.side-box-entry .recent-post-link:hover {
+	color: #1e6bb8;
+	text-decoration: underline;
 }
 
 /* 热门标签 */
