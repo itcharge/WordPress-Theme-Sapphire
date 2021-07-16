@@ -40,11 +40,11 @@ get_header();
 						<?php 
 							$cat = get_the_category();
 							if ($cat) {
-								echo '<div class="article-category tagcloud">';
+								echo '<div class="article-cat-tag tagcloud">';
 									echo '<i class="icon-book icon"></i>';
-									echo '<ul class="article-tag-list">';
+									echo '<ul class="cat-tag-list">';
 										foreach ($cat as $key => $category) {
-											echo '<li class="article-tag-list-item">';
+											echo '<li class="cat-tag-list-item">';
 												echo '<a class="article-category-link color'.rand(1, 6).'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
 											echo '</li>';
 										}
@@ -53,11 +53,11 @@ get_header();
 							}
 //							$tags = get_the_tags();
 //							if ($tags) {
-//								echo '<div class="article-tag tagcloud">';
+//								echo '<div class="article-cat-tag tagcloud">';
 //									echo '<i class="icon-price-tags icon"></i>';
-//									echo '<ul class="article-tag-list">';
+//									echo '<ul class="cat-tag-list">';
 //										foreach ($tags as $key => $tag) {
-//											echo '<li class="article-tag-list-item">';
+//											echo '<li class="cat-tag-list-item">';
 //												echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
 //											echo '</li>';
 //										}

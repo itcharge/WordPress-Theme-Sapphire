@@ -81,15 +81,15 @@
 					$tags_list = get_tags( array('number' => '50', 'orderby' => 'count', 'order' => 'DESC', 'hide_empty' => false) );
 					$count = 0; 
 					if ($tags_list) {
-						echo '<div class="article-info-index"><div class="article-category tagcloud"><ul class="article-tag-list">';
+						echo '<div class="side-info-index"><div class="side-tag tagcloud"><ul class="cat-tag-list">';
 						foreach($tags_list as $tag) {
 							$count++;
-							echo '<li class="article-tag-list-item">';
-								echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
+							echo '<li class="cat-tag-list-item">';
+								echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>';
 							echo '</li>';
 							if( $count > 20 ) break;
 						}
-						echo '</ul></div></div>';
+						echo '</ul></div><div class="clearfix"></div></div>';
 					}
 				?>
 			</div>

@@ -1,3 +1,31 @@
+/* 置顶 */
+.article-pop-out {
+	float: left;
+}
+
+.article-pop-out .icon-tuding {
+	color: #999;
+	float: left;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+
+.article-pop-out {
+	float: left;
+}
+
+/* 标签 / 分类 */
+.article-cat-tag {
+	float: left;
+}
+
+.article-cat-tag .icon {
+	color: #999;
+	float: left;
+	margin-right: 10px;
+	margin-top: 6px;
+}
+
 .tagcloud a {
 	display:inline-block;  
 	text-decoration:none;  
@@ -70,8 +98,8 @@
 }
 
 .tagcloud a.color4:before {
-		border-right-color: #94635c;  
-	}
+	border-right-color: #94635c;  
+}
 
 .tagcloud a.color5 {
 	background: #7B5D5F;
@@ -89,49 +117,13 @@
 	border-right-color: #88acdb;
 }
 
-.article-tag-list {
+.cat-tag-list {
 	float: left;
 	padding: 0;
 	margin: 0;
 }
 
-.article-tag-list .article-tag-list-item {
+.cat-tag-list .cat-tag-list-item {
 	float: left;
 }
 
-.article-pop-out {
-	float: left;
-}
-
-
-.article-pop-out .icon-tuding {
-	color: #999;
-	float: left;
-	margin-right: 10px;
-	margin-top: 6px;
-}
-
-.article-pop-out {
-	float: left;
-}
-
-.article-tag {
-	float: left;
-}
-.article-category {
-	float: left;
-}
-
-.article-tag .icon {
-	color: #999;
-	float: left;
-	margin-right: 10px;
-	margin-top: 6px;
-}
-
-.article-category .icon {
-	color: #999;
-	float: left;
-	margin-right: 10px;
-	margin-top: 6px;
-}
