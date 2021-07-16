@@ -65,6 +65,30 @@
 	position: relative;
 }
 
+/*------------------------------
+	banner
+------------------------------*/
+.banner-box {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+	position: relative;
+	background: #fff;
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
+}
+.banner-header {
+	border-left: 5px solid #4d4d4d;
+	padding: 20px 0px 15px 25px;
+}
+
+.banner-title {
+	color: #333;
+	font-size: 18px;
+	font-weight: 400;
+	margin: 0px;
+}
+
 
 /*------------------------------
 	article

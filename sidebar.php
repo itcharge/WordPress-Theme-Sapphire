@@ -94,19 +94,6 @@
 				?>
 			</div>
 		</div>
-		<div class="side-box feature-page" id="side-box-feature-page">
-			<div class="side-box-header">
-				<h1 class="side-box-title">
-					功能
-				</h1>
-			</div>
-			<div class="side-box-entry">
-				<ul>
-					<?php wp_register(); ?>
-					<?php wp_loginout(); ?>
-				</ul>
-			</div>
-		</div>
 		<?php if ( is_single() ): ?>
 		<div class="side-box article-toc" id="side-box-article-toc">
 			<div class="side-box-header">

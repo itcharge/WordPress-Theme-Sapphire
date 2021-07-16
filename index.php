@@ -13,6 +13,47 @@ get_header();
 <div class="site-content">
 	<div id="left-box">
 		<div id="home-loop">
+		<?php
+			$flag = false;
+			if ( is_category() ) {
+				$banner_title = '分类';
+				$banner_sub_title = '与「'.single_cat_title('', false).'」相关的内容';
+				$flag = true;
+			} elseif ( is_tag() ) {
+				$banner_title = '标签';
+				$banner_sub_title = '与「'.single_tag_title('', false).'」相关的内容';
+				$flag = true;
+			} elseif ( is_day() ) {
+				$banner_title = '归档';
+				$banner_sub_title = get_the_time('Y年m月d日的文章');
+				$flag = true;
+			} elseif ( is_month() ) {
+				$banner_title = '归档';
+				$banner_sub_title = get_the_time('Y年m月的文章');
+				$flag = true;
+			} elseif ( is_year() ) {
+				$banner_title = '归档';
+				$banner_sub_title = get_the_time('Y年的文章');
+				$flag = true;
+			} elseif ( is_author() ) {
+				$banner_title = '作者';
+				$banner_sub_title = wp_title('', false) . ' 的所有文章';
+				$flag = true;
+			} elseif ( is_search() ) {
+				$banner_title = '搜索';
+				$counts = $wp_query->found_posts;
+				if($counts) {
+					$banner_sub_title = '找到 ' . $counts . '+ 与『'.get_search_query().'』相关的内容';
+				} else {
+					$banner_sub_title = '没找到与『'.get_search_query().'』相关的内容';
+				}
+				$flag = true;
+			}
+			
+			if ( $flag ) {
+				echo '<div class="banner-box"><div class="banner-header"><h1 class="banner-title">'. $banner_sub_title .'</h1></div></div>';
+			}
+		?>
 		<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article class="article article-type-post article-index">
 				<div class='article-inner'>
