@@ -43,8 +43,9 @@ function sapphire_scripts() {
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'sapphire-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), "", true );
 	wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
-	wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
 	wp_enqueue_script( 'sapphire-automenu-js', get_template_directory_uri() . '/assets/js/automenu.js' );
+	wp_enqueue_script( 'sapphire-clicklove-js', get_template_directory_uri() . '/assets/js/clicklove.js' );
+	wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 
