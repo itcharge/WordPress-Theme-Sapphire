@@ -145,7 +145,7 @@ function read_words_times($text='') {
 }
 
 
-function loadCustomTemplate($template) {
+function load_custom_template($template) {
 	global $wp_query;
 	if(!file_exists($template)) { 
 		return;
@@ -171,11 +171,23 @@ function loadCustomTemplate($template) {
 /**
 * 自定义查找链接
 */
-function templateRedirect() {
+function template_redirect() {
 	$basename = basename($_SERVER['REQUEST_URI'], '?' . $_SERVER['QUERY_STRING']);
-	loadCustomTemplate(TEMPLATEPATH.'/assets/custom/'."/$basename.php");
+	load_custom_template(TEMPLATEPATH.'/inc/custom-pages/'."/$basename.php");
 }
-add_action('template_redirect', 'templateRedirect');
+add_action('template_redirect', 'template_redirect');
+
+/**
+* 主题设置面板
+*/
+function set_theme_config() {
+	add_theme_page( '主题选项', '主题设置', 'administrator', 'sapphire_slug', 'theme_config_page' );
+}
+
+function theme_config_page() {
+	include ("inc/custom-configs/theme-setup.php");
+}
+add_action('admin_menu', 'set_theme_config');
 ?>
 
 
