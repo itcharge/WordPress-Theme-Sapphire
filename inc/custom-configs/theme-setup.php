@@ -10,26 +10,9 @@ add_action('admin_menu', 'set_theme_config');
 function theme_config_page() {
 	global $theme_options, $theme_tabs;
 	if ( isset($_GET['update_options']) ) {	// 保存信息
-		echo '<div class="updated"><p><strong>主题设置已保存！</strong></p></div>';
-		foreach($theme_options as $theme_option) {
-			if(!isset($theme_option['id'])) {
-				continue;
-			}
-			if (isset($_GET[$theme_option['id']])) {
-				update_option($theme_option['id'], $_GET[$theme_option['std']]);
-			} else {
-				delete_option($theme_option['id']);
-			}
-		}
-		update_option('sapphire_options_setup', true);
-//		header('Location: themes.php?page=sapphire_slug&update_options=true');
+		save_options();
 	} else if( isset($_GET['reset_options']) ) {	// 恢复默认
-		echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
-		foreach ($theme_options as $theme_option) {
-			delete_option($theme_option['id']);
-		}
-		delete_option('sapphire_options_setup');   // 删除主题初始化标志
-//		header('Location: themes.php?page=sapphire_slug&reset_options=true');
+		reset_options();
 	}
 	echo '<div class="wrap sapphire-setup-panel">';
 		echo '<h2>Sapphire 主题设置</h2>';
@@ -56,7 +39,7 @@ function theme_config_page() {
 					echo '<table class="form-table">';
 					
 					foreach ($pannel_options as $pannel_option) {
-						$option_value = sa_theme_option($pannel_option['id'], $pannel_option['std']);
+						$option_value = sa_theme_option($pannel_option['id'], '');
 						$pannel_option['std'] = $option_value;
 						echo '<tr>';
 						if ($pannel_option['type'] == 'subtitle') {
@@ -64,7 +47,7 @@ function theme_config_page() {
 						} elseif ($pannel_option['type'] == 'text') {
 							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
 							echo '<td><label>';
-								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.$option_value.'"></input> &nbsp;';
+								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.htmlspecialchars($option_value).'"></input> &nbsp;';
 								echo '<span class="description">'.$pannel_option['desc'].'</span>';
 							echo '</td></label>';
 						} elseif ($pannel_option['type'] == 'select') {
@@ -87,17 +70,21 @@ function theme_config_page() {
 						}
 						echo '</tr>';
 					}
+					unset($pannel_option); // 销毁掉 user 引用
 					echo '</table>';
 				echo '</div>';
 				$pannel_index++;
 			}
 		echo '</form>';
 ?>
-		<div class="submit">
-			<a href="themes.php?page=sapphire_slug&update_options=true">保存更改</a>
+		<div class="update-reset-option">
+			<button type="button">
+				<a href="themes.php?page=sapphire_slug&update_options=true">保存更改</a>
+			</button>
 			&nbsp; &nbsp; &nbsp; &nbsp;
-			<input name="reset" type="submit" class="button button-secondary" value="重置主题"  onclick="return confirm('重置后将清除本主题所有的设置项！是否重置？');" />
-			<input type="hidden" name="action" value="reset" />
+			<button type="button">
+				<a href="themes.php?page=sapphire_slug&reset_options=true">重置主题</a>
+			</button>
 		</div>
 <style>
 #wpcontent{background:#fff}
@@ -129,31 +116,56 @@ jQuery(function ($) {
 
 // 获取主题选项值
 function sa_theme_option($key, $default = '', $echo = false) {
-	global $theme_options;
-	$result = get_option(THEME_SLUG . '_' . $key);
-	if (!THEME_READY && ! $result) {
-		if ($default) {
+	global $theme_options, $theme_tabs;
+	$result = get_option($key);
+	if ( !$result ) {
+		if ( $default ) {
 			$result = $default;
 		} else {
-			foreach ($theme_options as $value) {
-				if (isset($value['id']) && ($value['id'] == $key)) {
-					$result = $value['std'];
-					update_option($key, $result);
-					break;
+			foreach ($theme_tabs as $theme_tab) {
+				$pannel_options = $theme_options[$theme_tab['id']];
+				foreach ($pannel_options as $pannel_option) {
+					if (isset($pannel_option['id']) && ($pannel_option['id'] == $key)) {
+						$result = $pannel_option['std'];
+						update_option($key, $result);
+						break;
+					}
 				}
 			}
 		}
 	}
+
 	return $result;
 }
 
 // 保存主题选项值
 function save_options() {
+	global $theme_options, $theme_tabs;
+	foreach ($theme_tabs as $theme_tab) {
+		$pannel_options = $theme_options[$theme_tab['id']];
+		foreach ($pannel_options as $pannel_option) {
+			if ( isset($pannel_option['id']) ) {
+				$option_value = sa_theme_option($pannel_option['id'], $pannel_option['std']);
+				update_option($theme_option['id'], $option_value);
+			} else {
+				delete_option($theme_option['id']);
+			}
+		}
+	}
 	echo '<div class="updated"><p><strong>主题设置已保存！</strong></p></div>';
+	update_option('sapphire_options_setup', true);
 }
 
 function reset_options() {
+	global $theme_options, $theme_tabs;
 	echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
+	foreach ($theme_tabs as $theme_tab) {
+		$pannel_options = $theme_options[$theme_tab['id']];
+		foreach ($pannel_options as $pannel_option) {
+			delete_option($pannel_option['id']);
+		}
+	}
+	delete_option('sapphire_options_setup');   // 删除主题初始化标志
 }
 
 function theme_customize_register( $wp_customize ) {
