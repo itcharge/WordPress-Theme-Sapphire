@@ -1,12 +1,40 @@
 <?php
-	include 'theme-options.php';
-?>
+/**
+* 主题设置面板
+*/
+function set_theme_config() {
+	add_theme_page( '主题选项', '主题设置', 'administrator', 'sapphire_slug', 'theme_config_page' );
+}
+add_action('admin_menu', 'set_theme_config');
 
-<div class="wrap sapphire-setup-panel">
-	<h2>Sapphire 主题设置</h2>
-	<form>
-		<h2 class="nav-tab-wrapper">
-		<?php
+function theme_config_page() {
+	global $theme_options, $theme_tabs;
+	if ( isset($_GET['update_options']) ) {	// 保存信息
+		echo '<div class="updated"><p><strong>主题设置已保存！</strong></p></div>';
+		foreach($theme_options as $theme_option) {
+			if(!isset($theme_option['id'])) {
+				continue;
+			}
+			if (isset($_GET[$theme_option['id']])) {
+				update_option($theme_option['id'], $_GET[$theme_option['std']]);
+			} else {
+				delete_option($theme_option['id']);
+			}
+		}
+		update_option('sapphire_options_setup', true);
+//		header('Location: themes.php?page=sapphire_slug&update_options=true');
+	} else if( isset($_GET['reset_options']) ) {	// 恢复默认
+		echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
+		foreach ($theme_options as $theme_option) {
+			delete_option($theme_option['id']);
+		}
+		delete_option('sapphire_options_setup');   // 删除主题初始化标志
+//		header('Location: themes.php?page=sapphire_slug&reset_options=true');
+	}
+	echo '<div class="wrap sapphire-setup-panel">';
+		echo '<h2>Sapphire 主题设置</h2>';
+		echo '<form>';
+			echo '<h2 class="nav-tab-wrapper">';
 			$tab_index = 0;
 			foreach ($theme_tabs as $value) {
 				if ($tab_index == 0) {
@@ -16,9 +44,7 @@
 				}
 				$tab_index++;
 			}
-		?>
-		</h2>
-		<?php
+			echo '</h2>';
 			$pannel_index = 0; 
 			foreach ($theme_tabs as $theme_tab) {
 				$pannel_options = $theme_options[$theme_tab['id']];
@@ -30,13 +56,15 @@
 					echo '<table class="form-table">';
 					
 					foreach ($pannel_options as $pannel_option) {
+						$option_value = sa_theme_option($pannel_option['id'], $pannel_option['std']);
+						$pannel_option['std'] = $option_value;
 						echo '<tr>';
 						if ($pannel_option['type'] == 'subtitle') {
 							echo '<td><h2>'.$pannel_option['name'].'</h2></td>';
 						} elseif ($pannel_option['type'] == 'text') {
 							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
 							echo '<td><label>';
-								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.$pannel_option['std'].'"></input> &nbsp;';
+								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.$option_value.'"></input> &nbsp;';
 								echo '<span class="description">'.$pannel_option['desc'].'</span>';
 							echo '</td></label>';
 						} elseif ($pannel_option['type'] == 'select') {
@@ -45,8 +73,13 @@
 							echo '<td><label>';
 								echo '<select name="'.$pannel_option['id'].'" id="'.$pannel_option['id'].'">';
 								foreach ($select_options as $select_option) {
-									echo '<option>'.$select_option.'</option>';
+									if ($option_value == $select_option) {
+										echo '<option value="'.$select_option.'" selected>'.$select_option.'</option>';
+									} else {
+										echo '<option value="'.$select_option.'">'.$select_option.'</option>';
+									}
 								}
+								echo '</select>';
 								echo '<span class="description">'.$pannel_option['desc'].'</span>';
 							echo '</td></label>';
 						} else {
@@ -58,10 +91,14 @@
 				echo '</div>';
 				$pannel_index++;
 			}
-		?>
-		
-	</form>
-</div>
+		echo '</form>';
+?>
+		<div class="submit">
+			<a href="themes.php?page=sapphire_slug&update_options=true">保存更改</a>
+			&nbsp; &nbsp; &nbsp; &nbsp;
+			<input name="reset" type="submit" class="button button-secondary" value="重置主题"  onclick="return confirm('重置后将清除本主题所有的设置项！是否重置？');" />
+			<input type="hidden" name="action" value="reset" />
+		</div>
 <style>
 #wpcontent{background:#fff}
 #wpwrap{background-color: #fff;}
@@ -86,3 +123,76 @@ jQuery(function ($) {
 	});
 });
 </script>
+
+<?php	
+}
+
+// 获取主题选项值
+function sa_theme_option($key, $default = '', $echo = false) {
+	global $theme_options;
+	$result = get_option(THEME_SLUG . '_' . $key);
+	if (!THEME_READY && ! $result) {
+		if ($default) {
+			$result = $default;
+		} else {
+			foreach ($theme_options as $value) {
+				if (isset($value['id']) && ($value['id'] == $key)) {
+					$result = $value['std'];
+					update_option($key, $result);
+					break;
+				}
+			}
+		}
+	}
+	return $result;
+}
+
+// 保存主题选项值
+function save_options() {
+	echo '<div class="updated"><p><strong>主题设置已保存！</strong></p></div>';
+}
+
+function reset_options() {
+	echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
+}
+
+function theme_customize_register( $wp_customize ) {
+	$wp_customize->add_section( 'theme_section_praise', array(
+		'title'     => '打赏设置',
+		'priority'  => 50
+	) );
+	$wp_customize->add_setting( 'sa_praise_wechat_qrcode', array(
+		'default'   	=> 		'',
+		"transport" 	=> 		"postMessage",
+		'type'      	=> 		'theme_mod'
+	) );
+	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'sa_praise_wechat_qrcode', array(
+		'label'			=>		'微信打赏二维码',
+		'description'	=>		'设置文章底部微信打赏二维码图片，最佳尺寸：130px * 130px（不设置则不显示打赏按钮）',
+		'section'		=>		'theme_section_praise'
+	) ) );
+	$wp_customize->add_setting( 'sa_praise_alipay_qrcode', array(
+		'default'  		=> 		'',
+		"transport"		=> 		"postMessage",
+		'type'      	=> 		'theme_mod'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sa_praise_alipay_qrcode', array(
+		'label'			=>		'支付宝打赏二维码',
+		'description'	=>		'设置文章底部支付宝打赏二维码图片，最佳尺寸：130px * 130px（不设置则不显示打赏按钮）',
+		'section'		=>		'theme_section_praise'
+	) ) );
+	
+	$wp_customize->add_setting( 'sa_site_logo', array(
+		'default'		=> 		'',
+		'transport' 	=> 		'refresh',
+		'type' 		    => 		'theme_mod'
+	) );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sa_site_logo', array(
+		'label'     	=> 		'站点 logo',
+		'description' 	=> 		'设置网站顶部 logo，最佳尺寸：165px * 45px（不设置则显示纯文字站名）',
+		'section'   	=> 		'title_tagline',
+		'priority'  	=> 		300
+	) ) );
+}
+add_action( 'customize_register', 'theme_customize_register' );
+?>

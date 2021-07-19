@@ -2,7 +2,6 @@
  * Initialise Menu Toggle
  */
 ( function() {
-
 	jQuery('.sapphire-menu li.menu-item-has-children').each( function() {
 		jQuery(this).prepend('<div class="nav-toggle-subarrow"></div>');
 	});
@@ -19,7 +18,6 @@
 			jQuery(this).parent().toggleClass("nav-toggle-dropdown");
 		}
 	);
-
 } )();
 
 
