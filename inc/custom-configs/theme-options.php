@@ -197,6 +197,7 @@ $theme_options = array(
 	'panel_social'	=>	array(
 		array(
 			'name'		=>		'博客主页',
+			'short'		=>		'blog',
 			'desc'		=>		'显示博客主页链接按钮',
 			'id'		=>		'sa_social_blog_url',
 			'type'		=>		'text',
@@ -204,6 +205,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'GitHub 主页',
+			'short'		=>		'github',
 			'desc'		=>		'显示 GitHub 主页链接按钮',
 			'id'		=>		'sa_social_github_url',
 			'type'		=>		'text',
@@ -211,6 +213,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'微博主页',
+			'short'		=>		'weibo',
 			'desc'		=>		'显示微博主页链接按钮',
 			'id'		=>		'sa_social_weibo_url',
 			'type'		=>		'text',
@@ -218,6 +221,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'知乎主页',
+			'short'		=>		'zhihu',
 			'desc'		=>		'显示知乎主页链接按钮',
 			'id'		=>		'sa_social_zhihu_url',
 			'type'		=>		'text',
@@ -225,6 +229,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'CSDN 主页',
+			'short'		=>		'csdn',
 			'desc'		=>		'显示 CSDN 主页链接按钮',
 			'id'		=>		'sa_social_csdn_url',
 			'type'		=>		'text',
@@ -232,6 +237,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'博客园主页',
+			'short'		=>		'cnblogs',
 			'desc'		=>		'显示博客园主页链接按钮',
 			'id'		=>		'sa_social_cnblogs_url',
 			'type'		=>		'text',
@@ -239,6 +245,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'码云主页',
+			'short'		=>		'gitee',
 			'desc'		=>		'显示 gitee 主页链接按钮',
 			'id'		=>		'sa_social_gitee_url',
 			'type'		=>		'text',
@@ -246,6 +253,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'QQ 号',
+			'short'		=>		'qq',
 			'desc'		=>		'显示添加 QQ 号链接按钮',
 			'id'		=>		'sa_social_qq_url',
 			'type'		=>		'text',
@@ -253,6 +261,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'简书主页',
+			'short'		=>		'jianshu',
 			'desc'		=>		'显示简书主页链接按钮',
 			'id'		=>		'sa_social_jianshu_url',
 			'type'		=>		'text',
@@ -260,6 +269,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'豆瓣主页',
+			'short'		=>		'douban',
 			'desc'		=>		'显示豆瓣主页链接按钮',
 			'id'		=>		'sa_social_douban_url',
 			'type'		=>		'text',
@@ -267,6 +277,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'思否主页',
+			'short'		=>		'segmentfault',
 			'desc'		=>		'显示思否主页链接按钮',
 			'id'		=>		'sa_social_segmentfault_url',
 			'type'		=>		'text',
@@ -274,13 +285,15 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'哔哩哔哩',
+			'short'		=>		'bilibili',
 			'desc'		=>		'显示哔哩哔哩个人主页链接按钮',
-			'id'		=>		'sa_social_segmentfault_url',
+			'id'		=>		'sa_social_bilibili_url',
 			'type'		=>		'text',
 			'std'		=>		''
 		),
 		array(
 			'name'		=>		'AcFun 主页',
+			'short'		=>		'acfun',
 			'desc'		=>		'显示 AcFun 个人主页链接按钮',
 			'id'		=>		'sa_social_acfun_url',
 			'type'		=>		'text',
@@ -288,6 +301,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'E-mail',
+			'short'		=>		'mail',
 			'desc'		=>		'显示 E-mail 链接按钮',
 			'id'		=>		'sa_social_email_url',
 			'type'		=>		'text',
@@ -295,6 +309,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'Facebook 主页',
+			'short'		=>		'facebook',
 			'desc'		=>		'显示 Facebook 主页链接按钮',
 			'id'		=>		'sa_social_facebook_url',
 			'type'		=>		'text',
@@ -302,6 +317,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'Google 主页',
+			'short'		=>		'google',
 			'desc'		=>		'显示 Google 主页链接按钮',
 			'id'		=>		'sa_social_google_url',
 			'type'		=>		'text',
@@ -309,6 +325,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'Twitter 主页',
+			'short'		=>		'twitter',
 			'desc'		=>		'显示 Twitter 主页链接按钮',
 			'id'		=>		'sa_social_twitter_url',
 			'type'		=>		'text',
@@ -316,6 +333,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'LinkedIn 主页',
+			'short'		=>		'linkedin',
 			'desc'		=>		'显示 LinkedIn 主页链接按钮',
 			'id'		=>		'sa_social_linkedin_url',
 			'type'		=>		'text',

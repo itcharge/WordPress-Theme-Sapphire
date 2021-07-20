@@ -44,6 +44,10 @@
 				</div>
 			</nav>
 		</div>
+		<?php
+			$sa_sidebar_recent_posts = sa_theme_option('sa_sidebar_recent_posts');
+			if ($sa_sidebar_recent_posts && $sa_sidebar_recent_posts == 'open') :
+		?>
 		<div class="side-box recent-posts" id="side-box-recent-posts">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
@@ -70,6 +74,11 @@
 				<?php echo '</ul>'; endif; ?> 
 			</div>
 		</div>
+		<?php
+			endif;
+			$sa_sidebar_hot_tags = sa_theme_option('sa_sidebar_hot_tags');
+			if ($sa_sidebar_hot_tags && $sa_sidebar_hot_tags == 'open'):
+		?>
 		<div class="side-box friend-link" id="side-box-friend-link">
 			<div class="side-box-header">
 				<h1 class="side-box-title">
@@ -95,6 +104,37 @@
 			</div>
 		</div>
 		<?php
+			endif;
+			$sa_sidebar_contact = sa_theme_option('sa_sidebar_contact');
+			if ($sa_sidebar_contact && $sa_sidebar_contact == 'open'):
+		?>
+		<div class="side-box contact" id="side-box-contact">
+			<div class="side-box-header">
+				<h1 class="side-box-title">
+					联系方式
+				</h1>
+			</div>
+			<div class="side-box-entry">
+				<div class="side-info-index">
+					<nav class="social-nav">
+						<div class="social">
+							<?php 
+								global $theme_options;
+								$social_options = $theme_options['panel_social'];
+								foreach ($social_options as $social_option) {
+									$social_url = sa_theme_option($social_option['id']);
+									if ($social_url && $social_url != '') {
+										echo '<a class="'.$social_option['short'].'" target="_blank" href="'.$social_url.'" title="'.$social_option['short'].'"><i class="icon-'.$social_option['short'].'"></i></a>';
+									}
+								}
+							?>				        
+						</div>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<?php
+			endif;
 			$sa_sidebar_post_toc = sa_theme_option('sa_sidebar_post_toc');
 			if (is_single() && $sa_sidebar_post_toc && $sa_sidebar_post_toc == 'open') : 
 		?>

@@ -39,7 +39,7 @@ function theme_config_page() {
 					echo '<table class="form-table">';
 					
 					foreach ($pannel_options as $pannel_option) {
-						$option_key = sa_theme_option($pannel_option['id'], '');
+						$option_key = sa_theme_option($pannel_option['id']);
 						$pannel_options[$pannel_option['std']] = $option_key;
 						echo '<tr>';
 						if ($pannel_option['type'] == 'subtitle') {
@@ -164,7 +164,6 @@ function save_options() {
 // 重置主题选项值
 function reset_options() {
 	global $theme_options, $theme_tabs;
-
 	foreach ($theme_tabs as $theme_tab) {
 		$pannel_options = $theme_options[$theme_tab['id']];
 		foreach ($pannel_options as $pannel_option) {
