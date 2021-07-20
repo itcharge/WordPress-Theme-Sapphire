@@ -3,6 +3,12 @@
 // 全局定义
 require get_template_directory() . '/inc/custom-configs/theme-config.php';
 
+// 主题设置选项
+require get_template_directory() . '/inc/custom-configs/theme-options.php';
+
+// 主题设置面板
+require get_template_directory() . '/inc/custom-configs/theme-setup.php';
+
 // 主题函数
 require get_template_directory() . '/inc/custom-configs/theme-functions.php';
 
@@ -18,12 +24,6 @@ require get_template_directory() . '/inc/custom-configs/theme-readcount.php';
 // 自定义查找链接
 require get_template_directory() . '/inc/custom-configs/theme-findpage.php';
 
-
-// 主题设置选项
-require get_template_directory() . '/inc/custom-configs/theme-options.php';
-
-// 主题设置面板
-require get_template_directory() . '/inc/custom-configs/theme-setup.php';
 ?>
 
 
