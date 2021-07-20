@@ -19,8 +19,15 @@
 	<meta name="description" content="<? bloginfo('description'); ?>" />
 	<?php wp_head(); ?>
 </head>
-<?php if ( is_single() ): ?>
+<?php 
+if ( is_single() ):
+	$sa_post_prettify = sa_theme_option('sa_post_prettify');
+	if ($sa_post_prettify && $sa_post_prettify == 'open'):
+?>
 <body <?php body_class(); ?> onload="prettyPrint()">
+	<?php else : ?>
+<body <?php body_class(); ?> >
+	<?php endif; ?>
 <?php else : ?>
 <body <?php body_class(); ?> >
 <?php endif; ?>
