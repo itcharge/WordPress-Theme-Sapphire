@@ -9,17 +9,39 @@
  * @package Sapphire
  * @since Sapphire 1.0
  */
-wp_footer(); 
+wp_footer();
+
 ?>
 
 <footer class="site-footer" id="site-footer">
 	<div class="footer-info">
-		<div class="footer-left">
-			&copy; 
-			<?php echo date('Y'); echo " "; bloginfo('name'); echo ".  All Rights Reserved."; ?>
+		<?php 
+		$sa_site_uv_pv = sa_theme_option('sa_site_uv_pv');
+		if ($sa_site_uv_pv && $sa_site_uv_pv == 'open'):
+		?>
+		<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>		
+		<div class="footer-site-uv-pv">			
+			<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次 </span>
+			|
+			<span id="busuanzi_container_site_uv">本站总访客数 <span id="busuanzi_value_site_uv"></span> 人 </span>
 		</div>
-		<div class="footer-right">
-			<a href="https://cn.wordpress.org/" target="_blank">WordPress</a> Theme <a href="https://itcharge.cn/Sapphire/" target="_blank">Sapphire</a> by ITCharge
+		<?php endif; ?>
+		<div class="footer-copyright">
+			&copy;
+			<?php 
+			$sa_site_since = sa_theme_option('sa_site_since');
+			$now_date = date('Y');
+			if ($sa_site_since < $now_date) {
+				echo $sa_site_since."-".$now_date." ";
+			} else {
+				echo $now_date." "; 
+			}
+			
+			echo bloginfo('name')." | ";
+			$sa_site_icp = sa_theme_option('sa_site_icp');
+			echo '<a href="https://beian.miit.gov.cn/" target="_blank">'.$sa_site_icp.'</a> | ';
+			?>
+			Theme <a href="https://itcharge.cn/Sapphire/" target="_blank">Sapphire</a> by ITCharge
 		</div>
 	</div>
 </footer>

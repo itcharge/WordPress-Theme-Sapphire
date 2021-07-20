@@ -60,7 +60,6 @@ html, body {
 .site-footer {
 	margin: 0;
 	padding: 0;
-	height: 61px;
 	position: relative;
 	width: 100%;
 	background-color: #FFFFFF;
@@ -72,4 +71,5 @@ html, body {
 	background-color: #FFFFFF;
 	border: 1px solid #CFCFCF;
 	box-shadow: 0 0 5px #C6C6C6;
+	margin-bottom: 20px;
 }

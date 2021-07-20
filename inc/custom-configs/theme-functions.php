@@ -26,7 +26,6 @@ function sapphire_scripts() {
 		wp_enqueue_script( 'sapphire-progressbar-js', get_template_directory_uri() . '/assets/js/pace.min.js');
 	}
 	
-	
 	$sa_post_prettify = sa_theme_option('sa_post_prettify');
 	if ($sa_post_prettify && $sa_post_prettify == 'open') {
 		// 代码高亮
