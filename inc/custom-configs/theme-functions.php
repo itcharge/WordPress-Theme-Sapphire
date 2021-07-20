@@ -5,7 +5,7 @@
 function sapphire_scripts() {
 	// Jquery
 	wp_enqueue_script( 'jquery' );
-		
+	
 	// 主题 CSS、js
 	wp_enqueue_style( 'sapphire-theme-css', get_template_directory_uri() . '/assets/css/theme.css' );
 	wp_enqueue_script( 'sapphire-theme-js', get_template_directory_uri() . '/assets/js/theme.js', array(), "", true );
@@ -13,9 +13,13 @@ function sapphire_scripts() {
 	// 图标字体
 	wp_enqueue_style( 'sapphire-fonts-css', get_template_directory_uri() . '/assets/css/fonts.css' );
 	
-	// 代码高亮
-	wp_enqueue_style( 'sapphire-prettify-css', get_template_directory_uri() . '/assets/css/prettify.css' );
-	wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
+	$sa_post_prettify = sa_theme_option('sa_post_prettify');
+	if ($sa_post_prettify && $sa_post_prettify == 'open') {
+		// 代码高亮
+		wp_enqueue_style( 'sapphire-prettify-css', get_template_directory_uri() . '/assets/css/prettify.css' );
+		wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
+	}
+	
 	
 	// mathjax
 	wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');

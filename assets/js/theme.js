@@ -62,13 +62,3 @@
 		}, speed);
 	});
 } )();
-
-
-/**
- * 代码高亮 更改 pre 标签
- */
-( function () {
-	jQuery(document).ready(function () {
-		jQuery("pre").addClass("prettyprint linenums");
-	});
-} )();

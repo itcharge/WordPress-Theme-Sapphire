@@ -217,6 +217,12 @@
 	padding: 16px 16px 16px 28px;
 	margin: 10px 0px;
 	font-size: 14px;
+	background-color: rgba(0,0,0,0.03);
+	border: 1px solid #f0f0f0;
+}
+
+.article-entry pre code {
+	line-height: 26px;
 }
 
 .article-entry table {
