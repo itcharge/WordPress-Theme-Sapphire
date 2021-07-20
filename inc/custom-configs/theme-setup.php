@@ -39,16 +39,15 @@ function theme_config_page() {
 					echo '<table class="form-table">';
 					
 					foreach ($pannel_options as $pannel_option) {
-						$option_value = sa_theme_option($pannel_option['id'], '');
-//						echo 'value='.$option_value.'';
-						$pannel_options[$pannel_option['std']] = $option_value;
+						$option_key = sa_theme_option($pannel_option['id'], '');
+						$pannel_options[$pannel_option['std']] = $option_key;
 						echo '<tr>';
 						if ($pannel_option['type'] == 'subtitle') {
 							echo '<td><h2>'.$pannel_option['name'].'</h2></td>';
 						} elseif ($pannel_option['type'] == 'text') {
 							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
 							echo '<td><label>';
-								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.htmlspecialchars($option_value).'"></input> &nbsp;';
+								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.htmlspecialchars($option_key).'"></input> &nbsp;';
 								echo '<span class="description">'.$pannel_option['desc'].'</span>';
 							echo '</td></label>';
 						} elseif ($pannel_option['type'] == 'select') {
@@ -56,11 +55,11 @@ function theme_config_page() {
 							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
 							echo '<td><label>';
 								echo '<select name="'.$pannel_option['id'].'" id="'.$pannel_option['id'].'">';
-								foreach ($select_options as $select_option) {
-									if ($option_value == $select_option) {
-										echo '<option value="'.$select_option.'" selected>'.$select_option.'</option>';
+								foreach ($select_options as $select_key => $select_value) {
+									if ($option_key == $select_key) {
+										echo '<option value="'.$select_key.'" selected>'.$select_value.'</option>';
 									} else {
-										echo '<option value="'.$select_option.'">'.$select_option.'</option>';
+										echo '<option value="'.$select_key.'">'.$select_value.'</option>';
 									}
 								}
 								echo '</select>';
@@ -123,23 +122,25 @@ jQuery(function ($) {
 function sa_theme_option($key, $default = '', $echo = false) {
 	global $theme_options, $theme_tabs;
 	$result = get_option($key);
-	if ( !$result ) {
-		if ( $default ) {
-			$result = $default;
-		} else {
-			foreach ($theme_tabs as $theme_tab) {
-				$pannel_options = $theme_options[$theme_tab['id']];
-				foreach ($pannel_options as $pannel_option) {
-					if (isset($pannel_option['id']) && ($pannel_option['id'] == $key)) {
-						$result = $pannel_option['std'];
-						update_option($key, $result);
-						break;
-					}
-				}
+	if ( $result ) {
+		return $result;
+	}
+	
+	if ( $default ) {
+		return $default;
+	} 
+	
+	foreach ($theme_tabs as $theme_tab) {
+		$pannel_options = $theme_options[$theme_tab['id']];
+		foreach ($pannel_options as $pannel_option) {
+			if (isset($pannel_option['id']) && ($pannel_option['id'] == $key)) {
+				$result = $pannel_option['std'];
+				update_option($key, $result);
+				break;
 			}
 		}
 	}
-
+	
 	return $result;
 }
 
@@ -160,6 +161,7 @@ function save_options() {
 	update_option('sapphire_options_setup', true);
 }
 
+// 重置主题选项值
 function reset_options() {
 	global $theme_options, $theme_tabs;
 
@@ -173,6 +175,7 @@ function reset_options() {
 	echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
 }
 
+// 自定义主题选项栏
 function theme_customize_register( $wp_customize ) {
 	$wp_customize->add_section( 'theme_section_praise', array(
 		'title'     => '打赏设置',
