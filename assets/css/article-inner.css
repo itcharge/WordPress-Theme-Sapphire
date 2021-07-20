@@ -245,13 +245,15 @@
 }
 
 .article-copyright {
-	margin: 30px;
+	margin: 0px 30px 25px 30px;
 	border-left: 3px solid rgba(0, 0, 0, 0.4);
 	background-color: rgba(0, 0, 0, 0.05);
 	list-style: none;
 }
 
 .article-copyright ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
 	padding: 20px 10px 20px 35px;
 	font-size: 14px;
 	list-style-type: disc;
