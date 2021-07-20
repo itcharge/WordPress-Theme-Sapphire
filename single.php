@@ -30,7 +30,12 @@ get_header();
 					<div class="article-entry" id="article-entry-content">
 						<?php the_content(); ?>
 					</div>
-					
+					<?php 
+						$sa_post_copyright = sa_theme_option('sa_post_copyright');
+						if ($sa_post_copyright && $sa_post_copyright == 'open') :
+							$sa_post_copyright_name = sa_theme_option('sa_post_copyright_name');
+							$sa_post_copyright_url = sa_theme_option('sa_post_copyright_url');
+					?>
 					<div class="article-copyright">
 						<ul>
 							<li class="article-copyright-author">
@@ -43,20 +48,20 @@ get_header();
 							</li>
 							<li class="article-copyright-license">
 								<strong>版权声明：</strong>
-								本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn" title="CC BY-NC-SA 3.0">CC BY-NC-SA 3.0</a> 许可协议。<strong>转载请注明出处！</strong>
+								本站所有文章除特别声明外，均采用 <a href="<?php echo $sa_post_copyright_url; ?>"><?php echo $sa_post_copyright_name;?></a> 许可协议。
 							</li>
 						</ul>
 					</div>
-					
+					<?php endif; ?>
 					<div class="article-info article-info-index">
 						<?php 
 							$cat = get_the_category();
 							if ($cat) {
-								echo '<div class="article-category tagcloud">';
+								echo '<div class="article-cat-tag tagcloud">';
 									echo '<i class="icon-book icon"></i>';
-									echo '<ul class="article-tag-list">';
+									echo '<ul class="cat-tag-list">';
 										foreach ($cat as $key => $category) {
-											echo '<li class="article-tag-list-item">';
+											echo '<li class="cat-tag-list-item">';
 												echo '<a class="article-category-link color'.rand(1, 6).'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
 											echo '</li>';
 										}
