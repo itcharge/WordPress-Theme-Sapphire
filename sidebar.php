@@ -94,7 +94,10 @@
 				?>
 			</div>
 		</div>
-		<?php if ( is_single() ): ?>
+		<?php
+			$sa_sidebar_post_toc = sa_theme_option('sa_sidebar_post_toc');
+			if (is_single() && $sa_sidebar_post_toc && $sa_sidebar_post_toc == 'open') : 
+		?>
 		<div class="side-box article-toc" id="side-box-article-toc">
 			<div class="side-box-header">
 				<h1 class="side-box-title">目 录</h1>

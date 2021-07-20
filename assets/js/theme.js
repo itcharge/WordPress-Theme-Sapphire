@@ -22,7 +22,7 @@
 
 
 /**
- * 滚动到顶部
+ * 滚动到顶部工具
  */
 ( function () {
 	var offset = 300, duration = 500, backButton = jQuery('#back-top');
@@ -33,8 +33,6 @@
 	
 	// 当滚动条的垂直位置距顶部 300 像素一下时，跳转链接出现，否则消失
 	jQuery(window).scroll(function () {
-//		console.log(jQuery(window).scrollTop());
-
 		var scrollTop = jQuery(window).scrollTop();
 		if (scrollTop > offset) {
 			backButton.fadeIn(duration);

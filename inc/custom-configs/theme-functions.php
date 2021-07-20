@@ -13,6 +13,12 @@ function sapphire_scripts() {
 	// 图标字体
 	wp_enqueue_style( 'sapphire-fonts-css', get_template_directory_uri() . '/assets/css/fonts.css' );
 	
+	$sa_site_clicklove = sa_theme_option('sa_site_clicklove');
+	if ($sa_site_clicklove && $sa_site_clicklove == 'open') {
+		// 鼠标点击红心效果
+		wp_enqueue_script( 'sapphire-clicklove-js', get_template_directory_uri() . '/assets/js/clicklove.js' );
+	}
+	
 	$sa_post_prettify = sa_theme_option('sa_post_prettify');
 	if ($sa_post_prettify && $sa_post_prettify == 'open') {
 		// 代码高亮
@@ -20,16 +26,19 @@ function sapphire_scripts() {
 		wp_enqueue_script( 'sapphire-prettify-js', get_template_directory_uri() . '/assets/js/prettify.js');
 	}
 	
+	$sa_post_mathjax = sa_theme_option('sa_post_mathjax');
+	if ($sa_post_mathjax && $sa_post_mathjax == 'open') {
+		// mathjax
+		wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
+	}
 	
-	// mathjax
-	wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
 	
-	// 目录模块
-	wp_enqueue_style( 'sapphire-automenu-css', get_template_directory_uri() . '/assets/css/automenu.css' );
-	wp_enqueue_script( 'sapphire-automenu-js', get_template_directory_uri() . '/assets/js/automenu.js' );
-	
-	// 鼠标点击红心效果
-	wp_enqueue_script( 'sapphire-clicklove-js', get_template_directory_uri() . '/assets/js/clicklove.js' );
+	$sa_sidebar_post_toc = sa_theme_option('sa_sidebar_post_toc');
+	if ($sa_sidebar_post_toc && $sa_sidebar_post_toc == 'open') {
+		// 目录模块
+		wp_enqueue_style( 'sapphire-automenu-css', get_template_directory_uri() . '/assets/css/automenu.css' );
+		wp_enqueue_script( 'sapphire-automenu-js', get_template_directory_uri() . '/assets/js/automenu.js' );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'sapphire_scripts' );
 ?>

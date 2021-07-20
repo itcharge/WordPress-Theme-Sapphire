@@ -42,14 +42,17 @@
                 var opts = that.settings;
                 var width = typeof opts.width === 'number' && opts.width;
                 var height = typeof opts.height === 'number' && opts.height;
+            
                 var footHeight = $("#site-footer").height();
                 var windowHeight = $(window).height();
                 if (height > windowHeight - footHeight - 40 - 28 - 42.78) {
                     height = windowHeight - footHeight - 40 - 28 - 42.78;
                 }
                 that.$element.width(width);
-                var html = '<ul style="height: '+ height +'px">';
+                var html = '';
                 var num = 0;
+                var num1 = 0;
+                var num2 = 0;
                 $('*').each(function(){
                     var _this = $(this);
                     if (_this.get(0).tagName == opts.levelOne.toUpperCase()) {
@@ -57,15 +60,22 @@
                         var nodetext = that.handleTxt(_this.html());
                         html += '<li class="toc-heading" name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
                         num++;
+                        num1++;
                     } else if (_this.get(0).tagName == opts.levelTwo.toUpperCase()) {
                         _this.attr('id',num);
                         var nodetext = that.handleTxt(_this.html());
                         html += '<li class="toc-heading-sub" name="'+ num +'"><a href="#'+ num +'">'+ nodetext +'</a></li>';
                         num++;
+                        num2++;
                     }
                 })
                 html += '</ul>';
-                return html;   
+                if (height > 14*2 + 38*num1 + 26*num2) {
+                    height = 14*2 + 38*num1 + 26*num2;
+                }
+                var htmlStart = '<ul style="height: '+ height +'px">';
+                htmlStart += html;
+                return htmlStart;
             },
             handleTxt: function(txt) {
                 //正则表达式去除 HTML 的标签
