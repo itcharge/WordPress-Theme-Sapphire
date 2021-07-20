@@ -70,7 +70,6 @@ function theme_config_page() {
 						}
 						echo '</tr>';
 					}
-					unset($pannel_option); // 销毁掉 user 引用
 					echo '</table>';
 				echo '</div>';
 				$pannel_index++;
@@ -125,11 +124,9 @@ function sa_theme_option($key, $default = '', $echo = false) {
 	if ( $result ) {
 		return $result;
 	}
-	
 	if ( $default ) {
 		return $default;
 	} 
-	
 	foreach ($theme_tabs as $theme_tab) {
 		$pannel_options = $theme_options[$theme_tab['id']];
 		foreach ($pannel_options as $pannel_option) {
@@ -140,7 +137,6 @@ function sa_theme_option($key, $default = '', $echo = false) {
 			}
 		}
 	}
-	
 	return $result;
 }
 
