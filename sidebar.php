@@ -55,7 +55,6 @@
 				</h1>
 			</div>
 			<div class="side-box-entry">
-				
 				<?php 
 					// WP_Query 所使用的参数 
 					$args = array(
@@ -116,13 +115,13 @@
 			</div>
 			<div class="side-box-entry">
 				<div class="side-info-index">
-					<nav class="social-nav">
+					<nav class="social-header-nav">
 						<div class="social">
 							<?php 
 								global $theme_options;
 								$social_options = $theme_options['panel_social'];
 								foreach ($social_options as $social_option) {
-									$social_url = sa_theme_option($social_option['id']);
+									$social_url = sa_theme_option($social_option['id'], $social_option['std']);
 									if ($social_url && $social_url != '') {
 										echo '<a class="'.$social_option['short'].'" target="_blank" href="'.$social_url.'" title="'.$social_option['short'].'"><i class="icon-'.$social_option['short'].'"></i></a>';
 									}
