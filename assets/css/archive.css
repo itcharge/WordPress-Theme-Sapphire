@@ -1,4 +1,4 @@
-.archives-wrap {
+.archive-wrap {
 	position: relative;
 	border: 1px solid #CFCFCF;
 	box-shadow: 0 0 5px #C6C6C6;
@@ -6,7 +6,7 @@
 	margin-bottom: 20px;
 }
 
-.archives-wrap .archive-year-wrap {
+.archive-wrap .archive-year-wrap {
 	line-height: 35px;
 	width: 200px;
 	border-left: ;
@@ -17,10 +17,10 @@
 	z-index: 1;
 }
 
-.archives-wrap .archive-year-wrap .archive-year {
+.archive-wrap .archive-year-wrap .archive-year {
 	color: #666;
 	font-weight: bold;
-	padding-left: 48px;
+	padding-left: 25px;
 	text-decoration: none;
 }
 
@@ -29,7 +29,7 @@
 }
 
 .archive-article {
-	margin-left: 48px;
+	margin-left: 25px;
 	border-top: 1px solid #eee;
 	position: relative;
 }
