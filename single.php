@@ -62,7 +62,7 @@
 									echo '<ul class="cat-tag-list">';
 										foreach ($cat as $key => $category) {
 											echo '<li class="cat-tag-list-item">';
-												echo '<a class="article-category-link color'.rand(1, 6).'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
+												echo '<a class="article-category-link color'.rand(1, 10).'" href="'.get_category_link($category->cat_ID).'">'.$category->cat_name.'</a>'; 
 											echo '</li>';
 										}
 									echo '</ul>';
@@ -75,7 +75,7 @@
 //									echo '<ul class="article-tag-list">';
 //										foreach ($tags as $key => $tag) {
 //											echo '<li class="article-tag-list-item">';
-//												echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
+//												echo '<a class="article-tag-link color'.rand(1, 10).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'</a>'; 
 //											echo '</li>';
 //										}
 //									echo '</ul>';
