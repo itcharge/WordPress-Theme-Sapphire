@@ -1,5 +1,14 @@
 <?php
 /**
+ * 自定义数字分页函数
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
+
+<?php
+/**
 * 自定义数字分页函数
 * @Param int $range            数字分页的宽度
 * @Return string|empty        输出分页的HTML代码        

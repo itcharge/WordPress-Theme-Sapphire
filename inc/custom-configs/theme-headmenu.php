@@ -1,14 +1,21 @@
 <?php
-if ( ! function_exists( 'sapphire_setup' ) ) :
-	function sapphire_setup() {
-		/*
-		 * This theme uses wp_nav_menu() in one location.
-		 */
-		register_nav_menus( array(
-			'primary'	=> esc_html__( 'Primary Menu', 'sapphire' ),
-		) );
-	}
-endif; // sapphire_setup
+/**
+ * 顶部导航栏
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
+
+<?php
+function sapphire_setup() {
+	/*
+	 * This theme uses wp_nav_menu() in one location.
+	 */
+	register_nav_menus( array(
+		'primary'	=> esc_html__( 'Primary Menu', 'sapphire' ),
+	) );
+}
 add_action( 'after_setup_theme', 'sapphire_setup' );
 
 /**

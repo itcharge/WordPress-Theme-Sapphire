@@ -1,5 +1,13 @@
 <?php
+/**
+ * 主题设置选项配置
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
 
+<?php
 $theme_tabs = array(
 	array(
 		'title'		=>		'基本设置',

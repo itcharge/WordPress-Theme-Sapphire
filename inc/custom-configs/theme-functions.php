@@ -1,7 +1,13 @@
 <?php
 /**
- * 加载 scripts、styles.
+ * 按需加载 scripts、styles.
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
  */
+?>
+
+<?php
 function sapphire_scripts() {
 	// Jquery
 	wp_enqueue_script( 'jquery' );

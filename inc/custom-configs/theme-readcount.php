@@ -1,5 +1,14 @@
 <?php
 /**
+ * 自定义获取文章字数、阅读时间
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
+
+<?php
+/**
 * 自定义获取文章字数、阅读时间     
 */
 function read_words_times($text='') {
