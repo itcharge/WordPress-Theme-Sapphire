@@ -27,6 +27,7 @@
 
 .intro-header a {
 	color: #666;
+	font-weight: 400;
 }
 
 .intro-header a:hover {
@@ -79,7 +80,6 @@
 .intro-header .header-author {
 	text-align: center;
 	margin: 0.5em 0;
-	font-family: Roboto, "Roboto", serif;
 	font-size: 30px;
 	transition: 0.3s;
 }

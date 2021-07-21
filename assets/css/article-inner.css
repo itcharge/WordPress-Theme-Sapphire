@@ -15,11 +15,11 @@
 }
 
 .article-header .article-title {
-	color: #17181a;
+	color: #696969;
 	margin: 0px;
 	font-weight: 400;
-	line-height: 24px;
-	font-size: 18px;
+	line-height: 1.3;
+	font-size: 26px;
 	-webkit-transition: color 0.3s;
 	-moz-transition: color 0.3s;
 	-o-transition: color 0.3s;
@@ -27,7 +27,7 @@
 }
 
 .article-header .article-title .article-title-url {
-	color: #17181a;
+	color: #696969;
 	text-decoration: none;
 }
 

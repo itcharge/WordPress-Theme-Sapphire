@@ -34,7 +34,7 @@
 						foreach($tags_list as $tag) {
 							$count++;
 							echo '<li class="cat-tag-list-item">';
-								echo '<a class="article-tag-link color'.rand(1, 6).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'（'.$tag->count.'）</a>';
+								echo '<a class="article-tag-link color'.rand(1, 10).'" href="'.get_tag_link($tag->term_id).'">'.$tag->name.'（'.$tag->count.'）</a>';
 							echo '</li>';
 							if( $count > 20 ) break;
 						}
