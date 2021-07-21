@@ -15,7 +15,34 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<title><?php bloginfo('name'); ?></title>
+	<title>
+		<?php
+			$blog_title = get_bloginfo('name');
+			if ( is_home() ) {
+				echo $blog_title.' | '.get_bloginfo('description');
+//			} elseif ( is_single() || is_page() ) {
+//				echo single_cat_title()." | ".$blog_title;
+//			} elseif (is_category() ) {
+//				echo single_post_title()." | ".$blog_title;
+//			} elseif ( is_tag() ) {
+//				echo single_tag_title()." | ".$blog_title;
+//			} elseif ( is_search() ) {
+//				echo get_search_query()." 的搜索结果 | ".$blog_title;
+//			} elseif ( is_year() ) {
+//				echo the_time('Y年')." 所有文章 | ".$blog_title;
+//			} elseif ( is_month() ) {
+//				echo the_time('Y年n月')." 份所有文章 | ".$blog_title;
+//			} elseif ( is_day() ) {
+//				echo the_time('Y年n月j日'); echo '所有文章';
+//			} elseif ( is_404() ) {
+//				echo '404 | '.$blog_title;
+//			} elseif ( is_author() ) {
+//				echo the_author()." 的所有文章 | ".$blog_title;
+//			} else {
+//				bloginfo('name');
+			}
+		?>
+	</title>
 	<meta name="description" content="<? bloginfo('description'); ?>" />
 	<?php wp_head(); ?>
 </head>
