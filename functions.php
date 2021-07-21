@@ -12,6 +12,9 @@ require get_template_directory() . '/inc/custom-configs/theme-setup.php';
 // 加载头部菜单
 require get_template_directory() . '/inc/custom-configs/theme-headmenu.php';
 
+// 更改标签云颜色
+require get_template_directory() . '/inc/custom-configs/theme-colorcloud.php';
+
 // 自定义数字分页函数
 require get_template_directory() . '/inc/custom-configs/theme-pagenav.php';
 
@@ -23,6 +26,7 @@ require get_template_directory() . '/inc/custom-configs/theme-findpage.php';
 
 // 主题函数
 require get_template_directory() . '/inc/custom-configs/theme-functions.php';
+
 ?>
 
 

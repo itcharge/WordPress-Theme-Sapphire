@@ -44,7 +44,7 @@
 	margin: 0 auto;
 	position: relative;
 	overflow: hidden;
-	background: #88acdb;
+	background: #fff;
 	-webkit-transition: all 0.2s ease-in;
 	display: -webkit-box;
 	-webkit-box-orient: horizontal;

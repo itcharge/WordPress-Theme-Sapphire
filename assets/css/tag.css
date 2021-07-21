@@ -11,4 +11,16 @@
 .tag-wrap .tag-entry {
 	margin: 20px 30px;
 	padding: 0px;
+	line-height: 2;
+}
+
+.tag-wrap .tag-entry a {
+	margin: 20px 4px;
+	text-decoration: none;
+	opacity: 1;
+}
+
+.tag-wrap .tag-entry a:hover {
+	text-decoration: underline;
+	opacity: 1;
 }
