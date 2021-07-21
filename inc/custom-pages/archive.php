@@ -12,6 +12,11 @@
 <div class="site-content">
 	<div id="left-box">
 		<div id="home-loop">
+			<div class="banner-box">
+				<div class="banner-header">
+					<h1 class="banner-title">文 章（<?php $count_posts = wp_count_posts(); echo  $count_posts->publish; ?>）</h1>
+				</div>
+			</div>
 			<?php 
 				// WP_Query 所使用的参数 
 				$args = array(
@@ -29,10 +34,10 @@
 				$year = get_the_time('Y');
 				if ($last != $year) {
 					if ($last == 0000) {
-						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
+						echo '<section class="archive-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
 					} else {
 						echo '</div></section>';
-						echo '<section class="archives-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
+						echo '<section class="archive-wrap"><div class="archive-year-wrap"><a href="/'.$year.'/" class="archive-year">'.$year.'</a></div><div class="archive-articles">';
 					}
 					$last = $year;
 				}				
