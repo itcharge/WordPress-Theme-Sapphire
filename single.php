@@ -7,9 +7,9 @@
  * @package Sapphire
  * @since Sapphire 1.0
  */
-get_header(); 
 ?>
 
+<?php get_header(); ?>
 <div class="site-content">
 	<div id="left-box">
 		<div id="home-main">
