@@ -1,5 +1,14 @@
 <?php
 /**
+ * 主题设置面板
+ *
+ * @package Sapphire
+ * @since Sapphire 1.0
+ */
+?>
+
+<?php
+/**
 * 主题设置面板
 */
 function set_theme_config() {
