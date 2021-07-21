@@ -1,0 +1,14 @@
+.tag-wrap {
+	margin: 0px;
+	padding: 0px;
+	margin-bottom: 20px;
+	position: relative;
+	background: #fff;
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
+}
+
+.tag-wrap .tag-entry {
+	margin: 20px 30px;
+	padding: 0px;
+}
