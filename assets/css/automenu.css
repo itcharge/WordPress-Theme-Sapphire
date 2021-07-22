@@ -39,7 +39,7 @@
 }
 
 .autoMenu ul li.active {
-	color: #1e6bb8;
+	color: #ff7242;
 	background-color: #ebedef;
 }
 
@@ -75,10 +75,10 @@
 	color: #333;
 }
 .autoMenu ul li.active>a {
-	color: #1e6bb8;
+	color: #ff7242;
 	background-color: #ebedef;
 }
 
 .autoMenu ul li.active>a::before {
-	background-color: #1e6bb8;
+	background-color: #ff7242;
 }

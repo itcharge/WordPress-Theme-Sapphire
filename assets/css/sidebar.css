@@ -31,7 +31,7 @@
 }
 
 .intro-header a:hover {
-	color: #1e6bb8;
+	color: #ff7242;
 }
 
 .intro-header .profilepic {
@@ -127,7 +127,7 @@
 }
 
 .intro-site-state-item a:hover {
-	color: #1e6bb8;
+	color: #ff7242;
 }
 
 .intro-site-state-item-count {
@@ -194,7 +194,7 @@
 }
 
 .side-box-entry .recent-post-link:hover {
-	color: #1e6bb8;
+	color: #ff7242;
 	text-decoration: underline;
 }
 

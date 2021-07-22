@@ -38,16 +38,16 @@
 
 .category-wrap .category-list li:hover {
 	background-color: #ebedef;
-	color: #1e6bb8;
+	color: #ff7242;
 }
 
 .category-wrap .category-list li:hover a {
-	color: #1e6bb8;
+	color: #ff7242;
 	text-decoration: underline;
 }
 
 .category-wrap .category-list li:hover a:before {
-	background-color: #1e6bb8;
+	background-color: #ff7242;
 }
 
 
