@@ -73,7 +73,7 @@
 	<?php if ( have_comments() ) : ?>
 		<!-- 评论列表 -->	
 		<ol class="comment-list">
-			<?php wp_list_comments(array('callback' => 'mytheme_comment')); ?>
+			<?php wp_list_comments(array('callback' => 'sa_theme_comment')); ?>
 		</ol>
 	
 		<!-- 评论翻页 -->

@@ -21,8 +21,12 @@
 			if ( is_home() ) {
 				echo $blog_title.' | '.get_bloginfo('description');
 			} elseif ( is_single() || is_page() ) {
-				echo single_post_title()." | ".$blog_title;
-			} elseif (is_category() ) {
+				if (single_post_title() && single_post_title() != '') {
+					echo single_post_title()." | ".$blog_title;
+				} else {
+					echo $blog_title;
+				}
+			} elseif ( is_category() ) {
 				echo single_cat_title()." | ".$blog_title;
 			} elseif ( is_tag() ) {
 				echo single_tag_title()." | ".$blog_title;
@@ -64,9 +68,9 @@ if ( is_single() ):
 			<div class="site-branding">
 				<?php
 				if ( is_front_page() && is_home() ) :
-					echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+					echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . $blog_title . '</a></h1>';
 				else :
-					echo '<p class="site-title"><a href="' .esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></p>';
+					echo '<p class="site-title"><a href="' .esc_url( home_url( '/' ) ) . '" rel="home">' . $blog_title . '</a></p>';
 				endif;
 				?>
 			</div>
