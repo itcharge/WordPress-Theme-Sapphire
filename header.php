@@ -39,7 +39,7 @@
 			} elseif ( is_author() ) {
 				echo the_author()." 的所有文章 | ".$blog_title;
 			} else {
-				echo $blog_title;
+				wp_title('');
 			}
 		?>
 	</title>
