@@ -144,6 +144,11 @@
 	border-bottom: 1px solid #1e6bb8;
 }
 
+.article-entry a:hover {
+	color: #ff7242;
+	border-bottom: 1px solid #ff7242;
+}
+
 .article-entry img {
 	display: block;
 	margin: 0 auto;
@@ -196,7 +201,7 @@
 
 .article-entry strong {
 	font-weight: bold;
-	color: red;
+	color: #ff7242;
 }
 
 .article-entry .caption {
