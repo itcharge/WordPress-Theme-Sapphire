@@ -17,10 +17,9 @@
 .tag-wrap .tag-entry a {
 	margin: 20px 4px;
 	text-decoration: none;
-	opacity: 1;
 }
 
 .tag-wrap .tag-entry a:hover {
+	color: #ff7242!important;
 	text-decoration: underline;
-	opacity: 1;
 }
