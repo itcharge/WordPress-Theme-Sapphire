@@ -1,5 +1,17 @@
 <?php
 
+add_filter( 'get_avatar' , 'local_random_avatar' , 1 , 5 );
+function local_random_avatar( $avatar, $id_or_email, $size, $default, $alt) {
+	if ( !empty( $id_or_email->user_id ) ) {
+		$avatar = ''.get_template_directory_uri().'/assets/img/avatar/1.png';
+	}else{
+		$random = mt_rand(1, 10);
+		$avatar = ''.get_template_directory_uri().'/assets/img/avatar/'. $random .'.png';
+	}
+	$avatar = "<img alt='{$alt}' src='{$avatar}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
+	return $avatar;
+}
+
 function sa_theme_comment($comment, $args, $depth) {
 	$GLOBALS['comment'] = $comment; 
 ?>
@@ -28,7 +40,6 @@ function sa_theme_comment($comment, $args, $depth) {
  				<i class="fa fa-reply"></i> <?php comment_reply_link(array_merge( $args, array('reply_text' => '回复','depth' => $depth, 'max_depth' => $args['max_depth']))) ?> 
    			</span>
    		</div>
-	</li>
 <?php
 }	
 ?>
