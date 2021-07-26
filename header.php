@@ -15,39 +15,89 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>" type="text/css" media="screen" />
-	<title>
-		<?php
-			$blog_title = get_bloginfo('name');
-			if ( is_home() ) {
-				echo $blog_title.' | '.get_bloginfo('description');
-			} elseif ( is_single() || is_page() ) {
-				if (single_post_title() && single_post_title() != '') {
-					echo single_post_title()." | ".$blog_title;
-				} else {
-					echo $blog_title;
-				}
-			} elseif ( is_category() ) {
-				echo single_cat_title()." | ".$blog_title;
-			} elseif ( is_tag() ) {
-				echo single_tag_title()." | ".$blog_title;
-			} elseif ( is_search() ) {
-				echo get_search_query()." 的搜索结果 | ".$blog_title;
-			} elseif ( is_year() ) {
-				echo the_time('Y年')." 所有文章 | ".$blog_title;
-			} elseif ( is_month() ) {
-				echo the_time('Y年n月')." 份所有文章 | ".$blog_title;
-			} elseif ( is_day() ) {
-				echo the_time('Y年n月j日'); echo "所有文章 | ".$blog_title;
-			} elseif ( is_404() ) {
-				echo '404 | '.$blog_title;
-			} elseif ( is_author() ) {
-				echo the_author()." 的所有文章 | ".$blog_title;
-			} else {
-				wp_title('');
-			}
-		?>
-	</title>
-	<meta name="description" content="<? bloginfo('description'); ?>" />
+	<link rel="shortcut icon" href="<?php echo sa_theme_option('sa_site_favicon'); ?>" />
+	<?php
+	echo '<title>';
+	$sa_seo_connector = sa_theme_option('sa_seo_connector');
+	if ($sa_seo_connector == 'midline') {
+		$connector = ' - ';
+	} elseif ($sa_seo_connector == 'underline') {
+		$connector = ' _ ';
+	} elseif ($sa_seo_connector == 'verticalline') {
+		$connector = ' | ';
+	} else {
+		$connector = ' - ';
+	}
+	$blog_title = get_bloginfo('name');
+	if ( is_home() ) {
+		echo $blog_title.$connector.get_bloginfo('description');
+	} elseif ( is_single() || is_page() ) {
+		$post_url = $_SERVER['REQUEST_URI']."";
+		if ($post_url == '/tag') {
+			echo '标签'.$connector.$blog_title;
+		} elseif ($post_url == '/category') {
+			echo '分类'.$connector.$blog_title;
+		} elseif ($post_url == '/archive') {
+			echo '归档'.$connector.$blog_title;
+		} else {
+			echo single_post_title().$connector.$blog_title;
+		}
+	} elseif ( is_category() ) {
+		echo single_cat_title().$connector.$blog_title;
+	} elseif ( is_tag() ) {
+		echo single_tag_title().$connector.$blog_title;
+	} elseif ( is_search() ) {
+		echo get_search_query()." 的搜索结果".$connector.$blog_title;
+	} elseif ( is_year() ) {
+		echo the_time('Y年')." 所有文章".$connector.$blog_title;
+	} elseif ( is_month() ) {
+		echo the_time('Y年n月')." 份所有文章".$connector.$blog_title;
+	} elseif ( is_day() ) {
+		echo the_time('Y年n月j日'); echo "所有文章".$connector.$blog_title;
+	} elseif ( is_404() ) {
+		echo '404'.$connector.$blog_title;
+	} elseif ( is_author() ) {
+		echo the_author()." 的所有文章".$connector.$blog_title;
+	} else {
+		wp_title('');
+	}
+	echo '</title>';
+	?>
+	
+	<?php
+	if ( is_single() || is_page() ) {
+		$description = get_post_meta($post->ID, 'description', true);
+		if (!$description ) {
+			$description = sa_post_excerpt(100, '...'. true);
+		}
+		
+		$keywords = get_post_meta($post->ID, 'keywords', true);
+		$tags = wp_get_post_tags($post->ID);
+		$categories = get_the_category();
+		foreach ($tags as $tag) {
+			$keywords = $keywords . $tag->name . ",";
+		}
+		foreach ($categories as $category) {
+			$keywords = $keywords . $category->cat_name . ",";
+		}
+		$keywords = rtrim($keywords, ',');
+		$keywords = htmlspecialchars($keywords);
+	} elseif ( is_category() ) {
+		$description = category_description(get_the_category()->cat_ID);
+		$keywords = single_cat_title();
+	} elseif ( is_tag() ) {
+		$description = trim(strip_tags(tag_description()));
+		$keywords = single_tag_title();
+	} elseif ( is_home() ) {
+		$description = sa_theme_option('sa_seo_site_desc');
+		$keywords = sa_theme_option('sa_seo_site_keywords');
+	} else {
+		$description = sa_theme_option('sa_seo_site_desc');
+		$keywords = sa_theme_option('sa_seo_site_keywords');
+	}
+	?>
+	<meta name="description" content="<?php echo $description; ?>"/>
+	<meta name="keywords" content="<?php echo $keywords; ?>"/>
 	<?php wp_head(); ?>
 </head>
 <?php 
