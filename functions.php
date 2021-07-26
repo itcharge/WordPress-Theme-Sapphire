@@ -18,18 +18,14 @@ require get_template_directory() . '/inc/custom-configs/theme-comment.php';
 // 更改标签云颜色
 require get_template_directory() . '/inc/custom-configs/theme-colorcloud.php';
 
-// 自定义数字分页函数
-require get_template_directory() . '/inc/custom-configs/theme-pagenav.php';
-
-// 自定义获取文章字数、阅读时间 
-require get_template_directory() . '/inc/custom-configs/theme-readcount.php';
+// 文章相关函数：获取文章字数、阅读时间、提取摘要、自定义数字分页函数
+require get_template_directory() . '/inc/custom-configs/theme-post.php';
 
 // 自定义查找链接
 require get_template_directory() . '/inc/custom-configs/theme-findpage.php';
 
 // 主题函数
 require get_template_directory() . '/inc/custom-configs/theme-functions.php';
-
 ?>
 
 

@@ -14,17 +14,17 @@ $theme_tabs = array(
 		'id'		=>		'panel_basic'
 	),
 	array(
-		'title'		=>		'文章页面设置',
+		'title'		=>		'SEO 设置',
+		'id'		=>		'panel_seo'
+	),
+	array(
+		'title'		=>		'文章设置',
 		'id'		=>		'panel_post'
 	),
 	array(
-		'title'		=>		'联系方式设置',
+		'title'		=>		'社交设置',
 		'id'		=>		'panel_social'
 	),
-	array(
-		'title'		=>		'其他设置',
-		'id'		=>		'panel_other'
-	),	
 	array(
 		'title'		=>		'关于主题',
 		'id'		=>		'panel_about'
@@ -33,6 +33,25 @@ $theme_tabs = array(
 
 $theme_options = array(
 	'panel_basic'	=>	array(
+		// 网站图标设置
+		array(
+			'name'      =>		'网站图标设置',
+			'type'      =>		'subtitle'
+		),
+		array(
+			'name'		=>		'网站 Favicon 图标',
+			'desc'		=>		'网站 Favicon 图标，推荐尺寸 32px * 32px',
+			'id'		=>		'sa_site_favicon',
+			'type'		=>		'image',
+			'std'		=>		get_template_directory_uri() . '/assets/img/head.jpg'
+		),
+		array(
+			'name'		=>		'网站顶部 Logo 设置',
+			'desc'		=>		'网站 Logo 图标，推荐尺寸 264px * 52px（不设置则默认显示站点标题）',
+			'id'		=>		'sa_site_logo',
+			'type'		=>		'image',
+			'std'		=>		''
+		),
 		// 页面显示效果设置
 		array(
 			'name'      =>		'页面效果设置',
@@ -98,6 +117,13 @@ $theme_options = array(
 			'type'      =>		'subtitle'
 		),
 		array(
+			'name'		=>		'边栏 Logo 设置',
+			'desc'		=>		'边栏 Logo 图标（正方形），推荐大小 128px * 128px',
+			'id'		=>		'sa_sidebar_logo',
+			'type'		=>		'image',
+			'std'		=>		get_template_directory_uri() . '/assets/img/head.jpg'
+		),
+		array(
 			'name'      =>		'最新文章',
 			'desc'		=>		'打开则在「侧边栏」显示「最新文章」',
 			'id'        =>		'sa_sidebar_recent_posts',
@@ -142,7 +168,42 @@ $theme_options = array(
 			'std'		=>		'close'
 		)
 	),
+	
+	// SEO 设置
+	'panel_seo'			=>	array(
+		array(
+			'name'      =>		'标题链接符号',
+			'desc'		=>		'选择后切勿更改，对 SEO 不好',
+			'id'        =>		'sa_seo_connector',
+			'type'      =>		'select',
+			'options'	=>		array(
+					'midline'	=>	'中横线 - ',
+					'underline'	=>	'下划线 _ ',
+					'verticalline'=>'中竖线 | '
+			),
+			'std'		=>		'midline'
+		),
+		array(
+			'name'      =>		'网站关键词',
+			'desc'		=>		'设置「网站关键词」，用 , 隔开',
+			'id'        =>		'sa_seo_site_keywords',
+			'type'      =>		'textarea',
+			'std'		=>		'互联网,分享,技术'
+		),
+		array(
+			'name'      =>		'网站描述',
+			'desc'		=>		'设置「网站描述」',
+			'id'        =>		'sa_seo_site_desc',
+			'type'      =>		'textarea',
+			'std'		=>		'一款简洁大气的响应式双栏博客主题'
+		)
+	),
+	// 文章设置
 	'panel_post'		=>	array(
+		array(
+			'name'      =>		'文章效果设置',
+			'type'      =>		'subtitle'
+		),
 		array(
 			'name'      =>		'代码高亮',
 			'desc'		=>		'打开则使用 prettify.js 代码高亮',
@@ -177,7 +238,40 @@ $theme_options = array(
 			'std'		=>		'close'
 		),
 		array(
-			'name'      =>		'文章版权设置',
+			'name'      =>		'底部打赏设置',
+			'type'      =>		'subtitle'
+		),
+		array(
+			'name'      =>		'底部打赏开关',
+			'desc'		=>		'打开则在文章底部显示显示「打赏」，不设置则不显示打赏按钮',
+			'id'        =>		'sa_post_praise',
+			'type'      =>		'select',
+			'options'	=>		array(
+					'close'	=>	'关闭',
+					'open'	=>	'开启'
+			),
+			'std'		=>		'close'
+		),
+		array(
+			'name'		=>		'微信打赏二维码',
+			'desc'		=>		'设置文章底部微信打赏二维码图片，最佳尺寸：130px * 130px',
+			'id'		=>		'sa_post_praise_wechat',
+			'type'		=>		'image',
+			'std'		=>		''
+		),
+		array(
+			'name'		=>		'支付宝打赏二维码',
+			'desc'		=>		'设置文章底部支付宝打赏二维码图片，最佳尺寸：130px * 130px',
+			'id'		=>		'sa_post_praise_alipay',
+			'type'		=>		'image',
+			'std'		=>		''
+		),
+		array(
+			'name'      =>		'文章底部版权设置',
+			'type'      =>		'subtitle'
+		),
+		array(
+			'name'      =>		'文章版权开关',
 			'desc'		=>		'打开则在文章底部显示「文章版权」',
 			'id'        =>		'sa_post_copyright',
 			'type'      =>		'select',
@@ -202,6 +296,8 @@ $theme_options = array(
 			'std'		=>		'https://creativecommons.org/licenses/by-nc-sa/4.0/'
 		),
 	),
+	
+	// 社交设置
 	'panel_social'	=>	array(
 		array(
 			'name'		=>		'博客主页',
@@ -344,15 +440,6 @@ $theme_options = array(
 			'short'		=>		'linkedin',
 			'desc'		=>		'显示 LinkedIn 主页链接按钮',
 			'id'		=>		'sa_social_linkedin_url',
-			'type'		=>		'text',
-			'std'		=>		''
-		)
-	),
-	'other'			=>	array(
-		array(
-			'name'		=>		'其他设置',
-			'desc'		=>		'显示 LinkedIn 主页链接按钮',
-			'id'		=>		'sa_other',
 			'type'		=>		'text',
 			'std'		=>		''
 		)

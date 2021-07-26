@@ -45,7 +45,6 @@ function sapphire_scripts() {
 		wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
 	}
 	
-	
 	$sa_sidebar_post_toc = sa_theme_option('sa_sidebar_post_toc');
 	if ($sa_sidebar_post_toc && $sa_sidebar_post_toc == 'open') {
 		// 目录模块

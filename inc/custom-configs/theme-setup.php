@@ -46,38 +46,10 @@ function theme_config_page() {
 					echo '<div class="panel" id="'.$theme_tab['id'].'">';
 				}
 					echo '<table class="form-table">';
-					
 					foreach ($pannel_options as $pannel_option) {
 						$option_key = sa_theme_option($pannel_option['id']);
 						$pannel_options[$pannel_option['std']] = $option_key;
-						echo '<tr>';
-						if ($pannel_option['type'] == 'subtitle') {
-							echo '<td><h2>'.$pannel_option['name'].'</h2></td>';
-						} elseif ($pannel_option['type'] == 'text') {
-							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
-							echo '<td><label>';
-								echo '<input type="'.$pannel_option['type'].'" name="'.$pannel_option['id'].'" class="regular-text" id="'.$pannel_option['id'].'" value="'.htmlspecialchars($option_key).'"></input> &nbsp;';
-								echo '<span class="description">'.$pannel_option['desc'].'</span>';
-							echo '</td></label>';
-						} elseif ($pannel_option['type'] == 'select') {
-							$select_options = $pannel_option['options'];
-							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
-							echo '<td><label>';
-								echo '<select name="'.$pannel_option['id'].'" id="'.$pannel_option['id'].'">';
-								foreach ($select_options as $select_key => $select_value) {
-									if ($option_key == $select_key) {
-										echo '<option value="'.$select_key.'" selected>'.$select_value.'</option>';
-									} else {
-										echo '<option value="'.$select_key.'">'.$select_value.'</option>';
-									}
-								}
-								echo '</select>';
-								echo '<span class="description">'.$pannel_option['desc'].'</span>';
-							echo '</td></label>';
-						} else {
-							echo '<th><label for="'.$pannel_option['id'].'">'.$pannel_option['name'].'</label></th>';
-						}
-						echo '</tr>';
+						sa_theme_print_html($pannel_option, $option_key);
 					}
 					echo '</table>';
 				echo '</div>';
@@ -111,6 +83,7 @@ function theme_config_page() {
 .nav-tab .nav-tab-active{border-bottom-color: rgb(66,133,244);margin-bottom:-2px}
 .nav-tab:active, .nav-tab:focus{background:#eee;outline:0}
 .nav-tab{background:#fff;border:none;padding:10px 18px;margin-bottom:1px;margin-left:0;border-bottom: 3px solid transparent;}
+.regular-text {width: 50%;}
 </style>
 <script>
 jQuery(function ($) {
@@ -120,10 +93,93 @@ jQuery(function ($) {
 		$($(this).attr("href")).show();
 		return false;
 	});
+	//上传单个图片
+	$('.sa-theme-upload-image').on("click",function(e) {
+		var custom_uploader;
+
+		var obj = $(this);
+		e.preventDefault();
+
+		if (custom_uploader) {
+			custom_uploader.open();
+			return;
+		}
+
+		var custom_uploader = wp.media({
+			title: '插入选项缩略图',
+			button: {
+				text: '选择图片'
+			},
+			multiple: false  // Set this to true to allow multiple files to be selected
+		});
+
+		custom_uploader.on('select', function() {
+			var attachment = custom_uploader.state().get('selection').first().toJSON();
+			obj.prev("input").val(attachment.url)
+			obj.next("img").attr('src',attachment.url);
+			$('.media-modal-close').trigger('click');
+		});
+
+		custom_uploader.open();
+	});
 });
 </script>
 
 <?php	
+}
+
+function sa_theme_print_html($option, $option_key) {
+	echo '<tr>';
+	switch ($option['type']) {
+		case 'subtitle':
+			echo '<td><h2>'.$option['name'].'</h2></td>';
+			break;
+		case 'text':
+			echo '<th><label for="'.$option['id'].'">'.$option['name'].'</label></th>';
+			echo '<td><label>';
+				echo '<input type="'.$option['type'].'" name="'.$option['id'].'" class="regular-text" id="'.$option['id'].'" value="'.htmlspecialchars($option_key).'"></input> &nbsp;';
+				echo '<span class="description">'.$option['desc'].'</span>';
+			echo '</td></label>';
+			break;
+		case 'textarea':
+			echo '<th><label for="'.$option['id'].'">'.$option['name'].'</label></th>';
+			echo '<td><label>';
+				echo '<textarea name="'.$option['id'].'" class="regular-text" id="'.$option['id'].'" rows="3" cols="50">'.htmlspecialchars($option_key).'</textarea> &nbsp;';
+				echo '<span class="description">'.$option['desc'].'</span>';
+			echo '</td></label>';
+			break;
+		case 'image':
+			echo '<th><label for="'.$option['id'].'">'.$option['name'].'</label></th>';
+			echo '<td><label>';
+				echo '<div class="input-group">';
+					echo '<input type="text" name="'.$option['id'].'" class="regular-text" id="'.$option['id'].'" value="'.htmlspecialchars($option_key).'"></input> &nbsp;';
+					echo '<input type="button" name="'.$option['id'].'" class="sa-theme-upload-image" id="'.$option['id'].'" value="上传"></input> &nbsp;';
+					echo '<span class="description">'.$option['desc'].'</span>';
+				echo '</div>';
+				echo '<img src="'.htmlspecialchars($option_key).'" style="max-width:80px;vertical-align: top;margin:10px 0" />';
+			echo '</td></label>';
+			break;
+		case 'select':
+			$select_options = $option['options'];
+			echo '<th><label for="'.$option['id'].'">'.$option['name'].'</label></th>';
+			echo '<td><label>';
+				echo '<select name="'.$option['id'].'" id="'.$option['id'].'">';
+				foreach ($select_options as $select_key => $select_value) {
+					if ($option_key == $select_key) {
+						echo '<option value="'.$select_key.'" selected>'.$select_value.'</option>';
+					} else {
+						echo '<option value="'.$select_key.'">'.$select_value.'</option>';
+					}
+				}
+				echo '</select> &nbsp;';
+				echo '<span class="description">'.$option['desc'].'</span>';
+			echo '</td></label>';
+			break;
+		default:
+			echo '<th><label for="'.$option['id'].'">'.$option['name'].'</label></th>';
+			break;
+	}
+	echo '</tr>';
 }
 
 // 获取主题选项值
@@ -179,12 +235,15 @@ function reset_options() {
 	echo '<div class="updated"><p><strong>主题设置已重置。</strong></p></div>';
 }
 
+// 主题上传功能
+function load_media_files() {
+	wp_enqueue_media();
+}
+add_action( 'admin_enqueue_scripts', 'load_media_files' );
+
 // 自定义主题选项栏
 function theme_customize_register( $wp_customize ) {
-	$wp_customize->add_section( 'theme_section_praise', array(
-		'title'     => '打赏设置',
-		'priority'  => 50
-	) );
+
 	$wp_customize->add_setting( 'sa_praise_wechat_qrcode', array(
 		'default'   	=> 		'',
 		"transport" 	=> 		"postMessage",
