@@ -2,34 +2,71 @@
 
 add_filter( 'get_avatar' , 'local_random_avatar' , 1 , 5 );
 function local_random_avatar( $avatar, $id_or_email, $size, $default, $alt) {
-	if ( !empty( $id_or_email->user_id ) ) {
-		$avatar = ''.get_template_directory_uri().'/assets/img/avatar/1.png';
-	}else{
-		$random = mt_rand(1, 10);
-		$avatar = ''.get_template_directory_uri().'/assets/img/avatar/'. $random .'.png';
+	if (filter_var($id_or_email, FILTER_VALIDATE_EMAIL)) { // 判断是否为邮箱
+		$email = $id_or_email; // 用户邮箱
+		$user = get_user_by( 'email', $email ); // 通过邮箱查询用户信息
+	} else {
+		$uid = (int)$id_or_email; // 获取用户 ID
+		$user = get_user_by( 'id', $uid ); // 通过 ID 查询用户信息
 	}
+
+	$email = $user->user_email;  // 用户邮箱
+	$alt = $user->user_nicename; // 用户昵称
+	if(get_comment_author_email( $comment )) { // 通过评论获取邮箱
+		$email = get_comment_author_email( $comment );
+		$alt = get_comment_author( $comment );
+	}
+	
+	$random = string_covert_hashnum($alt);
+	$avatar = ''.get_template_directory_uri().'/assets/img/avatar/'. $random .'.png';
 	$avatar = "<img alt='{$alt}' src='{$avatar}' class='avatar avatar-{$size} photo' height='{$size}' width='{$size}' />";
 	return $avatar;
 }
 
+function sa_theme_is_administrator($user_id) {
+	$user = get_userdata($user_id);
+	if( !empty($user->roles) && in_array('administrator', $user->roles) ) {
+		return true;  // 是管理员
+	} else {
+		return false;  // 非管理员
+	}
+}
+
+
+function string_covert_hashnum($user_id) {
+	$range = 9;
+	$hashslot = bcmod(base_convert(md5($user_id), 16, 10), $range);
+	return $hashslot + 1;
+}
+
 function sa_theme_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment; 
+	$GLOBALS['comment'] = $comment;
 ?>
 	<li class="comment-list-li" id="comment-list-li-<?php comment_ID(); ?>">
    		<div class="media">
    			<div class="media-left">
-        		<?php 
+        		<?php
 					if (function_exists('get_avatar') && get_option('show_avatars')) { 
 						echo get_avatar($comment, 48); 
 					} 
 				?>
    			</div>
    			<div class="media-body">
-   				<?php printf(__('<p class="author_name">%s</p>'), get_comment_author_link()); ?>
-		        <?php if ($comment->comment_approved == '0') : ?>
-		            <em>评论等待审核...</em><br/>
-				<?php endif; ?>
-				<?php comment_text(); ?>
+				<?php
+					echo '<p class="media-author">';
+						$author = get_comment_author();
+						echo '<span class="author-name">'.$author.'</span>';
+				 
+						if ( sa_theme_is_administrator($comment->user_id) ) { 
+							echo '<span class="author-name-label">站长</span>';
+						}
+					echo '</p>';
+				 	
+					if ($comment->comment_approved == '0') {
+						echo '<em>评论等待审核...</em><br/>';
+					}
+		        	comment_text(); 
+				?>
    			</div>
    		</div>
    		<div class="comment-metadata">

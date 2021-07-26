@@ -65,23 +65,34 @@ h3.comment-reply-title:after {
 	display: table-cell;
 	vertical-align: top;
 }
-.comment-list-li .media-body .author_name {
+.comment-list-li .media-body .media-author {
 	margin-top: 0px;
-	margin-bottom:5px;
-	font-size:14px;
-	color:#777;
+	margin-bottom: 5px;
 }
+.comment-list-li .media-body .author-name {
+	font-size:14px;
+	color: #666;
+}
+.comment-list-li .media-body .author-name-label {
+	margin-left: 10px;
+	padding: 4px 8px;
+	background: #4d4d4d;
+	color: #fff;
+	border-radius: 5px;
+	border: 0;
+	opacity: 0.75;
+}
+
+
 .comment-list-li .media-body p {
 	margin-top: 0px;
 	margin-bottom: 0px;
 	padding: 0px;
 	font-size:14px;
 	line-height:1.5em;
-	color:#777;
+	color: #666;
 }
-.comment-list-li .media-body p a {
-	color:#000;
-}
+
 .comment-list-li .comment-metadata {
 	margin-left:58px;
 	padding:5px 0;
