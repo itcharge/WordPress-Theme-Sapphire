@@ -4,13 +4,13 @@
 }
 
 #page-nav .page-number {
-	width: 20px;
+	padding: 0 8px;
 	height: 25px;
 	background: #4d4d4d;
 	display: inline-block;
 	color: #fff;
 	line-height: 25px;
-	font-size: 12px;
+	font-size: 14px;
 	margin: 0 5px 30px;
 	border-radius: 2px;
 	text-decoration: none;
@@ -30,13 +30,20 @@
 }
 
 #page-nav .extend {
-	color: #4d4d4d;
-	margin: 0 27px;
-	opacity: 1;
+	padding: 0 10px;
+	height: 25px;
+	background: #4d4d4d;
+	display: inline-block;
+	color: #fff;
+	line-height: 25px;
+	font-size: 16px;
+	margin: 0 5px 30px;
+	border-radius: 2px;
+	text-decoration: none;
 }
 
 #page-nav .extend:hover {
-	color: #5e5e5e;
+	background: #5e5e5e;
 }
 #page-nav:hover .extend {
 	opacity: 1;
