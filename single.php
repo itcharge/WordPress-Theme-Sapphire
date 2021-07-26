@@ -39,31 +39,31 @@
 					
 					<div class="article-praise">
 						<a href="javascript:;" class="article-praise-btn tooltip-top">
-							<div class="tooltip tooltip-east">
+							<div class="tooltip">
 								<span class="tooltip-item">
 									赏
 								</span>
 								<span class="tooltip-content">
 									<span class="tooltip-text">
 										<span class="tooltip-inner">
-											<p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡~<i class="icon icon-quo-right"></i></p>
-											<div class="reward-box">
+											<p class="praise-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡~<i class="icon icon-quo-right"></i></p>
+											<div class="praise-box">
 												<?php if ($sa_post_praise_wechat && $sa_post_praise_wechat != '') :?>
-												<div class="reward-box-item">
-													<img class="reward-img" src="<?php echo $sa_post_praise_wechat; ?>">
-													<span class="reward-type">微信</span>
+												<div class="praise-box-item">
+													<img class="praise-img" src="<?php echo $sa_post_praise_wechat; ?>">
+													<span class="praise-type">微信</span>
 												</div>
 												<?php endif; ?>
 												<?php if ($sa_post_praise_alipay && $sa_post_praise_alipay != '') :?>
-												<div class="reward-box-item">
-													<img class="reward-img" src="<?php echo $sa_post_praise_alipay; ?>">
-													<span class="reward-type">支付宝</span>
+												<div class="praise-box-item">
+													<img class="praise-img" src="<?php echo $sa_post_praise_alipay; ?>">
+													<span class="praise-type">支付宝</span>
 												</div>
 												<?php endif; ?>
 											</div>
 										</span>
 									</span>
-								</span>		
+								</span>
 							</div>		
 						</a>	
 					</div>
