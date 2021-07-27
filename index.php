@@ -75,6 +75,7 @@ get_header();
 					<div class="article-info-index">
 						<?php if (is_sticky() && is_home()): ?>
 							<div class="article-pop-out tagcloud">
+								<i class="icon-tuding icon"></i>
 								<a class="color0">置顶</a>
 							</div>
 						<?php endif; ?>
