@@ -117,11 +117,12 @@ if ( is_single() ):
 		<div class="container">
 			<div class="site-branding">
 				<?php
-				if ( is_front_page() && is_home() ) :
+				$sa_site_logo = sa_theme_option('sa_site_logo');
+				if ($sa_site_logo && $sa_site_logo != '') {
+					echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home"><img src="' . $sa_site_logo . '" /></a></h1>';
+				} else {
 					echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . $blog_title . '</a></h1>';
-				else :
-					echo '<p class="site-title"><a href="' .esc_url( home_url( '/' ) ) . '" rel="home">' . $blog_title . '</a></p>';
-				endif;
+				}
 				?>
 			</div>
 			

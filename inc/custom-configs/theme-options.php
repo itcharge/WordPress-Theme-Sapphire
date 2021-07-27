@@ -40,10 +40,10 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'网站 Favicon 图标',
-			'desc'		=>		'网站 Favicon 图标，推荐尺寸 32px * 32px',
+			'desc'		=>		'网站 Favicon 图标，推荐尺寸 32px * 32px、48px * 48px、96px * 96px',
 			'id'		=>		'sa_site_favicon',
 			'type'		=>		'image',
-			'std'		=>		get_template_directory_uri() . '/assets/img/head.jpg'
+			'std'		=>		get_template_directory_uri() . '/assets/img/favicon.png'
 		),
 		array(
 			'name'		=>		'网站顶部 Logo 设置',
