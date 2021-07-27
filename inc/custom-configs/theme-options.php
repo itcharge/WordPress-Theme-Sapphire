@@ -118,7 +118,7 @@ $theme_options = array(
 		),
 		array(
 			'name'		=>		'边栏 Logo 设置',
-			'desc'		=>		'边栏 Logo 图标（正方形），推荐大小 128px * 128px',
+			'desc'		=>		'边栏 Logo 图标（正方形），推荐尺寸 128px * 128px',
 			'id'		=>		'sa_sidebar_logo',
 			'type'		=>		'image',
 			'std'		=>		get_template_directory_uri() . '/assets/img/head.jpg'

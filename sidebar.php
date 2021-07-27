@@ -14,7 +14,8 @@
 			<div class="overlay"></div>
 			<header class="intro-header">
 				<a class="profilepic" href="<?php get_option('home'); ?>">
-					<img class="intro-portrait" src="<?php bloginfo('template_url');?>/assets/img/head.jpg">
+					<?php $sa_sidebar_logo = sa_theme_option('sa_sidebar_logo'); ?>
+					<img class="intro-portrait" src="<?php echo $sa_sidebar_logo; ?>" />
 				</a>
 				<hgroup>
 					<h1 class="header-author">
