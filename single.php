@@ -143,7 +143,7 @@
 			<span class="pay-title">支付宝</span>
 		</div>
 		<?php elseif ($sa_post_praise_wechat && $sa_post_praise_wechat != '') :?>
-		<div class="article-praise-item" data-id="wechat_pay">
+		<div class="article-praise-item checked" data-id="wechat_pay">
     			<span class="radiobox"></span>
     			<span class="pay-type"><img src="<?php bloginfo('template_url'); ?>/assets/img/praise/wechat_pay.svg" alt="微信" /></span>
 				<span class="pay-title">微信支付</span>
@@ -157,7 +157,13 @@
 		<?php endif; ?>
 	</div>
 	<div class="article-praise-info">
+		<?php if (($sa_post_praise_wechat && $sa_post_praise_wechat != '') && ($sa_post_praise_alipay && $sa_post_praise_alipay != '')) :?>
+		<p>打开<span class="article-praise-info-txt">微信</span>扫一扫，即可进行扫码打赏哦</p>
+		<?php elseif ($sa_post_praise_wechat && $sa_post_praise_wechat != '') :?>
+		<p>打开<span class="article-praise-info-txt">微信</span>扫一扫，即可进行扫码打赏哦</p>
+		<?php elseif ($sa_post_praise_alipay && $sa_post_praise_alipay != '') : ?>
 		<p>打开<span class="article-praise-info-txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+		<?php endif; ?>
 	</div>
 </div>
 <script type="text/javascript">
