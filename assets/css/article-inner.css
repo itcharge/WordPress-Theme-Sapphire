@@ -30,9 +30,13 @@
 	text-decoration: none;
 }
 
-.article-inner .article-title .article-title-url:hover {
+.article-header .article-title .article-title-url:hover {
 	color: #ff7242;
 	text-decoration:underline;
+}
+
+.article-inner .article-read-words-times {
+	margin: 20px 30px ;
 }
 
 .article-date {

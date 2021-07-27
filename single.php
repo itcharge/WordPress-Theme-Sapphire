@@ -24,9 +24,10 @@
 								<?php the_time('Y-m-d') ?>
 							</time>
 						</a>
-						<?php read_words_times(); ?>
 					</header>
-					
+					<div class="article-read-words-times">
+						<?php read_words_times(); ?>
+					</div>
 					<div class="article-entry" id="article-entry-content">
 						<?php the_content(); ?>
 					</div>
