@@ -1,3 +1,4 @@
+/* 赞赏按钮 */
 .article-praise {
 	margin: 0px 0px 30px 0px;
 	text-align: center;
@@ -19,154 +20,156 @@
 	text-decoration: none;
 }
 
-.article-praise .article-praise-btn .tooltip-item {
-	display: block;
-	width: 56px;
-	height: 56px;
-}
-
 .article-praise .article-praise-btn:hover {
 	box-shadow: 0 6px 12px rgba(0,0,0,0.2),0 4px 15px rgba(0,0,0,0.2);
 }
-	
+
 .article-praise .article-praise-btn:active {
 	box-shadow: 0 6px 12px rgba(0,0,0,0.2),0 4px 15px rgba(0,0,0,0.2);
 }
 
-.article-praise .praise-box {
-	display: flex;
-	justify-content: space-around;
+/* 赞赏遮罩 */
+.article-praise-mask {
+	z-index: 999;
+	filter: alpha(opacity=50);
+	background: #666;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	left: 0;
+	top: 0;
+	height: 99%;
+	width: 100%;
+	position: fixed;
+	display: none;
 }
 
-.article-praise .praise-p {
-	color: rgb(99, 99, 99);
-	font-weight: bold;
-/*	text-shadow: 1px 1px 1px rgb(99, 99, 99);*/
+/* 赞赏控件 */
+.article-praise-box {
+	width: 540px;
+	height: 540px;
+	padding: 10px;
+	background-color: #fff;
+	border-radius: 10px;
+	position: fixed;
+	z-index: 1000;
+	left: 50%;
+	top: 50%;
+	margin-left: -280px;
+	margin-top: -280px;
+	border: 1px dotted #dedede;
+	display: none;
 }
 
-.article-praise .praise-p .icon {
-	margin: 0 10px;
-	color: #ddd;
+.article-praise-box img {
+	border: none;
+	border-width: 0;
 }
 
-.article-praise .praise-type {
+.article-praise-box .article-praise-p {
+	color: #aaaaaa;
+}
+
+.article-praise-box .article-praise-p .icon {
+	margin: 0 20px;
+	width: 40px;
+	height: 40px;
+	color: #aaaaaa;
+}
+
+.article-praise-close {
+	float: right;
+	display: inline-block;
+	color: #aaaaaa;
+	text-decoration: none;
+}
+
+.article-praise-title {
+	width: 100%;
+	height: 75px;
+	text-align: center;
+	line-height: 66px;
+	color: #aaaaaa;
 	font-size: 16px;
-	display: block;
-	color: #4d4d4d;
-	margin: 20px 0 0 0;
+	font-family: 'Microsoft YaHei';
+	margin-top: 7px;
+	margin-right: 2px;
 }
 
-.article-praise .praise-img {
-	width: 130px;
-	height: 130px;
-	border: 6px solid #fff;
+.article-praise-box-title p {
+	color: #aaaaaa;
+	text-align: center;
+	font-size: 16px;
+}
+
+.article-praise-explain {
+	text-align: center;
+	margin: 10px auto;
+	font-size: 12px;
+	color: #aaaaaa;
+}
+
+.article-praise-payimg {
+	width: 200px;
+	height: 200px;
+	padding: 10px;
+	margin: 0 auto;
 	border-radius: 3px;
 }
 
-
-.tooltip-top .tooltip {
-	display: inline;
-	position: relative;
-	z-index: 999;
-}
-
-/* Gap filler */
-.tooltip-top .tooltip:after {
-	content: '';
-	position: absolute;
+.article-praise-payimg img {
 	width: 100%;
-	height: 20px;
-	bottom: 100%;
-	left: 50%;
-	pointer-events: none;
-	-webkit-transform: translateX(-50%);
-	transform: translateX(-50%);
-}
-
-.tooltip-top .tooltip:hover::after {
-	pointer-events: auto;
-}
-
-/* Tooltip */
-.tooltip-top .tooltip-content {
-	position: absolute;
-	z-index: 9999;
-	width: 370px;
-	left: 50%;
-	bottom: 100%;
-	font-size: 20px;
-	line-height: 1.4;
+	height: 100%;
 	text-align: center;
-	font-weight: 400;
-	color: #4d4d4d;
-	background: transparent;
-	opacity: 0;
-	margin: 0 0 -10px -185px;
-	cursor: default;
-	pointer-events: none;
-	font-family: 'Satisfy', cursive;
-	-webkit-font-smoothing: antialiased;
-	-webkit-transition: opacity 0.3s 0.3s;
-	transition: opacity 0.3s 0.3s;
-	padding-bottom: 30px;
+	display: none;
 }
 
-.tooltip-top .tooltip:hover .tooltip-content {
-	opacity: 1;
-	pointer-events: auto;
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
+.radiobox {
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	margin-right: 14px;
+	background:url('/wp-content/themes/Sapphire/assets/img/praise/radio_normal.jpg');
 }
 
-.tooltip-top .tooltip-content span {
+.checked .radiobox {
+	background:url('/wp-content/themes/Sapphire/assets/img/praise/radio_select.jpg');
+}
+
+.pay-type {
+	float: left;
 	display: block;
 }
 
-.tooltip-top .tooltip-text {
-/*	border-bottom: 1px solid rgb(99, 99, 99);*/
-	overflow: hidden;
-	-webkit-transform: scale3d(0,1,1);
-	transform: scale3d(0,1,1);
-	-webkit-transition: -webkit-transform 0.3s 0.3s;
-	transition: transform 0.3s 0.3s;
+.pay-title {
+	height: 16px;
+	display: block;
+	float: left;
+	margin-left: 5px;
 }
 
-.tooltip-top .tooltip:hover .tooltip-text {
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
-	-webkit-transform: scale3d(1,1,1);
-	transform: scale3d(1,1,1);
+.article-praise-payselect {
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 40px;
+	cursor: pointer;
+	height: 60px;
 }
 
-.tooltip-top .tooltip-inner {
-	background: #f2f2f2;
-	padding: 40px;
-	-webkit-transform: translate3d(0,100%,0);
-	transform: translate3d(0,100%,0);
-	webkit-transition: -webkit-transform 0.3s;
-	transition: transform 0.3s;
+.article-praise-payselect .article-praise-item {
+	display: inline-block;
+	margin: 0 10px;
 }
 
-.tooltip-top .tooltip:hover .tooltip-inner {
-	-webkit-transition-delay: 0.3s;
-	transition-delay: 0.3s;
-	-webkit-transform: translate3d(0,0,0);
-	transform: translate3d(0,0,0);
-	border: 1px solid rgb(99, 99, 99);
-	border-radius: 5px;
+.article-praise-info {
+	clear: both;
 }
 
-/* Arrow */
-.tooltip-top .tooltip-content:after {
-	content: '';
-	left: 50%;
-	border: solid transparent;
-	height: 0;
-	width: 0;
-	position: absolute;
-	pointer-events: none;
-	border-color: transparent;
-	border-top-color: rgb(99, 99, 99);
-	border-width: 10px;
-	margin-left: -10px;
+.article-praise-info p,.article-praise-info a {
+	color: #C3C3C3;
+	text-align: center;
+	font-size: 12px;
+	text-decoration: none;
+	line-height: 2em;
 }

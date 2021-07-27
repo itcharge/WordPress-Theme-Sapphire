@@ -36,38 +36,9 @@
 						$sa_post_praise_alipay = sa_theme_option('sa_post_praise_alipay');
 						if ($sa_post_praise && $sa_post_praise == 'open' && (($sa_post_praise_wechat && $sa_post_praise_wechat != '') || ($sa_post_praise_alipay && $sa_post_praise_alipay != ''))) :
 					?>
-					
 					<div class="article-praise">
-						<a href="javascript:;" class="article-praise-btn tooltip-top">
-							<div class="tooltip">
-								<span class="tooltip-item">
-									赏
-								</span>
-								<span class="tooltip-content">
-									<span class="tooltip-text">
-										<span class="tooltip-inner">
-											<p class="praise-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡~<i class="icon icon-quo-right"></i></p>
-											<div class="praise-box">
-												<?php if ($sa_post_praise_wechat && $sa_post_praise_wechat != '') :?>
-												<div class="praise-box-item">
-													<img class="praise-img" src="<?php echo $sa_post_praise_wechat; ?>">
-													<span class="praise-type">微信</span>
-												</div>
-												<?php endif; ?>
-												<?php if ($sa_post_praise_alipay && $sa_post_praise_alipay != '') :?>
-												<div class="praise-box-item">
-													<img class="praise-img" src="<?php echo $sa_post_praise_alipay; ?>">
-													<span class="praise-type">支付宝</span>
-												</div>
-												<?php endif; ?>
-											</div>
-										</span>
-									</span>
-								</span>
-							</div>		
-						</a>	
+						<a href="javascript:void(0)" class="article-praise-btn" onclick="praiseBtnClick()" title="赏">赏</a>
 					</div>
-					
 					<?php endif; ?>
 					<?php 
 						$sa_post_copyright = sa_theme_option('sa_post_copyright');
@@ -140,5 +111,75 @@
 <a href="#" id="back-top">
 	<i class="icon-font icon-plane"></i>
 </a>
+
+<div class="article-praise-mask"></div>
+<div class="article-praise-box">
+	<a class="article-praise-close" href="javascript:void(0)" onclick="praiseBtnClick()" title="关闭"><i class="icon-close icon"></i></a>
+	<div class="article-praise-title">
+		<p class="article-praise-p"><i class="icon icon-quo-left"></i>谢谢你请我喝咖啡~<i class="icon icon-quo-right"></i></p>
+	</div>
+	
+	<div class="article-praise-payimg">
+		<?php if (($sa_post_praise_wechat && $sa_post_praise_wechat != '') && ($sa_post_praise_alipay && $sa_post_praise_alipay != '')) :?>
+		<img class="pay-img-wechatpay" src="<?php echo $sa_post_praise_wechat; ?>" alt="扫码支持" title="扫一扫" style="display: block;"/>
+		<img class="pay-img-alipay" src="<?php echo $sa_post_praise_alipay; ?>" alt="扫码支持" title="扫一扫" style="display: none;"/>
+		<?php elseif ($sa_post_praise_wechat && $sa_post_praise_wechat != '') : ?>
+		<img class="pay-img-wechatpay" src="<?php echo $sa_post_praise_wechat; ?>" alt="扫码支持" title="扫一扫" style="display: block;"/>
+		<?php elseif ($sa_post_praise_alipay && $sa_post_praise_alipay != '') : ?>
+		<img class="pay-img-alipay" src="<?php echo $sa_post_praise_alipay; ?>" alt="扫码支持" title="扫一扫" style="display: block;"/>
+		<?php endif; ?>
+	</div>
+	<div class="article-praise-explain">扫码打赏，支持一下</div>
+	<div class="article-praise-payselect">
+		<?php if (($sa_post_praise_wechat && $sa_post_praise_wechat != '') && ($sa_post_praise_alipay && $sa_post_praise_alipay != '')) :?>
+		<div class="article-praise-item checked" data-id="wechat_pay">
+    			<span class="radiobox"></span>
+    			<span class="pay-type"><img src="<?php bloginfo('template_url'); ?>/assets/img/praise/wechat_pay.svg" alt="微信" /></span>
+				<span class="pay-title">微信支付</span>
+		</div>
+		<div class="article-praise-item" data-id="ali_pay">
+			<span class="radiobox"></span>
+			<span class="pay-type"><img src="<?php bloginfo('template_url'); ?>/assets/img/praise/ali_pay.svg" alt="支付宝" /></span>
+			<span class="pay-title">支付宝</span>
+		</div>
+		<?php elseif ($sa_post_praise_wechat && $sa_post_praise_wechat != '') :?>
+		<div class="article-praise-item" data-id="wechat_pay">
+    			<span class="radiobox"></span>
+    			<span class="pay-type"><img src="<?php bloginfo('template_url'); ?>/assets/img/praise/wechat_pay.svg" alt="微信" /></span>
+				<span class="pay-title">微信支付</span>
+		</div>
+		<?php elseif ($sa_post_praise_alipay && $sa_post_praise_alipay != '') : ?>
+		<div class="article-praise-item checked" data-id="ali_pay">
+			<span class="radiobox"></span>
+			<span class="pay-type"><img src="<?php bloginfo('template_url'); ?>/assets/img/praise/ali_pay.svg" alt="支付宝" /></span>
+			<span class="pay-title">支付宝</span>
+		</div>
+		<?php endif; ?>
+	</div>
+	<div class="article-praise-info">
+		<p>打开<span class="article-praise-info-txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+	</div>
+</div>
+<script type="text/javascript">
+jQuery(function($){
+	jQuery(".article-praise-item").click(function(){
+		jQuery(this).addClass('checked').siblings('.article-praise-item').removeClass('checked');
+		var dataid = jQuery(this).attr('data-id');
+		if (dataid == "ali_pay") {
+			jQuery(".pay-img-alipay").css('display','block');
+			jQuery(".pay-img-wechatpay").css('display','none');
+		} else {
+			jQuery(".pay-img-wechatpay").css('display','block');
+			jQuery(".pay-img-alipay").css('display','none');
+		}
+
+		jQuery(".article-praise-info-txt").text(dataid=="ali_pay"?"支付宝":"微信");
+	});
+});
+function praiseBtnClick() {
+	jQuery(".article-praise-mask").fadeToggle();
+	jQuery(".article-praise-box").fadeToggle();
+}
+</script>
 
 <?php get_footer(); ?>
