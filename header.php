@@ -67,7 +67,7 @@
 	<?php
 	if ( is_single() || is_page() ) {
 		$description = get_post_meta($post->ID, 'description', true);
-		if (!$description ) {
+		if ( !$description ) {
 			$description = sa_post_excerpt(100, '...'. true);
 		}
 		
@@ -83,11 +83,11 @@
 		$keywords = rtrim($keywords, ',');
 		$keywords = htmlspecialchars($keywords);
 	} elseif ( is_category() ) {
-		$description = category_description(get_the_category()->cat_ID);
-		$keywords = single_cat_title();
+		$description = trim(strip_tags(category_description()));
+		$keywords = trim(strip_tags(single_cat_title('', false)));
 	} elseif ( is_tag() ) {
 		$description = trim(strip_tags(tag_description()));
-		$keywords = single_tag_title();
+		$keywords = trim(strip_tags(single_tag_title('', false)));
 	} elseif ( is_home() ) {
 		$description = sa_theme_option('sa_seo_site_desc');
 		$keywords = sa_theme_option('sa_seo_site_keywords');
