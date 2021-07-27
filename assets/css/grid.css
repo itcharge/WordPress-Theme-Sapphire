@@ -7,6 +7,7 @@ body, button, input, select, textarea {
 }
 body {
 	background: #eaeaea;
+	min-height: 100%;
 }
 html {
 	-ms-text-size-adjust: 100%;
@@ -22,6 +23,75 @@ html, body {
 	display: none;
 }
 
+@-webkit-keyframes cd-bounce-1 {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale(1.01);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+@-moz-keyframes cd-bounce-1 {
+	0% {
+		opacity: 0;
+		-moz-transform: scale(1);
+	}
+	60% {
+		opacity: 1;
+		-moz-transform: scale(1.01);
+	}
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+@keyframes cd-bounce-1 {
+	0% {
+		opacity: 0;
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+	60% {
+		opacity: 1;
+		-webkit-transform: scale(1.01);
+		-moz-transform: scale(1.01);
+		-ms-transform: scale(1.01);
+		-o-transform: scale(1.01);
+		transform: scale(1.01);
+	}
+	100% {
+		-webkit-transform: scale(1);
+		-moz-transform: scale(1);
+		-ms-transform: scale(1);
+		-o-transform: scale(1);
+		transform: scale(1);
+	}
+}
+
+/*------------------------------
+	Content
+------------------------------*/
+.site-content {
+	margin: 0px auto 0px;
+	padding: 0px;
+	clear: both;
+	width: 1000px;
+	max-width: 1000px;
+	min-height: 100%;
+	display: block;
+	position: relative;
+}
+
+.site-content.no-border {
+	border-top: none;
+}
 
 /*----------------------
 	header
@@ -31,7 +101,6 @@ html, body {
 	position: relative;
 	width: 100%;
 	background: #fff;
-/*	z-index: 50;*/
 	border-bottom: 1px solid #DDDDDD;
 }
 
@@ -41,7 +110,8 @@ html, body {
 #left-box {
 	float: left;
 	width: 640px;
-	padding-top: 20px;
+	margin: 20px 20px 0px 20px;
+	padding: 0px;
 }
 
 /*----------------------
@@ -50,8 +120,17 @@ html, body {
 #right-box {
 	float: left;
 	width: 300px;
-	padding-top: 20px;
-	padding-left: 20px;
+	margin: 20px 20px 0px 0px;
+}
+
+/*----------------------
+	comments
+----------------------*/
+.comments-box {
+	background-color: #FFFFFF;
+	border: 1px solid #CFCFCF;
+	box-shadow: 0 0 5px #C6C6C6;
+	margin-bottom: 20px;
 }
 
 /*----------------------
@@ -64,12 +143,28 @@ html, body {
 	width: 100%;
 	background-color: #FFFFFF;
 	border-top: 1px solid #DDDDDD;
-/*	z-index: 50;*/
 }
 
-.comments-box {
-	background-color: #FFFFFF;
-	border: 1px solid #CFCFCF;
-	box-shadow: 0 0 5px #C6C6C6;
-	margin-bottom: 20px;
+/*----------------------
+	屏幕适配
+----------------------*/
+@media screen and (max-width: 1000px) {
+	.site-content {
+		width: 100%;
+	}
+	#left-box {
+		width: calc(100% - 360px);
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.site-content {
+		width: 100%;
+	}
+	#left-box {
+		width: calc(100% - 40px);
+	}
+	#right-box {
+		display: none;
+	}
 }

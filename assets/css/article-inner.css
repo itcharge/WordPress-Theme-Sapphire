@@ -9,8 +9,7 @@
 
 .article-inner .article-header {
 	border-left: 5px solid #4d4d4d;
-	padding: 20px 0px 15px 25px;
-	width: 460px;
+	padding: 20px 130px 15px 25px;
 }
 
 .article-header .article-title {
@@ -54,7 +53,6 @@
 	color: #aaa;
 	float: right;
 }
-
 
 
 /* 文章内容 CSS */

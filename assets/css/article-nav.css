@@ -1,6 +1,6 @@
 #page-nav {
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 #page-nav .page-number {
@@ -11,7 +11,7 @@
 	color: #fff;
 	line-height: 25px;
 	font-size: 14px;
-	margin: 0 5px 30px;
+	margin: 0 5px 20px;
 	border-radius: 2px;
 	text-decoration: none;
 }
@@ -37,7 +37,7 @@
 	color: #fff;
 	line-height: 25px;
 	font-size: 16px;
-	margin: 0 5px 30px;
+	margin: 0 5px 20px;
 	border-radius: 2px;
 	text-decoration: none;
 }
