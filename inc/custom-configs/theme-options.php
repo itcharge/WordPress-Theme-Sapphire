@@ -146,8 +146,8 @@ $theme_options = array(
 			'std'		=>		'open'
 		),
 		array(
-			'name'      =>		'侧边栏显示「联系方式」',
-			'desc'		=>		'打开则在「侧边栏」显示「联系方式」，可在下方设置具体连接',
+			'name'      =>		'联系方式',
+			'desc'		=>		'打开则在「侧边栏」显示「联系方式」，具体可在「社交设置」设置',
 			'id'        =>		'sa_sidebar_contact',
 			'type'      =>		'select',
 			'options'	=>		array(
