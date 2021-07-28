@@ -41,7 +41,7 @@ h3.comment-reply-title:after {
 	left: 0;
 	width: 135px;
 	height: 1px;
-	background: #fa2a2a;/*main-color*/
+	background: #4d4d4d;/*main-color*/
 }	
 
 .comment-list {
@@ -132,10 +132,12 @@ h3.comment-reply-title:after {
 .comment-reply-title a:first-child,.warning-text a:first-child {
 	display:inline-block;
 	margin:0 2px;
-	padding:2px 5px;
-	background:#fa2a2a; /*main-color*/
+	padding:2px 8px;
+	border-radius: 5px;
+	background:#4d4d4d; /*main-color*/
 	color:#fff;
-	font-size:14px;
+	font-size: 14px;
+	text-decoration: none;
 }
 .warning-text {
 	color:#999;
@@ -143,26 +145,36 @@ h3.comment-reply-title:after {
 .link-logout {
 	color:#999;
 }
+
 .comments-nav {
 	width:100%;
-	margin:0 auto;
-	padding:15px 0;
+	margin-top: 20px;
 	text-align: center;
 }
 .comments-nav .page-numbers {
+	padding: 0 8px;
+	height: 25px;
+	background: #4d4d4d;
 	display:inline-block;
-	padding:9px 16px;
-	color:#999;
-	background:#f1f1f1;
+	color: #fff;
+	line-height: 25px;
+	font-size: 14px;
+	margin: 0 5px 20px;
+	border-radius: 2px;
+	text-decoration: none;
+	opacity: 1;
 }
 .comments-nav .page-numbers:hover {
-	background:#e8e8e8;
-	color:#666;
+	background:#4d4d4d;
+	opacity: 0.8;
 }
-.comments-nav .current,
+.comments-nav .current {
+	background:#88acdb;
+	cursor: default;
+}
 .comments-nav .current:hover {
-	background:#fa2a2a;/*main-color*/
-	color:#fff;
+	background: #e8e8e8;
+	color:#666;
 }
 
 .comment-form-box {
@@ -205,8 +217,8 @@ h3.comment-reply-title:after {
 	transition: background .5s;
 }
 .comment-form-info input:focus {
-	box-shadow:none;
-	background: #e9e9e9/*main-color*/
+	box-shadow: none;
+	background: #e9e9e9;
 }
 
 .comment-submit-button .submit-button {
@@ -215,14 +227,14 @@ h3.comment-reply-title:after {
 	height: 34px;
 	font-size: 14px;
 	text-align: center;
-	background: #4d4d4d;/*main-color*/
-	opacity: 0.75;
+	background: #4d4d4d;
+	opacity: 1;
 	border-radius: 5px;
 	border:0;
 }
 .comment-submit-button .submit-button:hover {
-	background: #3c3c3c;
-	opacity: 1;
+	background: #4d4d4d;
+	opacity: 0.8;
 }
 input#submit{
 	color: #fff;

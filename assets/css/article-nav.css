@@ -14,10 +14,12 @@
 	margin: 0 5px 20px;
 	border-radius: 2px;
 	text-decoration: none;
+	opacity: 1;
 }
 
 #page-nav .page-number:hover {
-	background: #5e5e5e;
+	background: #4d4d4d;
+	opacity: 0.8;
 }
 
 #page-nav .current {
@@ -26,7 +28,8 @@
 }
 
 #page-nav .current:hover {
-	background: #88acdb;
+	background: #e8e8e8;
+	color:#666;
 }
 
 #page-nav .extend {

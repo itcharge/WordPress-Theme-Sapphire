@@ -35,7 +35,9 @@
 }
 
 .article-inner .article-read-words-times {
-	margin: 20px 30px ;
+	margin: 20px 30px 0px 30px;
+	padding-top: 10px;
+	border-top: 1px solid #DDD;
 }
 
 .article-date {
@@ -72,7 +74,7 @@
 }
 
 #article-entry-content {
-	padding: 25px 30px;
+	padding: 20px 30px;
 }
 
 .article-entry p {

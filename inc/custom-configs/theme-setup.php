@@ -241,41 +241,5 @@ function load_media_files() {
 }
 add_action( 'admin_enqueue_scripts', 'load_media_files' );
 
-// 自定义主题选项栏
-function theme_customize_register( $wp_customize ) {
 
-	$wp_customize->add_setting( 'sa_praise_wechat_qrcode', array(
-		'default'   	=> 		'',
-		"transport" 	=> 		"postMessage",
-		'type'      	=> 		'theme_mod'
-	) );
-	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'sa_praise_wechat_qrcode', array(
-		'label'			=>		'微信打赏二维码',
-		'description'	=>		'设置文章底部微信打赏二维码图片，最佳尺寸：130px * 130px（不设置则不显示打赏按钮）',
-		'section'		=>		'theme_section_praise'
-	) ) );
-	$wp_customize->add_setting( 'sa_praise_alipay_qrcode', array(
-		'default'  		=> 		'',
-		"transport"		=> 		"postMessage",
-		'type'      	=> 		'theme_mod'
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sa_praise_alipay_qrcode', array(
-		'label'			=>		'支付宝打赏二维码',
-		'description'	=>		'设置文章底部支付宝打赏二维码图片，最佳尺寸：130px * 130px（不设置则不显示打赏按钮）',
-		'section'		=>		'theme_section_praise'
-	) ) );
-	
-	$wp_customize->add_setting( 'sa_site_logo', array(
-		'default'		=> 		'',
-		'transport' 	=> 		'refresh',
-		'type' 		    => 		'theme_mod'
-	) );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'sa_site_logo', array(
-		'label'     	=> 		'站点 logo',
-		'description' 	=> 		'设置网站顶部 logo，最佳尺寸：165px * 45px（不设置则显示纯文字站名）',
-		'section'   	=> 		'title_tagline',
-		'priority'  	=> 		300
-	) ) );
-}
-add_action( 'customize_register', 'theme_customize_register' );
 ?>

@@ -61,13 +61,13 @@
 	-moz-border-radius: 2px;
 	border-radius: 2px;
 	transition: background 0.3s;
-	opacity: 0.75;
+	opacity: 1;
 	text-decoration: none;
 }
 
 .article-more-link a:hover {
-	background: #3c3c3c;
-	opacity: 1;
+	background: #4d4d4d;
+	opacity: 0.8;
 }
 
 .article-more-link a.hidden {
