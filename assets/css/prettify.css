@@ -3,6 +3,7 @@
 	background-color: rgba(0,0,0,0.03);
   border: 1px solid #f0f0f0;
   font-family: Menlo, "Bitstream Vera Sans Mono", "DejaVu Sans Mono", Monaco, Consolas, monospace;
+  overflow: auto;
 }
 
 .pln {
