@@ -447,10 +447,10 @@ $theme_options = array(
 	'panel_about'	=>	array(
 		array(
 			'name'		=>		'关于主题',
-			'desc'		=>		'显示 LinkedIn 主页链接按钮',
+			'desc'		=>		'',
 			'id'		=>		'sa_about',
-			'type'		=>		'text',
-			'std'		=>		'https://itcharge.cn'
+			'type'		=>		'html',
+			'std'		=>		get_template_directory_uri() . '/inc/custom-configs/theme-about.php'
 		)
 	)
 );

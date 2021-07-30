@@ -1,5 +1,8 @@
 <?php
 
+// 主题关于页面
+require get_template_directory() . '/inc/custom-configs/theme-about.php';
+
 // 主题设置选项
 require get_template_directory() . '/inc/custom-configs/theme-options.php';
 

@@ -45,6 +45,10 @@ function theme_config_page() {
 				} else {
 					echo '<div class="panel" id="'.$theme_tab['id'].'">';
 				}
+				
+				if ($theme_tab['id'] == 'panel_about') {
+					echo sa_theme_print_about_page();
+				} else {
 					echo '<table class="form-table">';
 					foreach ($pannel_options as $pannel_option) {
 						$option_key = sa_theme_option($pannel_option['id']);
@@ -52,6 +56,8 @@ function theme_config_page() {
 						sa_theme_print_html($pannel_option, $option_key);
 					}
 					echo '</table>';
+				}
+					
 				echo '</div>';
 				$pannel_index++;
 			}
