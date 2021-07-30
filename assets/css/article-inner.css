@@ -280,3 +280,8 @@
 	font-weight: bold;
 	border-bottom: 1px solid #1e6bb8;
 }
+
+.article-copyright a:hover {
+    color: #ff7242;
+	border-bottom: 1px solid #ff7242;
+}

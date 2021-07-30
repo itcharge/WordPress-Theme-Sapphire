@@ -16,7 +16,7 @@ function read_words_times($text='') {
 	if ($text == '') {
 		$text = $post->post_content;
 	}
-	if (mb_strlen($count, 'UTF-8') < mb_strlen($text, 'UTF-8')) {
+	if (mb_strlen($text, 'UTF-8') > 0) {
 		$count = mb_strlen(preg_replace('/\s/','',html_entity_decode(strip_tags($post->post_content))),'UTF-8');
 	} else {
 		$count = 0;
@@ -40,12 +40,10 @@ function read_words_times($text='') {
 function pagenav($type=null, $archive_pages=0) {
 	global $paged, $wp_query;
 	$range = 4;
-	if (!$max_page) {
-		if ($type) {
-			$max_page = $archive_pages / 10;
-   		} else {
-   			$max_page = $wp_query->max_num_pages;
-		}
+	if ($type) {
+		$max_page = $archive_pages / 10;
+	} else {
+		$max_page = $wp_query->max_num_pages;
 	}
 	if ($max_page > 1) {
 		echo '<nav id="page-nav">'; 

@@ -22,7 +22,7 @@
 				$args = array(
 					'order' => 'DESC',
 					'orderby' => 'date',
-					'showposts' => 30
+					'posts_per_page' => -1
 				); 
 
 				// 调用 WP_Query 新建文章查询. 
