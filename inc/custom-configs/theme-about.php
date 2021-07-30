@@ -28,9 +28,9 @@ function sa_theme_print_about_page() {
 </tr>
 <tr style="border: 0; border-top: 1px solid #ccc; background-color: white;">
 <td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;">演示地址</td>
-<td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;"><a href="https://itcharge.cn" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">点击查看</a></td>
+<td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;"><a href="https://itcharge.cn" target="_blank" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">点击查看</a></td>
 <td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;">下载地址</td>
-<td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;"><a href="https://github.com/itcharge/WordPress-Theme-Sapphire/releases" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">点击跳转下载链接</a></td>
+<td style="font-size: 16px; border: 1px solid #ccc; padding: 5px 10px; text-align: left;"><a href="https://github.com/itcharge/WordPress-Theme-Sapphire/releases" target="_blank" style="text-decoration: none; color: #1e6bb8; word-wrap: break-word; font-weight: bold; border-bottom: 1px solid #1e6bb8;">点击跳转下载链接</a></td>
 </tr>
 </tbody>
 </table>
