@@ -18,10 +18,12 @@ add_action('admin_menu', 'set_theme_config');
 
 function theme_config_page() {
 	global $theme_options, $theme_tabs;
-	if ( $_REQUEST['action'] == 'update' ) {	// 保存信息
-		save_options();
-	} else if ( $_REQUEST['action'] == 'reset' ) {	// 恢复默认
-		reset_options();
+	if ($_SERVER["REQUEST_METHOD"] == "POST") { 
+		if ( $_REQUEST['action'] == 'update' ) {	// 保存信息
+			save_options();
+		} else if ( $_REQUEST['action'] == 'reset' ) {	// 恢复默认
+			reset_options();
+		}
 	}
 	echo '<div class="wrap sapphire-setup-panel">';
 		echo '<h2>Sapphire 主题设置</h2>';
