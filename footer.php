@@ -41,7 +41,7 @@ wp_footer();
 			$sa_site_icp = sa_theme_option('sa_site_icp');
 			echo '<a href="https://beian.miit.gov.cn/" target="_blank">'.$sa_site_icp.'</a> | ';
 			?>
-			Theme <a href="https://itcharge.cn/Sapphire/" target="_blank">Sapphire</a> by ITCharge
+			Theme <a href="https://itcharge.cn/wordpress-theme-sapphire/" target="_blank">Sapphire</a> by ITCharge
 		</div>
 	</div>
 </footer>
