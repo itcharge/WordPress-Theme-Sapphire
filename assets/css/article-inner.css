@@ -139,6 +139,23 @@
 	text-align: left;
 }
 
+.article-entry li code {
+    font-size: 14px;
+	word-wrap: break-word;
+	word-break: break-all;
+	padding: 2px 4px;
+	border-radius: 4px;
+	margin: 0 2px;
+	color: #1e6bb8;
+	background-color: rgba(27,31,35,.05);
+}
+
+.article-entry li .language-objc {
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+}
+
 .article-entry a {
 	text-decoration: none;
 	color: #1e6bb8;

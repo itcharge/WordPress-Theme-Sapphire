@@ -6,7 +6,6 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
 function load_custom_template($template) {
 	global $wp_query;
@@ -30,7 +29,6 @@ function load_custom_template($template) {
 	include($template);
 	exit;
 }
- 
 /**
 * 自定义查找链接
 */

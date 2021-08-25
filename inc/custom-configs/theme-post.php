@@ -6,7 +6,6 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
 /**
 * 自定义获取文章字数、阅读时间     
@@ -24,8 +23,8 @@ function read_words_times($text='') {
 	if ($count < 1000) {
 		echo '<div class="article-read-count"><span class="read-count"><i class="icon-statistics icon"></i><span class="article-word-count"> '.$count.' 字</span></span>'; 
 	} else {
-		$count = round($count / 100.0, 2) / 10;
-		echo '<div class="article-read-count"><span class="read-count"><i class="icon-statistics icon"></i><span class="article-word-count">'.$count.'k 字</span></span>'; 
+		$k_count = round($count / 100.0, 2) / 10;
+		echo '<div class="article-read-count"><span class="read-count"><i class="icon-statistics icon"></i><span class="article-word-count">'.$k_count.'k 字</span></span>'; 
 	}
 	echo '&nbsp; | &nbsp;';
 	$read_time = ceil($count / 300); // 修改数字 300 调整时间
@@ -125,4 +124,12 @@ function sa_post_excerpt($width_or_words, $more = '...', $words = false) {
 	
 	return $excerpt;
 }
+
+/**
+* 自定义文章摘要长度
+*/
+function sa_excerpt_length(){
+    return 100;
+}
+add_filter( 'excerpt_length', 'sa_excerpt_length');
 ?>

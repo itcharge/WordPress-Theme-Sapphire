@@ -9,7 +9,6 @@
  */
 get_header(); 
 ?>
-
 <div class="site-content">
 	<div id="left-box">
 		<div id="home-loop">
@@ -69,7 +68,7 @@ get_header();
 						</a>
 					</header>
 					<div class="article-entry" id="article-entry-excerpt">
-						<?php the_excerpt(); ?>
+						<?php echo the_excerpt(); ?>
 					</div>
 					
 					<div class="article-info-index">

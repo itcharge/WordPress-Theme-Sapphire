@@ -6,7 +6,6 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
 /**
 * 主题设置面板

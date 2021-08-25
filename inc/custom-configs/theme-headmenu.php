@@ -6,7 +6,6 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
 function sapphire_setup() {
 	/*

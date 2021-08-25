@@ -1,5 +1,4 @@
 <?php
-
 // 主题关于页面
 require get_template_directory() . '/inc/custom-configs/theme-about.php';
 
@@ -27,11 +26,6 @@ require get_template_directory() . '/inc/custom-configs/theme-findpage.php';
 // 主题函数
 require get_template_directory() . '/inc/custom-configs/theme-functions.php';
 
+// wordpress 优化
+require get_template_directory() . '/inc/custom-configs/wp-optimize.php';
 ?>
-
-
-
-	
-	
-
-

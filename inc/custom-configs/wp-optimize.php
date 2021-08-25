@@ -6,9 +6,7 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
-
 remove_action( 'wp_head', 'wp_generator' );     // 移除 WordPress 版本信息
 remove_action( 'wp_head', 'rsd_link' );         // 移除 WordPress 离线编辑器接口
 remove_action( 'wp_head', 'wlwmanifest_link' ); // 同上
@@ -34,7 +32,6 @@ remove_filter( 'comment_text', 'make_clickable',  9 );  // 移除 WordPress 评�
 add_filter( 'xmlrpc_enabled', '__return_false' );       // 关闭 XML-RPC 的 pingback 端口
 add_filter( 'use_default_gallery_style', '__return_false' );        // 去除 wordpress 自带相册样式
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );   // 启用链接功能（友链）
-
 
 // 禁止后台加载谷歌字体
 function sa_remove_open_sans_from_wp_core() {
@@ -143,4 +140,12 @@ if ( !function_exists( 'disable_embeds_init' ) ) :
 	
 	register_deactivation_hook( __FILE__, 'disable_embeds_flush_rewrite_rules' );
 endif;
+
+add_filter('wpseo_robots', 'yoast_no_home_noindex', 999);
+function yoast_no_home_noindex($string="") {
+    if (is_home() || is_front_page() || is_search()) {
+        $string="index,follow";
+    }
+    return $string;
+}
 ?>

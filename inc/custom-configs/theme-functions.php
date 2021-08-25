@@ -6,7 +6,6 @@
  * @since Sapphire 1.0
  */
 ?>
-
 <?php
 function sapphire_scripts() {
 	// Jquery
@@ -41,8 +40,35 @@ function sapphire_scripts() {
 	
 	$sa_post_mathjax = sa_theme_option('sa_post_mathjax');
 	if ($sa_post_mathjax && $sa_post_mathjax == 'open') {
+?>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        document.getElementById(all[i].inputID + '-Frame').parentNode.classList.add('has-jax');
+    }       
+});
+</script>
+<script async src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<style>
+.has-jax {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+</style>
+<?php
 		// mathjax
-		wp_enqueue_script( 'sapphire-mathjax-js', 'http://mathjax.josephjctang.com/MathJax.js?config=TeX-MML-AM_HTMLorMML');
+// 		echo '<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/3.2.0/es5/tex-mml-chtml.min.js"></script>';
+// 		wp_enqueue_script( 'sapphire-mathjax-js', 'https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.9/config/TeX-AMS-MML_HTMLorMML.min.js');
 	}
 	
 	$sa_sidebar_post_toc = sa_theme_option('sa_sidebar_post_toc');

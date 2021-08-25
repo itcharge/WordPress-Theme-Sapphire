@@ -1,5 +1,4 @@
 <?php
-
 add_filter( 'get_avatar' , 'local_random_avatar' , 1 , 5 );
 function local_random_avatar( $avatar, $id_or_email, $size, $default, $alt) {
 	if (filter_var($id_or_email, FILTER_VALIDATE_EMAIL)) { // 判断是否为邮箱
