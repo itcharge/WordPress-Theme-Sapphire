@@ -1,7 +1,7 @@
 # WordPress-Theme-Sapphire
 > 基于 WordPress 开发的双栏博客主题 Sapphire
 
-![](http://qcdn.itcharge.cn/images/sapphire-screenshot.png)
+![](./screenshot.png)
 
 
 ## 1. 环境要求
